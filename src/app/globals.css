@@ -46,13 +46,24 @@
 
 html {
   scroll-behavior: smooth;
+  /* Prevent text size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
+  /* Only hide cursor on non-touch devices */
   cursor: none;
+}
+
+/* Restore cursor on touch/mobile devices */
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -70,7 +81,7 @@ body {
 }
 
 /* ──────────────────────────────────────────
-   CUSTOM CURSOR
+   CUSTOM CURSOR (desktop only)
    ────────────────────────────────────────── */
 .cursor {
   width: 8px;
@@ -109,6 +120,14 @@ body {
   border-color: rgba(255, 255, 255, 0.8);
 }
 
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+}
+
 /* ──────────────────────────────────────────
    BACKGROUND EFFECTS
    ────────────────────────────────────────── */
@@ -126,6 +145,13 @@ body {
     linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 60px 60px;
   animation: gridShift 30s linear infinite;
+}
+
+/* Reduce grid size on mobile for better performance */
+@media (max-width: 768px) {
+  .grid-overlay {
+    background-size: 40px 40px;
+  }
 }
 
 @keyframes gridShift {
@@ -173,6 +199,13 @@ body {
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   animation: noiseShift 0.5s steps(2) infinite;
+}
+
+/* Reduce noise animation on mobile for performance */
+@media (max-width: 768px) {
+  .noise {
+    animation: none;
+  }
 }
 
 @keyframes noiseShift {
@@ -262,6 +295,10 @@ body {
    ────────────────────────────────────────── */
 .nav-link {
   @apply text-[#888] no-underline text-[0.82rem] tracking-[1.5px] uppercase font-display font-normal transition-colors duration-[250ms] relative pb-[2px];
+  /* Minimum tap target for mobile */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
 }
 .nav-link::after {
   content: "";
@@ -280,6 +317,13 @@ body {
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+}
+
+/* Smaller nav text on mobile */
+@media (max-width: 640px) {
+  .nav-link {
+    @apply text-[0.75rem] tracking-[1px];
+  }
 }
 
 .nav-logo-link::after {
@@ -328,7 +372,20 @@ body {
   @apply px-8 py-3 rounded-[10px] font-display text-[0.84rem] font-semibold tracking-[1.5px] uppercase no-underline border-none transition-all duration-300 relative overflow-hidden inline-block text-center;
   cursor: none;
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Proper tap target on mobile */
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Restore cursor on touch devices */
+@media (pointer: coarse) {
+  .btn {
+    cursor: pointer;
+  }
+}
+
 .btn::before {
   content: "";
   position: absolute;
@@ -339,6 +396,13 @@ body {
 }
 .btn:hover::before {
   transform: translateX(110%) skewX(-15deg);
+}
+
+/* Full-width buttons on small screens */
+@media (max-width: 480px) {
+  .btn {
+    @apply px-6 py-[10px] text-[0.78rem] tracking-[1px] w-full;
+  }
 }
 
 .btn-primary {
@@ -354,6 +418,13 @@ body {
   transform: translateY(-3px) scale(1.02);
 }
 
+/* Disable lift on touch — no hover state */
+@media (pointer: coarse) {
+  .btn-primary:hover {
+    transform: none;
+  }
+}
+
 .btn-ghost {
   background: rgba(15, 15, 15, 0.6);
   color: #bbb;
@@ -365,6 +436,12 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
   color: #fff;
   transform: translateY(-3px) scale(1.02);
+}
+
+@media (pointer: coarse) {
+  .btn-ghost:hover {
+    transform: none;
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -404,6 +481,25 @@ body {
   opacity: 1;
 }
 
+/* Disable card lift on touch devices */
+@media (pointer: coarse) {
+  .glass-card:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: none;
+  }
+  .glass-card:hover::after {
+    opacity: 0;
+  }
+}
+
+/* Reduce border-radius on very small screens */
+@media (max-width: 400px) {
+  .glass-card {
+    border-radius: 14px;
+  }
+}
+
 /* ──────────────────────────────────────────
    SECTION LABELS
    ────────────────────────────────────────── */
@@ -418,6 +514,12 @@ body {
   flex-shrink: 0;
 }
 
+@media (max-width: 480px) {
+  .section-label {
+    @apply text-[0.65rem] tracking-[3px];
+  }
+}
+
 /* ──────────────────────────────────────────
    SKILL TAGS
    ────────────────────────────────────────── */
@@ -425,6 +527,10 @@ body {
   @apply px-3 py-[5px] rounded-[20px] text-[0.8rem] text-[#ccc] border border-white/10 bg-white/[0.04] transition-all duration-[250ms];
   cursor: default;
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Proper tap target */
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
 }
 .skill-tag:hover {
   background: rgba(255, 255, 255, 0.12);
@@ -432,6 +538,18 @@ body {
   color: #fff;
   transform: scale(1.06) translateY(-1px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+@media (pointer: coarse) {
+  .skill-tag:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-tag {
+    @apply text-[0.75rem] px-[10px] py-1;
+  }
 }
 
 .skill-cat-title {
@@ -479,13 +597,43 @@ body {
 .tech-item:hover .tech-name {
   color: #fff;
 }
+
+@media (pointer: coarse) {
+  .tech-item:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Smaller tech items on mobile */
+@media (max-width: 480px) {
+  .tech-item {
+    @apply py-4 px-4 min-w-[72px];
+    gap: 8px;
+  }
+}
+
 .tech-icon {
   font-size: 2rem;
   line-height: 1;
   transition: transform 0.3s;
 }
+
+@media (max-width: 480px) {
+  .tech-icon {
+    font-size: 1.6rem;
+  }
+}
+
 .tech-name {
   @apply text-[0.72rem] text-[#999] font-display tracking-[1px] transition-colors duration-200;
+}
+
+@media (max-width: 480px) {
+  .tech-name {
+    @apply text-[0.65rem] tracking-[0.5px];
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -513,16 +661,37 @@ body {
   opacity: 1;
 }
 
+@media (pointer: coarse) {
+  .project-card:hover::before {
+    opacity: 0;
+  }
+}
+
 .project-tag {
   @apply text-[0.7rem] px-[10px] py-[3px] rounded-xl bg-white/[0.05] border border-white/[0.14] text-[#ccc] font-display tracking-[0.5px] transition-all duration-200 cursor-default;
+  /* Tap-friendly */
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
 }
 .project-tag:hover {
   background: rgba(255, 255, 255, 0.12);
   color: #fff;
 }
 
+@media (max-width: 480px) {
+  .project-tag {
+    @apply text-[0.65rem] px-2;
+  }
+}
+
 .proj-link {
   @apply px-4 py-[7px] rounded-lg text-[0.76rem] font-display no-underline border border-white/[0.16] text-[#bbb] transition-all duration-[250ms] tracking-[0.5px];
+  /* Ensure tap target */
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .proj-link:hover {
   border-color: rgba(255, 255, 255, 0.5);
@@ -539,6 +708,18 @@ body {
   background: rgba(255, 255, 255, 0.16);
 }
 
+@media (pointer: coarse) {
+  .proj-link:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .proj-link {
+    @apply text-[0.72rem] px-3 py-[6px] flex-1;
+  }
+}
+
 /* ──────────────────────────────────────────
    ACHIEVEMENT CARDS
    ────────────────────────────────────────── */
@@ -548,6 +729,18 @@ body {
 .ach-card:hover .ach-icon {
   transform: rotate(-8deg) scale(1.1);
   background: rgba(255, 255, 255, 0.12);
+}
+
+@media (pointer: coarse) {
+  .ach-card:hover .ach-icon {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ach-icon {
+    @apply w-10 h-10 rounded-xl text-[1.2rem];
+  }
 }
 
 .ach-year {
@@ -580,6 +773,13 @@ body {
   );
 }
 
+/* Reduce timeline indent on small screens */
+@media (max-width: 480px) {
+  .exp-timeline {
+    padding-left: 22px;
+  }
+}
+
 .exp-dot {
   position: absolute;
   left: -40px;
@@ -597,6 +797,15 @@ body {
   transform: scale(1.2);
 }
 
+@media (max-width: 480px) {
+  .exp-dot {
+    left: -30px;
+    width: 12px;
+    height: 12px;
+    top: 4px;
+  }
+}
+
 /* ──────────────────────────────────────────
    INFO ROWS
    ────────────────────────────────────────── */
@@ -611,12 +820,21 @@ body {
   padding-left: 8px;
 }
 
+@media (max-width: 480px) {
+  .info-row {
+    @apply gap-3 py-3;
+    flex-wrap: wrap;
+  }
+}
+
 /* ──────────────────────────────────────────
    CONTACT LINKS
    ────────────────────────────────────────── */
 .contact-link {
   @apply flex items-center gap-[14px] py-[14px] px-[18px] rounded-xl bg-[rgba(18,18,18,0.5)] border border-white/[0.08] no-underline text-[#eee] transition-all duration-300;
   transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
+  /* Tap target */
+  min-height: 52px;
 }
 .contact-link:hover {
   background: rgba(255, 255, 255, 0.06);
@@ -625,11 +843,25 @@ body {
   transform: translateX(4px);
 }
 
+@media (pointer: coarse) {
+  .contact-link:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-link {
+    @apply gap-3 py-3 px-4 rounded-lg;
+  }
+}
+
 /* ──────────────────────────────────────────
    FORM INPUTS
    ────────────────────────────────────────── */
 .form-input {
   @apply w-full px-4 py-3 bg-[rgba(15,15,15,0.7)] border border-white/10 rounded-[10px] text-white font-body text-[0.93rem] outline-none transition-all duration-300;
+  /* Prevent iOS zoom on focus (font-size >= 16px) */
+  font-size: max(0.93rem, 16px);
 }
 .form-input:focus {
   border-color: rgba(255, 255, 255, 0.45);
@@ -640,6 +872,14 @@ body {
   color: #555;
 }
 
+/* Ensure adequate tap height on mobile */
+@media (max-width: 768px) {
+  .form-input {
+    @apply py-[14px];
+    font-size: 16px; /* hard-set to prevent iOS zoom */
+  }
+}
+
 /* ──────────────────────────────────────────
    HERO FLOATING GEO SHAPES
    ────────────────────────────────────────── */
@@ -648,6 +888,13 @@ body {
   pointer-events: none;
   border: 1px solid rgba(255, 255, 255, 0.06);
   animation: geoFloat var(--dur, 12s) ease-in-out infinite alternate;
+}
+
+/* Hide decorative shapes on very small screens to reduce clutter */
+@media (max-width: 480px) {
+  .hero-geo {
+    display: none;
+  }
 }
 
 @keyframes geoFloat {
@@ -674,6 +921,13 @@ body {
   transform: none;
 }
 
+/* Reduce reveal distance on mobile */
+@media (max-width: 768px) {
+  .reveal {
+    transform: translateY(20px);
+  }
+}
+
 .reveal-left {
   opacity: 0;
   transform: translateX(-36px);
@@ -682,6 +936,12 @@ body {
 .reveal-left.visible {
   opacity: 1;
   transform: none;
+}
+
+@media (max-width: 768px) {
+  .reveal-left {
+    transform: translateX(-20px);
+  }
 }
 
 .reveal-scale {
@@ -736,6 +996,43 @@ body {
   transition-delay: 0.48s;
 }
 
+/* Tighten stagger delays on mobile */
+@media (max-width: 768px) {
+  .stagger-children.visible > *:nth-child(2) { transition-delay: 0.05s; }
+  .stagger-children.visible > *:nth-child(3) { transition-delay: 0.1s; }
+  .stagger-children.visible > *:nth-child(4) { transition-delay: 0.15s; }
+  .stagger-children.visible > *:nth-child(5) { transition-delay: 0.2s; }
+  .stagger-children.visible > *:nth-child(6) { transition-delay: 0.25s; }
+  .stagger-children.visible > *:nth-child(7) { transition-delay: 0.3s; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-scale,
+  .stagger-children > *,
+  .hero-anim-1,
+  .hero-anim-2,
+  .hero-anim-3,
+  .hero-anim-4,
+  .hero-anim-5,
+  .hero-anim-6,
+  .hero-anim-7 {
+    opacity: 1;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+  .hero-name-glow,
+  .badge-dot,
+  .grid-overlay,
+  .scanline,
+  .noise {
+    animation: none;
+  }
+}
+
 /* ──────────────────────────────────────────
    TOOLTIP
    ────────────────────────────────────────── */
@@ -765,6 +1062,13 @@ body {
 [data-tip]:hover::after {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
+}
+
+/* Disable tooltips on touch — they flash on tap and can't be dismissed */
+@media (pointer: coarse) {
+  [data-tip]::after {
+    display: none;
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -810,6 +1114,17 @@ body {
   animation: fadeUp 0.9s 0.65s ease both;
 }
 
+/* Faster, tighter hero animations on mobile */
+@media (max-width: 768px) {
+  .hero-anim-1 { animation: fadeUp 0.7s ease both; }
+  .hero-anim-2 { animation: fadeUp 0.7s 0.08s ease both; }
+  .hero-anim-3 { animation: fadeUp 0.7s 0.14s ease both; }
+  .hero-anim-4 { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-anim-5 { animation: fadeUp 0.7s 0.26s ease both; }
+  .hero-anim-6 { animation: fadeUp 0.7s 0.32s ease both; }
+  .hero-anim-7 { animation: fadeUp 0.7s 0.38s ease both; }
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -826,11 +1141,20 @@ body {
    ────────────────────────────────────────── */
 .edu-sub {
   @apply text-[0.76rem] px-3 py-1 rounded-[14px] bg-white/[0.04] border border-white/10 text-[#bbb] transition-all duration-200 cursor-default;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
 }
 .edu-sub:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  .edu-sub {
+    @apply text-[0.7rem] px-[10px];
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -845,4 +1169,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@media (max-width: 480px) {
+  .stat-num {
+    font-size: 1.6rem;
+  }
 }
