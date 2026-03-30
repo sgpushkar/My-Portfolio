@@ -5,7 +5,10 @@ export interface Project {
   featured?: boolean;
   name: string;
   emoji: string;
+  hook: string;          // Added
+  problem: string;       // Added
   desc: string;
+  impact: string;        // Added
   features: string[];
   tags: string[];
   githubUrl: string;
