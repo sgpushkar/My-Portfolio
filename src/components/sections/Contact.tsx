@@ -1,19 +1,44 @@
 // src/components/sections/Contact.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { CONTACT_LINKS } from "@/lib/data";
 
 export default function Contact() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
-  function handleSubmit() {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
     setStatus("sending");
-    setTimeout(() => {
-      setStatus("sent");
-      setTimeout(() => setStatus("idle"), 3000);
-    }, 1200);
-  }
+    setErrorMsg("");
+
+    const formData = new FormData(formRef.current);
+
+    try {
+      // Replace the email address below with your own
+      const response = await fetch("https://formsubmit.co/ajax/pushkarmhatre007@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus("sent");
+        formRef.current.reset();
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      console.error("Form error:", error);
+      setStatus("error");
+      setErrorMsg("Something went wrong. Please try again or email me directly.");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
 
   return (
     <section id="contact" className="relative z-[2]">
@@ -63,49 +88,61 @@ export default function Contact() {
 
           {/* Form */}
           <div className="glass-card p-5 sm:p-10">
-            <div className="mb-4">
-              <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                placeholder="Your name"
-                className="form-input"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="form-input"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
-                Message
-              </label>
-              <textarea
-                placeholder="What's on your mind?"
-                className="form-input min-h-[110px] resize-y"
-              />
-            </div>
+            <form ref={formRef} onSubmit={handleSubmit}>
+              <div className="mb-4">
+                <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
+                  Name *
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name"
+                  className="form-input"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
+                  Email *
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  className="form-input"
+                  required
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
+                  Message *
+                </label>
+                <textarea
+                  name="message"
+                  placeholder="What's on your mind?"
+                  className="form-input min-h-[110px] resize-y"
+                  required
+                />
+              </div>
 
-            <button
-              onClick={handleSubmit}
-              disabled={status !== "idle"}
-              className={`btn btn-primary w-full ${
-                status === "sent"
-                  ? "!bg-[linear-gradient(135deg,#2a2a2a,#111)]"
-                  : ""
-              }`}
-            >
-              {status === "idle" && "Start the conversation"}
-              {status === "sending" && "Sending…"}
-              {status === "sent" && "✓ Sent!"}
-            </button>
+              <button
+                type="submit"
+                disabled={status === "sending"}
+                className={`btn btn-primary w-full ${
+                  status === "sent"
+                    ? "!bg-[linear-gradient(135deg,#2a2a2a,#111)]"
+                    : ""
+                }`}
+              >
+                {status === "idle" && "Start the conversation"}
+                {status === "sending" && "Sending…"}
+                {status === "sent" && "✓ Sent!"}
+                {status === "error" && "✗ Failed — try again"}
+              </button>
+              {errorMsg && (
+                <p className="text-red-400 text-sm mt-3 text-center">{errorMsg}</p>
+              )}
+            </form>
           </div>
         </div>
       </div>
