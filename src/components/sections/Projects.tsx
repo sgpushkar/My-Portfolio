@@ -5,7 +5,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative z-[2]">
       <div className="section-wrap">
-        <span className="section-label">Projects</span>
+        <span className="section-label">Work That Ships</span>
         <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
           What I&apos;ve Built
         </h2>
@@ -16,36 +16,72 @@ export default function Projects() {
               key={project.id}
               className="glass-card project-card p-5 sm:p-8 flex flex-col"
             >
-              <div
-                className={`font-display text-[0.65rem] tracking-[3px] uppercase mb-4 ${
-                  project.featured ? "text-[#aaa]" : "text-[#555]"
-                }`}
-              >
-                {project.featured ? "✦ Main Project" : ""}
+              {project.featured && (
+                <div className="font-display text-[0.65rem] tracking-[3px] uppercase mb-4 text-[#aaa]">
+                  ✦ Main Project
+                </div>
+              )}
+
+              {/* Hook */}
+              <div className="text-[0.85rem] text-[#ccc] italic mb-2 leading-tight">
+                “{project.hook}”
               </div>
 
+              {/* Title */}
               <div className="font-display text-[1.2rem] font-bold text-white mb-2 leading-[1.2]">
                 {project.name} {project.emoji}
               </div>
 
-              <p className="text-[#999] text-[0.88rem] leading-[1.72] mb-4">
+              {/* Problem */}
+              <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+                Problem
+              </div>
+              <p className="text-[#999] text-[0.88rem] leading-[1.5] mb-2">
+                {project.problem}
+              </p>
+
+              {/* What I built */}
+              <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+                What I built
+              </div>
+              <p className="text-[#999] text-[0.88rem] leading-[1.5] mb-2">
                 {project.desc}
               </p>
 
-              <ul className="list-none mb-5 space-y-1">
-                {project.features.map((f) => (
-                  <li
-                    key={f}
-                    className="text-[0.82rem] text-[#bbb] flex items-start gap-2"
-                  >
-                    <span className="text-[#777] text-[0.65rem] flex-shrink-0 mt-[3px]">
-                      ▸
-                    </span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
+              {/* Impact */}
+              <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+                Impact
+              </div>
+              <p className="text-[#aaa] text-[0.85rem] font-medium mb-3">
+                {project.impact}
+              </p>
 
+              {/* Features (optional, keep if you want) */}
+              {project.features && project.features.length > 0 && (
+                <>
+                  <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+                    Key features
+                  </div>
+                  <ul className="list-none mb-5 space-y-1">
+                    {project.features.slice(0, 3).map((f) => (
+                      <li
+                        key={f}
+                        className="text-[0.82rem] text-[#bbb] flex items-start gap-2"
+                      >
+                        <span className="text-[#777] text-[0.65rem] flex-shrink-0 mt-[3px]">
+                          ▸
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                    {project.features.length > 3 && (
+                      <li className="text-[0.7rem] text-[#777] mt-1">+ more</li>
+                    )}
+                  </ul>
+                </>
+              )}
+
+              {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                 {project.tags.map((tag) => (
                   <span key={tag} className="project-tag">
@@ -54,6 +90,7 @@ export default function Projects() {
                 ))}
               </div>
 
+              {/* Links */}
               <div className="flex gap-2 flex-wrap">
                 <a
                   href={project.githubUrl}

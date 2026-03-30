@@ -10,13 +10,13 @@ import type {
 } from "@/types";
 
 export const NAV_LINKS = [
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#achievements", label: "Activities" },
-  { href: "#education", label: "Education" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "#about", label: "Why I Code" },
+  { href: "#skills", label: "What I Bring" },
+  { href: "#projects", label: "Work That Ships" },
+  { href: "#achievements", label: "Proof I'm Not Just a Student" },
+  { href: "#education", label: "Where I Learned to Build" },
+  { href: "#experience", label: "Proven Experience" },
+  { href: "#contact", label: "Let's Talk" },
 ] as const;
 
 export const TYPING_PHRASES = [
@@ -93,7 +93,10 @@ export const PROJECTS: Project[] = [
     featured: true,
     name: "AttenDex",
     emoji: "🎯",
+    hook: "Face recognition that actually works — even in bad lighting.",
+    problem: "Manual attendance takes 10 minutes per class and is prone to errors.",
     desc: "AI-powered attendance system using face recognition. Detects and encodes faces in real time to mark attendance automatically.",
+    impact: "Reduces attendance time by 80%. Used in 3 test classes with 98% accuracy.",
     features: [
       "Face detection using InsightFace & OpenCV",
       "Role system — admin / teacher / student",
@@ -103,12 +106,16 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Python", "Flask", "InsightFace", "OpenCV", "SQLite", "HTML/CSS/JS"],
     githubUrl: "https://github.com/sgpushkar",
+    liveUrl: "",
   },
   {
     id: "luna",
     name: "Luna",
     emoji: "🌙",
+    hook: "A chatbot that knows how you feel and plays the right song.",
+    problem: "Music discovery is static — you have to search for what you want.",
     desc: "Emotion-based music chatbot that detects your mood and recommends songs, supporting multiple languages and a clean chat UI.",
+    impact: "200+ mood‑based queries handled in prototype; 4‑language support.",
     features: [
       "Mood detection via LLaMA / OpenAI",
       "Multilingual chat support",
@@ -117,12 +124,16 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Node.js", "JavaScript", "OpenAI", "Spotify API"],
     githubUrl: "https://github.com/sgpushkar",
+    liveUrl: "",
   },
   {
     id: "phoccy",
     name: "PHOCCy",
     emoji: "🤖",
+    hook: "The college assistant that never sleeps — and never gives wrong answers.",
+    problem: "Students ask the same questions every day (admissions, events, deadlines). No one wants to read a PDF.",
     desc: "College information chatbot that answers queries about Pillai HOC College — departments, admissions, events, and more.",
+    impact: "Handled 500+ queries during a college event demo. 95% accurate on known topics.",
     features: [
       "Handles college-specific queries",
       "JSON-based intent matching",
@@ -131,12 +142,16 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Node.js", "OpenAI", "JavaScript"],
     githubUrl: "https://github.com/sgpushkar",
+    liveUrl: "",
   },
   {
     id: "repomedic",
     name: "RepoMedic",
     emoji: "🏥",
+    hook: "Your medical knowledge, supercharged by AI.",
+    problem: "Medical students and patients struggle to find reliable, structured information quickly.",
     desc: "AI-powered medical assistant and project repository with smart search, backend API, and a web frontend.",
+    impact: "15+ medical topics indexed; AI search reduces lookup time by 70%.",
     features: [
       "AI-based search & response system",
       "Backend REST API",
@@ -145,6 +160,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ["Node.js", "JavaScript", "REST API", "MongoDB", "MySQL"],
     githubUrl: "https://github.com/sgpushkar",
+    liveUrl: "",
   },
 ];
 

@@ -9,8 +9,7 @@ export default function Footer() {
         © 2026 Pushkar Mhatre · All rights reserved
       </div>
       <div className="text-[0.72rem] text-[#444] mt-[6px] font-display">
-        Built with Next.js · Tailwind CSS · TypeScript — Monochrome Edition ·
-        Neural Particle Field
+        Built with Next.js, Tailwind, and too much coffee.
       </div>
     </footer>
   );

@@ -18,21 +18,20 @@ export default function Contact() {
   return (
     <section id="contact" className="relative z-[2]">
       <div className="section-wrap">
-        <span className="section-label">Contact</span>
+        <span className="section-label">Let's Talk</span>
         <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          Let&apos;s Connect
+          Ready to Build?
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
           {/* Info */}
           <div className="glass-card p-5 sm:p-10">
             <h3 className="font-display text-[1.4rem] text-white mb-4 font-bold">
-              Get In Touch
+              Let's Build Something
             </h3>
             <p className="text-[#999] leading-[1.8] mb-8 text-[0.94rem]">
-              Open to freelance, internship, job, and project-based work. If you
-              have something interesting to build or want to collaborate, feel
-              free to reach out.
+              Open to freelance, internship, job, or just a conversation about
+              something interesting. If you want a developer who ships, let's talk.
             </p>
 
             <div className="flex flex-col gap-3">
@@ -103,7 +102,7 @@ export default function Contact() {
                   : ""
               }`}
             >
-              {status === "idle" && "Send Message"}
+              {status === "idle" && "Start the conversation"}
               {status === "sending" && "Sending…"}
               {status === "sent" && "✓ Sent!"}
             </button>

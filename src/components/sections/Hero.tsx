@@ -10,7 +10,6 @@ export default function Hero() {
   const typedText = useTyping();
   useStatCounters();
 
-  // Geo parallax — desktop only
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       const geos = document.querySelectorAll<HTMLElement>(".hero-geo");
@@ -58,7 +57,7 @@ export default function Hero() {
         {/* Available badge */}
         <div className="hero-anim-1 inline-flex items-center gap-2 px-4 py-[7px] border border-white/[0.18] rounded-3xl bg-white/[0.03] text-[clamp(0.65rem,2.5vw,0.76rem)] tracking-[1.5px] uppercase text-[#ccc] font-display mb-6 backdrop-blur-lg text-center leading-tight">
           <span className="badge-dot flex-shrink-0" />
-          <span>Available for Freelance · Internships · Projects</span>
+          <span>Open for work — freelance, internship, full‑time</span>
         </div>
 
         {/* Name */}
@@ -73,16 +72,13 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p className="hero-anim-3 font-display text-[clamp(0.7rem,2.5vw,0.82rem)] tracking-[1.5px] uppercase text-[#888] mb-3 leading-relaxed">
-          Full-Stack Developer &nbsp;·&nbsp;{" "}
-          <span className="text-[#ddd] font-semibold">AI Enthusiast</span>
-          &nbsp;·&nbsp; Backend Developer
+          I build things that shouldn't exist — but do.
         </p>
 
         {/* Description */}
         <p className="hero-anim-4 text-[clamp(0.9rem,3vw,1.12rem)] text-[#aaa] max-w-[540px] mx-auto mb-7 leading-[1.75]">
-          I build real-world AI apps, backend systems, and full-stack tools —
-          from face recognition systems to chatbots and automation scripts that
-          actually solve problems.
+          AI apps, full‑stack systems, and tools that actually solve real problems.
+          Final year student by title, developer by obsession.
         </p>
 
         {/* Typing effect */}
@@ -94,7 +90,7 @@ export default function Hero() {
         {/* CTA Buttons */}
         <div className="hero-anim-6 flex gap-3 justify-center flex-wrap px-2">
           <a href="#projects" className="btn btn-primary">
-            View Projects
+            See What I Build
           </a>
           <a
             href="https://github.com/sgpushkar"
@@ -105,7 +101,7 @@ export default function Hero() {
             GitHub
           </a>
           <a href="#contact" className="btn btn-ghost">
-            Contact
+            Let's Talk
           </a>
         </div>
 

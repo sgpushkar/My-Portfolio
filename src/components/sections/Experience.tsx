@@ -5,9 +5,9 @@ export default function Experience() {
   return (
     <section id="experience" className="relative z-[2]">
       <div className="section-wrap">
-        <span className="section-label">Experience</span>
+        <span className="section-label">Proven Experience</span>
         <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          What I&apos;ve Done
+          What I've Done
         </h2>
 
         <div className="glass-card p-5 sm:p-8 md:px-12 md:py-11">

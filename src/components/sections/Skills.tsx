@@ -5,7 +5,7 @@ export default function Skills() {
   return (
     <section id="skills" className="relative z-[2]">
       <div className="section-wrap">
-        <span className="section-label">Skills</span>
+        <span className="section-label">What I Bring</span>
         <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
           Technical Skills
         </h2>

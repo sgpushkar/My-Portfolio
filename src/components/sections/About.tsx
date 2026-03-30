@@ -3,46 +3,22 @@ export default function About() {
   return (
     <section id="about" className="relative z-[2]">
       <div className="section-wrap">
-        <span className="section-label">About</span>
+        <span className="section-label">Why I Code</span>
         <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          Who I Am
+          I Build Things That Actually Work
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
           {/* Text card */}
           <div className="glass-card about-text reveal-left p-6 sm:p-10">
             <p className="text-[#b8b8b8] leading-[1.85] mb-4 text-[0.97rem]">
-              I&apos;m a{" "}
-              <strong className="text-[#f0f0f0] font-medium">
-                final-year Diploma in Computer Engineering student
-              </strong>{" "}
-              at Pillai HOC College of Engineering who builds projects to learn
-              and to solve real problems.
+              I’m Pushkar. I started coding because I wanted to build something that didn’t exist. Now, I build AI‑powered attendance systems, emotion‑aware chatbots, and full‑stack tools that actually get used.
             </p>
             <p className="text-[#b8b8b8] leading-[1.85] mb-4 text-[0.97rem]">
-              I enjoy working on{" "}
-              <strong className="text-[#f0f0f0] font-medium">
-                AI apps, backend systems, and full-stack applications
-              </strong>
-              . Whether it&apos;s an AI-powered attendance system, an
-              emotion-based chatbot, or a REST API backend, I focus on building
-              things that actually work — not just demos.
+              I don’t just write code — I obsess over how it feels to use. My work lives at the intersection of AI, backend logic, and user experience. Whether it’s face recognition that works in a noisy classroom or a REST API that doesn’t crumble under load, I make sure it’s solid.
             </p>
             <p className="text-[#b8b8b8] leading-[1.85] mb-4 text-[0.97rem]">
-              I&apos;ve worked on{" "}
-              <strong className="text-[#f0f0f0] font-medium">
-                internship, freelance, and personal projects
-              </strong>
-              , both solo and in teams. I like experimenting with new tools,
-              integrating APIs, and figuring out how to automate repetitive
-              tasks or build something useful from scratch.
-            </p>
-            <p className="text-[#b8b8b8] leading-[1.85] text-[0.97rem]">
-              I&apos;m always looking to work on{" "}
-              <strong className="text-[#f0f0f0] font-medium">
-                interesting problems
-              </strong>{" "}
-              and grow through real-world experience.
+              I’ve worked with startups, freelanced, and led teams in competitions. I’m looking for a place where I can ship code that matters — and keep learning from people who care about quality.
             </p>
           </div>
 

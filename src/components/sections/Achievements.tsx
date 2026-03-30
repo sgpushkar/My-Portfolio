@@ -5,9 +5,9 @@ export default function Achievements() {
   return (
     <section id="achievements" className="relative z-[2]">
       <div className="section-wrap">
-        <span className="section-label">Activities &amp; Competitions</span>
+        <span className="section-label">Proof I'm Not Just a Student</span>
         <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          Activities &amp; Competitions
+          Activities & Competitions
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-[18px] stagger-children reveal">
