@@ -10,7 +10,7 @@ export default function Hero() {
   const typedText = useTyping();
   useStatCounters();
 
-  // Geo parallax on mouse move
+  // Geo parallax — desktop only
   useEffect(() => {
     const onMove = (e: MouseEvent) => {
       const geos = document.querySelectorAll<HTMLElement>(".hero-geo");
@@ -28,9 +28,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-12 pt-[120px] pb-20 relative text-center z-[2]"
+      className="min-h-screen flex items-center justify-center px-[var(--section-px)] pt-[100px] pb-16 relative text-center z-[2]"
     >
-      {/* Floating geo shapes */}
+      {/* Floating geo shapes (hidden on mobile via CSS) */}
       <div
         className="hero-geo w-20 h-20 top-[20%] left-[10%] rounded-sm"
         style={{ ["--dur" as string]: "14s" }}
@@ -54,45 +54,45 @@ export default function Hero() {
         style={{ ["--dur" as string]: "18s", animationDelay: "-2s" }}
       />
 
-      <div className="max-w-[820px] relative">
-        {/* Badge */}
-        <div className="hero-anim-1 inline-flex items-center gap-2 px-5 py-[7px] border border-white/[0.18] rounded-3xl bg-white/[0.03] text-[0.76rem] tracking-[2px] uppercase text-[#ccc] font-display mb-[30px] backdrop-blur-lg">
-          <span className="badge-dot" />
-          Available for Freelance · Internships · Projects
+      <div className="w-full max-w-[820px] relative">
+        {/* Available badge */}
+        <div className="hero-anim-1 inline-flex items-center gap-2 px-4 py-[7px] border border-white/[0.18] rounded-3xl bg-white/[0.03] text-[clamp(0.65rem,2.5vw,0.76rem)] tracking-[1.5px] uppercase text-[#ccc] font-display mb-6 backdrop-blur-lg text-center leading-tight">
+          <span className="badge-dot flex-shrink-0" />
+          <span>Available for Freelance · Internships · Projects</span>
         </div>
 
         {/* Name */}
         <div className="hero-name-wrap hero-anim-2 block">
-          <h1 className="font-display font-extrabold gradient-text leading-[1.02] mb-5 tracking-[-1px] text-[clamp(3rem,8vw,6.2rem)]">
+          <h1 className="font-display font-extrabold gradient-text leading-[1.02] mb-4 tracking-[-1px] text-[clamp(2.4rem,10vw,6.2rem)]">
             Pushkar Mhatre
           </h1>
-          <span className="hero-name-glow font-display font-extrabold leading-[1.02] text-[clamp(3rem,8vw,6.2rem)] absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <span className="hero-name-glow font-display font-extrabold leading-[1.02] text-[clamp(2.4rem,10vw,6.2rem)] absolute inset-0 flex items-center justify-center pointer-events-none select-none">
             Pushkar Mhatre
           </span>
         </div>
 
         {/* Subtitle */}
-        <p className="hero-anim-3 font-display text-[0.82rem] tracking-[1.5px] uppercase text-[#888] mb-[14px]">
+        <p className="hero-anim-3 font-display text-[clamp(0.7rem,2.5vw,0.82rem)] tracking-[1.5px] uppercase text-[#888] mb-3 leading-relaxed">
           Full-Stack Developer &nbsp;·&nbsp;{" "}
-          <span className="text-[#ddd] font-semibold">AI Enthusiast</span>{" "}
+          <span className="text-[#ddd] font-semibold">AI Enthusiast</span>
           &nbsp;·&nbsp; Backend Developer
         </p>
 
-        {/* Desc */}
-        <p className="hero-anim-4 text-[1.12rem] text-[#aaa] max-w-[540px] mx-auto mb-9 leading-[1.75]">
+        {/* Description */}
+        <p className="hero-anim-4 text-[clamp(0.9rem,3vw,1.12rem)] text-[#aaa] max-w-[540px] mx-auto mb-7 leading-[1.75]">
           I build real-world AI apps, backend systems, and full-stack tools —
           from face recognition systems to chatbots and automation scripts that
           actually solve problems.
         </p>
 
-        {/* Typing */}
-        <div className="hero-anim-5 font-display text-[1.05rem] text-[#ccc] mb-11 h-[30px] tracking-[0.5px]">
+        {/* Typing effect */}
+        <div className="hero-anim-5 font-display text-[clamp(0.88rem,3vw,1.05rem)] text-[#ccc] mb-9 h-[30px] tracking-[0.5px]">
           {typedText}
           <span className="typing-cursor">|</span>
         </div>
 
-        {/* Buttons */}
-        <div className="hero-anim-6 flex gap-[14px] justify-center flex-wrap">
+        {/* CTA Buttons */}
+        <div className="hero-anim-6 flex gap-3 justify-center flex-wrap px-2">
           <a href="#projects" className="btn btn-primary">
             View Projects
           </a>
@@ -110,16 +110,13 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="hero-stats hero-anim-7 flex gap-10 justify-center mt-14 pt-10 border-t border-white/[0.08]">
+        <div className="hero-stats hero-anim-7 flex gap-6 sm:gap-10 justify-center mt-12 pt-8 border-t border-white/[0.08] flex-wrap">
           {STATS.map((stat) => (
             <div key={stat.label} className="text-center">
-              <span
-                className="stat-num"
-                data-target={stat.target}
-              >
+              <span className="stat-num" data-target={stat.target}>
                 0
               </span>
-              <div className="text-[0.72rem] text-[#666] uppercase tracking-[2px] mt-1">
+              <div className="text-[clamp(0.6rem,2vw,0.72rem)] text-[#666] uppercase tracking-[2px] mt-1">
                 {stat.label}
               </div>
             </div>
