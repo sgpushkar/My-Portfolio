@@ -17,19 +17,19 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative z-[2]">
-      <div className="max-w-[1120px] mx-auto px-12 py-[110px]">
+      <div className="section-wrap">
         <span className="section-label">Contact</span>
-        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,4vw,3rem)] leading-[1.08] mb-[60px]">
+        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
           Let&apos;s Connect
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 reveal">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
           {/* Info */}
-          <div className="glass-card p-10">
-            <h3 className="font-display text-[1.5rem] text-white mb-[14px] font-bold">
+          <div className="glass-card p-5 sm:p-10">
+            <h3 className="font-display text-[1.4rem] text-white mb-4 font-bold">
               Get In Touch
             </h3>
-            <p className="text-[#999] leading-[1.8] mb-[30px] text-[0.94rem]">
+            <p className="text-[#999] leading-[1.8] mb-8 text-[0.94rem]">
               Open to freelance, internship, job, and project-based work. If you
               have something interesting to build or want to collaborate, feel
               free to reach out.
@@ -48,14 +48,14 @@ export default function Contact() {
                   }
                   className="contact-link"
                 >
-                  <span className="text-[1.1rem] w-[26px] text-center">
+                  <span className="text-[1.1rem] w-[26px] text-center flex-shrink-0">
                     {link.icon}
                   </span>
-                  <div>
-                    <div className="text-[0.7rem] text-[#666] tracking-[1px] uppercase mb-[2px]">
+                  <div className="min-w-0">
+                    <div className="text-[0.7rem] text-[#666] tracking-[1px] uppercase mb-0.5">
                       {link.label}
                     </div>
-                    <div>{link.value}</div>
+                    <div className="truncate">{link.value}</div>
                   </div>
                 </a>
               ))}
@@ -63,8 +63,8 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="glass-card p-10">
-            <div className="mb-[18px]">
+          <div className="glass-card p-5 sm:p-10">
+            <div className="mb-4">
               <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
                 Name
               </label>
@@ -74,7 +74,7 @@ export default function Contact() {
                 className="form-input"
               />
             </div>
-            <div className="mb-[18px]">
+            <div className="mb-4">
               <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
                 Email
               </label>
@@ -84,7 +84,7 @@ export default function Contact() {
                 className="form-input"
               />
             </div>
-            <div className="mb-[18px]">
+            <div className="mb-4">
               <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
                 Message
               </label>

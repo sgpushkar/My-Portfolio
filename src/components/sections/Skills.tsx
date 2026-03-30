@@ -4,17 +4,17 @@ import { SKILL_CATEGORIES } from "@/lib/data";
 export default function Skills() {
   return (
     <section id="skills" className="relative z-[2]">
-      <div className="max-w-[1120px] mx-auto px-12 py-[110px]">
+      <div className="section-wrap">
         <span className="section-label">Skills</span>
-        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,4vw,3rem)] leading-[1.08] mb-[60px]">
+        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
           Technical Skills
         </h2>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] gap-[18px] stagger-children reveal">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-[18px] stagger-children reveal">
           {SKILL_CATEGORIES.map((cat) => (
-            <div key={cat.id} className="glass-card p-7">
+            <div key={cat.id} className="glass-card p-5 sm:p-7">
               <div className="skill-cat-title">{cat.title}</div>
-              <div className="flex flex-wrap gap-[7px]">
+              <div className="flex flex-wrap gap-2">
                 {cat.tags.map((tag) => (
                   <span key={tag} className="skill-tag">
                     {tag}
