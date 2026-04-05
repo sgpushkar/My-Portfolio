@@ -55,7 +55,7 @@ export default function Hero() {
 
       <div className="w-full max-w-[820px] relative">
         {/* Available badge */}
-        <div className="hero-anim-1 inline-flex items-center gap-2 px-4 py-[7px] border border-white/[0.18] rounded-3xl bg-white/[0.03] text-[clamp(0.65rem,2.5vw,0.76rem)] tracking-[1.5px] uppercase text-[#ccc] font-display mb-6 backdrop-blur-lg text-center leading-tight">
+        <div className="hero-anim-1 inline-flex items-center gap-2 px-4 py-[7px] border border-[color:var(--border-strong)] rounded-3xl bg-[color:var(--surface-soft)] text-[clamp(0.65rem,2.5vw,0.76rem)] tracking-[1.5px] uppercase text-[color:var(--text-soft)] font-display mb-6 backdrop-blur-lg text-center leading-tight">
           <span className="badge-dot flex-shrink-0" />
           <span>Open for work — freelance, internship, full‑time</span>
         </div>
@@ -71,18 +71,18 @@ export default function Hero() {
         </div>
 
         {/* Subtitle */}
-        <p className="hero-anim-3 font-display text-[clamp(0.7rem,2.5vw,0.82rem)] tracking-[1.5px] uppercase text-[#888] mb-3 leading-relaxed">
+        <p className="hero-anim-3 font-display text-[clamp(0.7rem,2.5vw,0.82rem)] tracking-[1.5px] uppercase text-[color:var(--text-muted)] mb-3 leading-relaxed">
           I build things that shouldn't exist — but do.
         </p>
 
         {/* Description */}
-        <p className="hero-anim-4 text-[clamp(0.9rem,3vw,1.12rem)] text-[#aaa] max-w-[540px] mx-auto mb-7 leading-[1.75]">
+        <p className="hero-anim-4 text-[clamp(0.9rem,3vw,1.12rem)] text-[color:var(--text-soft)] max-w-[540px] mx-auto mb-7 leading-[1.75]">
           AI apps, full‑stack systems, and tools that actually solve real problems.
           Final year student by title, developer by obsession.
         </p>
 
         {/* Typing effect */}
-        <div className="hero-anim-5 font-display text-[clamp(0.88rem,3vw,1.05rem)] text-[#ccc] mb-9 h-[30px] tracking-[0.5px]">
+        <div className="hero-anim-5 font-display text-[clamp(0.88rem,3vw,1.05rem)] text-[color:var(--text-soft)] mb-9 h-[30px] tracking-[0.5px]">
           {typedText}
           <span className="typing-cursor">|</span>
         </div>
@@ -106,13 +106,13 @@ export default function Hero() {
         </div>
 
         {/* Stats */}
-        <div className="hero-stats hero-anim-7 flex gap-6 sm:gap-10 justify-center mt-12 pt-8 border-t border-white/[0.08] flex-wrap">
+        <div className="hero-stats hero-anim-7 flex gap-6 sm:gap-10 justify-center mt-12 pt-8 border-t border-[color:var(--border-soft)] flex-wrap">
           {STATS.map((stat) => (
             <div key={stat.label} className="text-center">
               <span className="stat-num" data-target={stat.target}>
                 0
               </span>
-              <div className="text-[clamp(0.6rem,2vw,0.72rem)] text-[#666] uppercase tracking-[2px] mt-1">
+              <div className="text-[clamp(0.6rem,2vw,0.72rem)] text-[color:var(--text-subtle)] uppercase tracking-[2px] mt-1">
                 {stat.label}
               </div>
             </div>

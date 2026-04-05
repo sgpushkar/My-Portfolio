@@ -53,8 +53,34 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${oxanium.variable} ${dmSans.variable}`}>
-      <body className="font-body bg-bg text-[#f0f0f0] antialiased">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${oxanium.variable} ${dmSans.variable}`}
+    >
+      <body className="font-body antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (() => {
+                try {
+                  const storedTheme = localStorage.getItem("theme");
+                  const theme =
+                    storedTheme === "light" || storedTheme === "dark"
+                      ? storedTheme
+                      : window.matchMedia("(prefers-color-scheme: dark)").matches
+                        ? "dark"
+                        : "light";
+                  document.documentElement.dataset.theme = theme;
+                  document.documentElement.style.colorScheme = theme;
+                } catch {
+                  document.documentElement.dataset.theme = "dark";
+                  document.documentElement.style.colorScheme = "dark";
+                }
+              })();
+            `,
+          }}
+        />
         {/* Ambient background effects */}
         <NeuralCanvas />
         <div className="grid-overlay" />

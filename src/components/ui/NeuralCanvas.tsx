@@ -32,6 +32,19 @@ export default function NeuralCanvas() {
     let nodes: Node[] = [];
     const mouse = { x: -9999, y: -9999 };
     let animId: number;
+    let nodeColor = "255,255,255";
+    let lineColor = "255,255,255";
+
+    function syncThemeColors() {
+      const theme = document.documentElement.dataset.theme;
+      if (theme === "light") {
+        nodeColor = "15,23,42";
+        lineColor = "71,85,105";
+      } else {
+        nodeColor = "255,255,255";
+        lineColor = "255,255,255";
+      }
+    }
 
     function resize() {
       W = canvas!.width = window.innerWidth;
@@ -79,7 +92,7 @@ export default function NeuralCanvas() {
         const pulse = Math.sin(n.pulse) * 0.15 + 0.85;
         ctx!.beginPath();
         ctx!.arc(n.x, n.y, n.r * pulse, 0, Math.PI * 2);
-        ctx!.fillStyle = `rgba(255,255,255,${n.alpha * pulse})`;
+        ctx!.fillStyle = `rgba(${nodeColor},${n.alpha * pulse})`;
         ctx!.fill();
       }
 
@@ -93,7 +106,7 @@ export default function NeuralCanvas() {
             ctx!.beginPath();
             ctx!.moveTo(nodes[i].x, nodes[i].y);
             ctx!.lineTo(nodes[j].x, nodes[j].y);
-            ctx!.strokeStyle = `rgba(255,255,255,${alpha})`;
+            ctx!.strokeStyle = `rgba(${lineColor},${alpha})`;
             ctx!.lineWidth = 0.5;
             ctx!.stroke();
           }
@@ -115,12 +128,23 @@ export default function NeuralCanvas() {
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("resize", onResize);
 
+    const observer = new MutationObserver(() => {
+      syncThemeColors();
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
     resize();
+    syncThemeColors();
     createNodes();
     drawFrame();
 
     return () => {
       cancelAnimationFrame(animId);
+      observer.disconnect();
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", onResize);
     };

@@ -20,14 +20,14 @@ export default function Experience() {
                 }`}
               >
                 <div className="exp-dot" />
-                <div className="font-display text-[1.05rem] font-bold text-white">
+                <div className="font-display text-[1.05rem] font-bold text-[color:var(--text-strong)]">
                   {item.role}
                 </div>
-                <div className="text-[0.84rem] text-[#777] my-1 mb-2 font-display">
+                <div className="text-[0.84rem] text-[color:var(--text-subtle)] my-1 mb-2 font-display">
                   {item.org}
                   {item.location ? ` · ${item.location}` : ""}
                 </div>
-                <div className="text-[0.87rem] text-[#aaa] leading-[1.75]">
+                <div className="text-[0.87rem] text-[color:var(--text-soft)] leading-[1.75]">
                   {item.desc}
                 </div>
               </div>

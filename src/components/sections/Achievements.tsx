@@ -19,10 +19,10 @@ export default function Achievements() {
             >
               <div className="ach-icon">{ach.icon}</div>
               <div>
-                <div className="font-display text-[0.95rem] font-bold text-white mb-2 leading-[1.35]">
+                <div className="font-display text-[0.95rem] font-bold text-[color:var(--text-strong)] mb-2 leading-[1.35]">
                   {ach.title}
                 </div>
-                <div className="text-[0.83rem] text-[#999] leading-[1.65]">
+                <div className="text-[0.83rem] text-[color:var(--text-muted)] leading-[1.65]">
                   {ach.desc}
                 </div>
                 <div className="ach-year">

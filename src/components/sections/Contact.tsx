@@ -51,10 +51,10 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
           {/* Info */}
           <div className="glass-card p-5 sm:p-10">
-            <h3 className="font-display text-[1.4rem] text-white mb-4 font-bold">
+            <h3 className="font-display text-[1.4rem] text-[color:var(--text-strong)] mb-4 font-bold">
               Let's Build Something
             </h3>
-            <p className="text-[#999] leading-[1.8] mb-8 text-[0.94rem]">
+            <p className="text-[color:var(--text-muted)] leading-[1.8] mb-8 text-[0.94rem]">
               Open to freelance, internship, job, or just a conversation about
               something interesting. If you want a developer who ships, let's talk.
             </p>
@@ -76,7 +76,7 @@ export default function Contact() {
                     {link.icon}
                   </span>
                   <div className="min-w-0">
-                    <div className="text-[0.7rem] text-[#666] tracking-[1px] uppercase mb-0.5">
+                    <div className="text-[0.7rem] text-[color:var(--text-subtle)] tracking-[1px] uppercase mb-0.5">
                       {link.label}
                     </div>
                     <div className="truncate">{link.value}</div>
@@ -90,7 +90,7 @@ export default function Contact() {
           <div className="glass-card p-5 sm:p-10">
             <form ref={formRef} onSubmit={handleSubmit}>
               <div className="mb-4">
-                <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
+                <label className="block text-[0.72rem] text-[color:var(--text-subtle)] tracking-[2px] uppercase font-display mb-2">
                   Name *
                 </label>
                 <input
@@ -102,7 +102,7 @@ export default function Contact() {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
+                <label className="block text-[0.72rem] text-[color:var(--text-subtle)] tracking-[2px] uppercase font-display mb-2">
                   Email *
                 </label>
                 <input
@@ -114,7 +114,7 @@ export default function Contact() {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-[0.72rem] text-[#777] tracking-[2px] uppercase font-display mb-2">
+                <label className="block text-[0.72rem] text-[color:var(--text-subtle)] tracking-[2px] uppercase font-display mb-2">
                   Message *
                 </label>
                 <textarea
@@ -129,9 +129,7 @@ export default function Contact() {
                 type="submit"
                 disabled={status === "sending"}
                 className={`btn btn-primary w-full ${
-                  status === "sent"
-                    ? "!bg-[linear-gradient(135deg,#2a2a2a,#111)]"
-                    : ""
+                  status === "sent" ? "contact-submit-sent" : ""
                 }`}
               >
                 {status === "idle" && "Start the conversation"}

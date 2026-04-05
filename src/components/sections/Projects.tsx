@@ -17,65 +17,65 @@ export default function Projects() {
               className="glass-card project-card p-5 sm:p-8 flex flex-col"
             >
               {project.featured && (
-                <div className="font-display text-[0.65rem] tracking-[3px] uppercase mb-4 text-[#aaa]">
+                <div className="font-display text-[0.65rem] tracking-[3px] uppercase mb-4 text-[color:var(--text-soft)]">
                   ✦ Main Project
                 </div>
               )}
 
               {/* Hook */}
-              <div className="text-[0.85rem] text-[#ccc] italic mb-2 leading-tight">
+              <div className="text-[0.85rem] text-[color:var(--text-soft)] italic mb-2 leading-tight">
                 “{project.hook}”
               </div>
 
               {/* Title */}
-              <div className="font-display text-[1.2rem] font-bold text-white mb-2 leading-[1.2]">
+              <div className="font-display text-[1.2rem] font-bold text-[color:var(--text-strong)] mb-2 leading-[1.2]">
                 {project.name} {project.emoji}
               </div>
 
               {/* Problem */}
-              <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+              <div className="text-[0.75rem] text-[color:var(--text-subtle)] uppercase tracking-wider mt-1 mb-1">
                 Problem
               </div>
-              <p className="text-[#999] text-[0.88rem] leading-[1.5] mb-2">
+              <p className="text-[color:var(--text-muted)] text-[0.88rem] leading-[1.5] mb-2">
                 {project.problem}
               </p>
 
               {/* What I built */}
-              <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+              <div className="text-[0.75rem] text-[color:var(--text-subtle)] uppercase tracking-wider mt-1 mb-1">
                 What I built
               </div>
-              <p className="text-[#999] text-[0.88rem] leading-[1.5] mb-2">
+              <p className="text-[color:var(--text-muted)] text-[0.88rem] leading-[1.5] mb-2">
                 {project.desc}
               </p>
 
               {/* Impact */}
-              <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+              <div className="text-[0.75rem] text-[color:var(--text-subtle)] uppercase tracking-wider mt-1 mb-1">
                 Impact
               </div>
-              <p className="text-[#aaa] text-[0.85rem] font-medium mb-3">
+              <p className="text-[color:var(--text-soft)] text-[0.85rem] font-medium mb-3">
                 {project.impact}
               </p>
 
               {/* Features (optional, keep if you want) */}
               {project.features && project.features.length > 0 && (
                 <>
-                  <div className="text-[0.75rem] text-[#777] uppercase tracking-wider mt-1 mb-1">
+                  <div className="text-[0.75rem] text-[color:var(--text-subtle)] uppercase tracking-wider mt-1 mb-1">
                     Key features
                   </div>
                   <ul className="list-none mb-5 space-y-1">
                     {project.features.slice(0, 3).map((f) => (
                       <li
                         key={f}
-                        className="text-[0.82rem] text-[#bbb] flex items-start gap-2"
+                        className="text-[0.82rem] text-[color:var(--text-soft)] flex items-start gap-2"
                       >
-                        <span className="text-[#777] text-[0.65rem] flex-shrink-0 mt-[3px]">
+                        <span className="text-[color:var(--text-subtle)] text-[0.65rem] flex-shrink-0 mt-[3px]">
                           ▸
                         </span>
                         {f}
                       </li>
                     ))}
                     {project.features.length > 3 && (
-                      <li className="text-[0.7rem] text-[#777] mt-1">+ more</li>
+                      <li className="text-[0.7rem] text-[color:var(--text-subtle)] mt-1">+ more</li>
                     )}
                   </ul>
                 </>
