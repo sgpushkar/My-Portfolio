@@ -10,7 +10,7 @@ export default function TechStack() {
   return (
     <section
       id="techstack"
-      className="relative w-full py-24"
+      className="relative w-full py-16 sm:py-24"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-warm/4 rounded-full blur-3xl" />
@@ -19,7 +19,7 @@ export default function TechStack() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <SectionHeading subtitle="Building with modern tools">Tech Arsenal</SectionHeading>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mt-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mt-16">
           {TECH_STACK.map((tech, i) => {
             const Icon = getIcon(tech.icon);
             return (

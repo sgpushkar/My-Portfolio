@@ -28,7 +28,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative w-full py-24"
+      className="relative w-full py-16 sm:py-24"
     >
       {/* Subtle accent blob */}
       <div className="absolute -left-32 top-1/3 w-96 h-96 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -68,7 +68,7 @@ export default function Projects() {
                   }`}
                 >
                   {/* Content */}
-                  <div className="p-8 lg:p-10 flex flex-col h-full">
+                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col h-full">
                     {/* Header with index and badge */}
                     <div className="flex items-start justify-between mb-6">
                       <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-accent-muted">

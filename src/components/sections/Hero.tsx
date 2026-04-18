@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary pt-40 sm:pt-44 md:pt-52"
     >
       {/* Subtle background accent blob (just one, not multiple) */}
       <div className="absolute top-20 -right-32 w-96 h-96 bg-accent-warm/8 rounded-full blur-3xl pointer-events-none" />
@@ -21,8 +21,8 @@ export default function Hero() {
       {/* Subtle grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(149,164,175,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(149,164,175,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.4),transparent_70%)] pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl px-6 mx-auto">
-        <div className="flex flex-col gap-16 lg:flex-row lg:justify-between lg:items-end">
+      <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 mx-auto">
+        <div className="flex flex-col gap-12 sm:gap-16 lg:flex-row lg:justify-between lg:items-end">
           {/* Main content - offset left with breathing room */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 mb-6"
+              className="inline-flex items-center gap-2 mb-2 sm:mb-4"
             >
               <div className="w-2 h-2 rounded-full bg-accent-warm" />
               <span className="text-sm font-medium text-accent-muted">
@@ -44,12 +44,12 @@ export default function Hero() {
             </motion.div>
 
             {/* Descriptor - soft and intentional */}
-            <p className="text-sm uppercase tracking-widest text-accent-muted mb-4">
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-accent-muted mb-3 sm:mb-4">
               Full-Stack Engineer & AI Builder
             </p>
 
             {/* Main headline - bold and slightly offset */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6 text-accent-default mix-blend-lighten">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6 text-accent-default mix-blend-lighten">
               Crafting{' '}
               <span className="text-accent-warm">intentional</span>
               {' '}
@@ -58,16 +58,16 @@ export default function Hero() {
             </h1>
 
             {/* Description - warm and conversational */}
-            <p className="text-lg leading-relaxed text-accent-muted max-w-xl mb-10">
+            <p className="text-sm sm:text-lg leading-relaxed text-accent-muted max-w-xl mb-8 sm:mb-10">
               I build full-stack applications, AI systems, and polished interfaces that are clean, purposeful, and genuinely human. Not another generic SaaS clone.
             </p>
 
             {/* CTA Buttons - primary focus */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <GlowButton href="#projects" className="px-8">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+              <GlowButton href="#projects" className="px-6 sm:px-8 py-2 sm:py-2.5 text-xs sm:text-sm">
                 View my work
               </GlowButton>
-              <GlowButton href="#contact" variant="outline" className="px-8">
+              <GlowButton href="#contact" variant="outline" className="px-6 sm:px-8 py-2 sm:py-2.5 text-xs sm:text-sm">
                 Talk to me
               </GlowButton>
             </div>
@@ -78,7 +78,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
-            className="grid grid-cols-3 gap-4 lg:gap-6 w-full lg:w-auto lg:max-w-sm"
+            className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 w-full lg:w-auto lg:max-w-sm mt-8 lg:mt-0"
           >
             {stats.map((stat, i) => (
               <div
@@ -89,14 +89,14 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-bg-secondary rounded-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
 
                 {/* Content */}
-                <div className="relative p-4 sm:p-6">
-                  <div className="text-4xl sm:text-5xl font-black text-accent-warm mb-2">
+                <div className="relative p-3 sm:p-4 lg:p-6">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent-warm mb-2">
                     {stat.value}
                   </div>
-                  <div className="text-sm font-semibold text-accent-default mb-1">
+                  <div className="text-xs sm:text-sm font-semibold text-accent-default mb-1">
                     {stat.label}
                   </div>
-                  <div className="text-xs text-accent-muted">
+                  <div className="text-xs text-accent-muted leading-tight">
                     {stat.subtext}
                   </div>
                 </div>

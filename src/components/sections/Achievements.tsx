@@ -10,7 +10,7 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="relative w-full py-24"
+      className="relative w-full py-16 sm:py-24"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-primary/4 rounded-full blur-3xl" />
@@ -19,7 +19,7 @@ export default function Achievements() {
       <div className="relative z-10 max-w-4xl mx-auto px-6">
         <SectionHeading subtitle="Proof of excellence">Achievements & Awards</SectionHeading>
 
-        <div className="mt-16 space-y-6">
+        <div className="mt-16 space-y-4 sm:space-y-6">
           {ACHIEVEMENTS.map((achievement, i) => {
             const Icon = getIcon(achievement.icon);
             return (
@@ -29,23 +29,23 @@ export default function Achievements() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.15 }}
                 viewport={{ once: false }}
-                className="group bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-8 hover:border-accent-warm/30 transition-all"
+                className="group bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-6 sm:p-8 hover:border-accent-warm/30 transition-all"
               >
-                <div className="flex gap-6">
-                  {Icon && <Icon className="w-8 h-8 flex-shrink-0 text-accent-warm" />}
-                  <div className="flex-1">
+                <div className="flex gap-4 sm:gap-6">
+                  {Icon && <Icon className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 text-accent-warm mt-1" />}
+                  <div className="flex-1 min-w-0">
                     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
-                      <h3 className="text-xl font-black text-accent-default">
+                      <h3 className="text-lg sm:text-xl font-black text-accent-default leading-tight">
                         {achievement.title}
                       </h3>
-                      <span className="text-sm font-mono text-accent-warm">
+                      <span className="text-xs sm:text-sm font-mono text-accent-warm flex-shrink-0">
                         {achievement.year}
                       </span>
                     </div>
-                    <p className="text-sm font-semibold text-accent-warm mb-3">
+                    <p className="text-xs sm:text-sm font-semibold text-accent-warm mb-3">
                       {achievement.type}
                     </p>
-                    <p className="text-accent-muted leading-relaxed">
+                    <p className="text-sm text-accent-muted leading-relaxed">
                       {achievement.desc}
                     </p>
                   </div>

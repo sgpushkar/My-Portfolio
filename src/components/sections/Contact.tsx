@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full bg-gradient-to-b from-slate-950 via-slate-900 to-black py-20"
+      className="relative w-full bg-gradient-to-b from-slate-950 via-slate-900 to-black py-16 sm:py-20"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-accent-primary/4 blur-3xl" />
@@ -54,15 +54,15 @@ export default function Contact() {
           Get In Touch
         </SectionHeading>
 
-        <div className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-8 sm:gap-12 md:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: false }}
           >
-            <div className="rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-8 backdrop-blur-sm">
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+            <div className="rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-6 sm:p-8 backdrop-blur-sm">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div>
                   <label className="mb-2 block text-sm font-mono uppercase tracking-wider text-accent-primary">
                     Your Name

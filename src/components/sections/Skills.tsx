@@ -9,7 +9,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative w-full py-24"
+      className="relative w-full py-16 sm:py-24"
     >
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -19,7 +19,7 @@ export default function Skills() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <SectionHeading subtitle="Technologies I master">Skills & Expertise</SectionHeading>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mt-16">
           {SKILL_CATEGORIES.map((category, i) => (
             <motion.div
               key={category.id}
@@ -27,7 +27,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: false }}
-              className="bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-8 hover:border-accent-primary/40 transition-all"
+              className="bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-6 sm:p-8 hover:border-accent-primary/40 transition-all"
             >
               <h3 className="text-lg font-black text-accent-warm mb-6 uppercase tracking-widest">
                 {category.title}

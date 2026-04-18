@@ -31,7 +31,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative w-full py-24"
+      className="relative w-full py-16 sm:py-24"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-1/2 right-0 h-96 w-96 rounded-full bg-accent-primary/4 blur-3xl" />
@@ -54,26 +54,26 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: false }}
-              className="group rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-8 transition-all hover:border-accent-warm/30 hover:shadow-depth-md"
+              className="group rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-6 sm:p-8 transition-all hover:border-accent-warm/30 hover:shadow-depth-md"
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-accent-warm/30 bg-accent-warm/10 text-sm font-bold text-accent-warm">
+              <div className="mb-4 inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg border border-accent-warm/30 bg-accent-warm/10 text-xs sm:text-sm font-bold text-accent-warm">
                 {point.icon}
               </div>
-              <h3 className="mb-3 text-xl font-black text-accent-default">{point.title}</h3>
-              <p className="leading-relaxed text-accent-muted">{point.desc}</p>
+              <h3 className="mb-3 text-lg sm:text-xl font-black text-accent-default">{point.title}</h3>
+              <p className="leading-relaxed text-accent-muted text-sm">{point.desc}</p>
             </motion.div>
           ))}
         </motion.div>
 
         <motion.div
-          className="mt-20 max-w-3xl"
+          className="mt-12 sm:mt-20 max-w-3xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: false }}
         >
-          <div className="rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-10">
-            <p className="mb-6 text-lg leading-relaxed text-accent-muted">
+          <div className="rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-6 sm:p-10">
+            <p className="mb-6 text-base sm:text-lg leading-relaxed text-accent-muted">
               I started coding to solve problems I faced in college. What began as
               "let me automate this" turned into a passion for building AI-powered
               tools and full-stack systems that actually impact people's lives.

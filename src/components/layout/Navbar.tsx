@@ -43,25 +43,25 @@ export default function Navbar() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="fixed inset-x-0 top-0 z-[1000] px-4 pt-4 sm:px-6"
+      className="fixed inset-x-0 top-0 z-[1000] px-3 pt-3 sm:px-6 sm:pt-4"
     >
       <div
         className={`mx-auto max-w-7xl transition-all duration-300 ${
           scrolled
             ? 'border border-accent-muted/10 bg-bg-secondary/50 shadow-soft-lg backdrop-blur-md'
-            : 'border border-transparent bg-transparent'
+            : 'border border-accent-muted/10 bg-bg-secondary/50 backdrop-blur-md'
         } rounded-xl overflow-hidden`}
       >
-        <div className="flex items-center justify-between gap-4 px-4 py-3 sm:px-6 sm:py-4">
+        <div className="flex items-center justify-between gap-3 sm:gap-4 px-3 py-3 sm:px-6 sm:py-4">
           {/* Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2 text-accent-default hover:text-accent-warm transition-colors font-semibold"
+            className="flex items-center gap-2 text-accent-default hover:text-accent-warm transition-colors font-semibold flex-shrink-0"
           >
             <div className="w-8 h-8 rounded-lg bg-accent-warm/10 flex items-center justify-center font-black text-sm text-accent-warm">
               PM
             </div>
-            <span className="font-semibold text-sm hidden sm:block text-accent-default">Pushkar</span>
+            <span className="font-semibold text-xs sm:text-sm hidden sm:block text-accent-default">Pushkar</span>
           </a>
 
           {/* Desktop Navigation */}
@@ -87,7 +87,7 @@ export default function Navbar() {
           </ul>
 
           {/* Right side actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             <a
               href="https://github.com/sgpushkar"
               target="_blank"
@@ -96,30 +96,30 @@ export default function Navbar() {
             >
               GitHub
             </a>
-            <GlowButton variant="primary" href="#contact" className="text-xs px-4">
+            <GlowButton variant="primary" href="#contact" className="hidden sm:inline-flex text-xs px-4 sm:px-5 py-2 sm:py-2.5 whitespace-nowrap">
               Contact
             </GlowButton>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-bg-secondary transition-colors"
+              className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg bg-accent-warm/10 hover:bg-accent-warm/20 transition-all duration-300 flex-shrink-0"
               onClick={() => setMenuOpen((open) => !open)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
             >
               <span
-                className={`w-5 h-0.5 bg-accent-default rounded-full transition-transform duration-300 ${
-                  menuOpen ? 'translate-y-1.5 rotate-45' : ''
+                className={`w-5 h-1 bg-accent-warm rounded-full transition-transform duration-300 ${
+                  menuOpen ? 'translate-y-2 rotate-45' : ''
                 }`}
               />
               <span
-                className={`w-5 h-0.5 bg-accent-default rounded-full transition-opacity duration-300 ${
+                className={`w-5 h-1 bg-accent-warm rounded-full transition-opacity duration-300 ${
                   menuOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <span
-                className={`w-5 h-0.5 bg-accent-default rounded-full transition-transform duration-300 ${
-                  menuOpen ? '-translate-y-1.5 -rotate-45' : ''
+                className={`w-5 h-1 bg-accent-warm rounded-full transition-transform duration-300 ${
+                  menuOpen ? '-translate-y-2 -rotate-45' : ''
                 }`}
               />
             </button>
@@ -145,7 +145,7 @@ export default function Navbar() {
                   key={href}
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className={`block px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors ${
+                  className={`block px-4 py-3 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors ${
                     active
                       ? 'text-accent-warm bg-accent-warm/10'
                       : 'text-accent-muted hover:text-accent-default hover:bg-bg-secondary'
@@ -161,7 +161,7 @@ export default function Navbar() {
                 href="https://github.com/sgpushkar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 text-xs font-semibold uppercase tracking-wider text-accent-muted hover:text-accent-warm transition-colors"
+                className="flex-1 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-accent-muted hover:text-accent-warm hover:bg-bg-secondary rounded-lg transition-colors text-center"
               >
                 GitHub
               </a>
