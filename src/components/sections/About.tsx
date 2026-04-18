@@ -1,77 +1,90 @@
 // src/components/sections/About.tsx
+'use client';
+
+import { motion } from 'framer-motion';
+import SectionHeading from '@/components/ui/SectionHeading';
+
 export default function About() {
+  const points = [
+    {
+      icon: 'PS',
+      title: 'Problem Solver',
+      desc: 'I identify real problems and build practical solutions, not features nobody needs.',
+    },
+    {
+      icon: 'QL',
+      title: 'Quick Learner',
+      desc: 'From AI and ML to full-stack web development, I jump into new stacks and ship products fast.',
+    },
+    {
+      icon: 'PB',
+      title: 'Passionate Builder',
+      desc: 'I love turning ideas into working products that people actually use and remember.',
+    },
+    {
+      icon: 'AI',
+      title: 'AI Enthusiast',
+      desc: 'I explore LLMs, computer vision, and practical AI applications to solve real problems.',
+    },
+  ];
+
   return (
-    <section id="about" className="relative z-[2]">
-      <div className="section-wrap">
-        <span className="section-label">Why I Code</span>
-        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          I Build Things That Actually Work
-        </h2>
+    <section
+      id="about"
+      className="relative w-full py-24"
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-1/2 right-0 h-96 w-96 rounded-full bg-accent-primary/4 blur-3xl" />
+      </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-          {/* Text card */}
-          <div className="glass-card about-text reveal-left p-6 sm:p-10">
-            <p className="text-[color:var(--text-soft)] leading-[1.85] mb-4 text-[0.97rem]">
-              I’m Pushkar. I started coding because I wanted to build something that didn’t exist. Now, I build AI‑powered attendance systems, emotion‑aware chatbots, and full‑stack tools that actually get used.
-            </p>
-            <p className="text-[color:var(--text-soft)] leading-[1.85] mb-4 text-[0.97rem]">
-              I don’t just write code — I obsess over how it feels to use. My work lives at the intersection of AI, backend logic, and user experience. Whether it’s face recognition that works in a noisy classroom or a REST API that doesn’t crumble under load, I make sure it’s solid.
-            </p>
-            <p className="text-[color:var(--text-soft)] leading-[1.85] mb-4 text-[0.97rem]">
-              I’ve worked with startups, freelanced, and led teams in competitions. I’m looking for a place where I can ship code that matters — and keep learning from people who care about quality.
-            </p>
-          </div>
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <SectionHeading subtitle="Who I am beyond the code">Why I Code</SectionHeading>
 
-          {/* Info card */}
-          <div className="glass-card reveal p-6 sm:p-9 sm:px-10">
-            {[
-              {
-                icon: "🎓",
-                label: "Education",
-                value: "Pillai HOC College of Engineering",
-              },
-              {
-                icon: "📅",
-                label: "Year",
-                value: "Final Year (2023 – 2026)",
-              },
-              {
-                icon: "📍",
-                label: "Location",
-                value: "Mumbai, Maharashtra, India",
-              },
-              {
-                icon: "💻",
-                label: "Focus Areas",
-                value: "AI Apps · Backend · Full Stack",
-              },
-              {
-                icon: "🚀",
-                label: "Status",
-                value: "Open to Internship / Freelance / Job",
-              },
-              {
-                icon: "📧",
-                label: "Email",
-                value: "pushkarmhatre007@gmail.com",
-              },
-            ].map((row) => (
-              <div key={row.label} className="info-row">
-                <div className="text-[1.1rem] w-7 text-center flex-shrink-0">
-                  {row.icon}
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[0.7rem] text-[color:var(--text-subtle)] uppercase tracking-[1.5px] mb-1">
-                    {row.label}
-                  </div>
-                  <div className="text-[0.92rem] text-[color:var(--text-strong)] font-display break-words">
-                    {row.value}
-                  </div>
-                </div>
+        <motion.div
+          className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ staggerChildren: 0.15 }}
+          viewport={{ once: false }}
+        >
+          {points.map((point, index) => (
+            <motion.div
+              key={point.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              viewport={{ once: false }}
+              className="group rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-8 transition-all hover:border-accent-warm/30 hover:shadow-depth-md"
+            >
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-accent-warm/30 bg-accent-warm/10 text-sm font-bold text-accent-warm">
+                {point.icon}
               </div>
-            ))}
+              <h3 className="mb-3 text-xl font-black text-accent-default">{point.title}</h3>
+              <p className="leading-relaxed text-accent-muted">{point.desc}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-20 max-w-3xl"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false }}
+        >
+          <div className="rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-10">
+            <p className="mb-6 text-lg leading-relaxed text-accent-muted">
+              I started coding to solve problems I faced in college. What began as
+              "let me automate this" turned into a passion for building AI-powered
+              tools and full-stack systems that actually impact people's lives.
+            </p>
+            <p className="text-lg leading-relaxed text-accent-muted">
+              Today, I am a final-year student obsessed with shipping products. Whether
+              it is AI chatbots, attendance systems, or backend APIs, I love the process
+              of turning ideas into working software.
+            </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,38 +1,45 @@
 // src/components/sections/Experience.tsx
-import { EXPERIENCE_ITEMS } from "@/lib/data";
+'use client';
+
+import { motion } from 'framer-motion';
+import { EXPERIENCE_ITEMS } from '@/lib/data';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative z-[2]">
-      <div className="section-wrap">
-        <span className="section-label">Proven Experience</span>
-        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          What I've Done
-        </h2>
+    <section
+      id="experience"
+      className="relative w-full py-24"
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-1/4 left-1/3 w-96 h-96 bg-accent-warm/4 rounded-full blur-3xl" />
+      </div>
 
-        <div className="glass-card p-5 sm:p-8 md:px-12 md:py-11">
-          <div className="exp-timeline reveal">
-            {EXPERIENCE_ITEMS.map((item, idx) => (
-              <div
-                key={item.id}
-                className={`exp-item relative pl-8 transition-transform duration-300 hover:translate-x-1 ${
-                  idx === EXPERIENCE_ITEMS.length - 1 ? "pb-0" : "pb-8 md:pb-12"
-                }`}
-              >
-                <div className="exp-dot" />
-                <div className="font-display text-[1.05rem] font-bold text-[color:var(--text-strong)]">
-                  {item.role}
-                </div>
-                <div className="text-[0.84rem] text-[color:var(--text-subtle)] my-1 mb-2 font-display">
-                  {item.org}
-                  {item.location ? ` · ${item.location}` : ""}
-                </div>
-                <div className="text-[0.87rem] text-[color:var(--text-soft)] leading-[1.75]">
-                  {item.desc}
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <SectionHeading subtitle="Real-world experience building products">Experience</SectionHeading>
+
+        <div className="mt-16 space-y-6">
+          {EXPERIENCE_ITEMS.map((exp, i) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: false }}
+              className="bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-8 hover:border-accent-primary/40 transition-all"
+            >
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-black text-accent-default">{exp.role}</h3>
+                  <p className="text-accent-warm font-semibold">@ {exp.org}</p>
+                  {exp.location && (
+                    <p className="text-sm text-accent-muted mt-1">{exp.location}</p>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
+              <p className="text-accent-muted leading-relaxed">{exp.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

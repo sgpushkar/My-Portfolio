@@ -1,36 +1,58 @@
 // src/components/sections/Achievements.tsx
-import { ACHIEVEMENTS } from "@/lib/data";
+'use client';
+
+import { motion } from 'framer-motion';
+import { ACHIEVEMENTS } from '@/lib/data';
+import { getIcon } from '@/lib/iconMap';
+import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="relative z-[2]">
-      <div className="section-wrap">
-        <span className="section-label">Proof I'm Not Just a Student</span>
-        <h2 className="font-display font-bold gradient-text-muted text-[clamp(2rem,5vw,3rem)] leading-[1.08] mb-12 md:mb-[60px]">
-          Activities & Competitions
-        </h2>
+    <section
+      id="achievements"
+      className="relative w-full py-24"
+    >
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-primary/4 rounded-full blur-3xl" />
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-[18px] stagger-children reveal">
-          {ACHIEVEMENTS.map((ach) => (
-            <div
-              key={ach.id}
-              className="glass-card ach-card p-5 sm:p-[30px] flex gap-4 items-start transition-all duration-[350ms] hover:-translate-y-[6px]"
-              style={{ transitionTimingFunction: "cubic-bezier(0.34,1.56,0.64,1)" }}
-            >
-              <div className="ach-icon">{ach.icon}</div>
-              <div>
-                <div className="font-display text-[0.95rem] font-bold text-[color:var(--text-strong)] mb-2 leading-[1.35]">
-                  {ach.title}
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <SectionHeading subtitle="Proof of excellence">Achievements & Awards</SectionHeading>
+
+        <div className="mt-16 space-y-6">
+          {ACHIEVEMENTS.map((achievement, i) => {
+            const Icon = getIcon(achievement.icon);
+            return (
+              <motion.div
+                key={achievement.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.15 }}
+                viewport={{ once: false }}
+                className="group bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-8 hover:border-accent-warm/30 transition-all"
+              >
+                <div className="flex gap-6">
+                  {Icon && <Icon className="w-8 h-8 flex-shrink-0 text-accent-warm" />}
+                  <div className="flex-1">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
+                      <h3 className="text-xl font-black text-accent-default">
+                        {achievement.title}
+                      </h3>
+                      <span className="text-sm font-mono text-accent-warm">
+                        {achievement.year}
+                      </span>
+                    </div>
+                    <p className="text-sm font-semibold text-accent-warm mb-3">
+                      {achievement.type}
+                    </p>
+                    <p className="text-accent-muted leading-relaxed">
+                      {achievement.desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="text-[0.83rem] text-[color:var(--text-muted)] leading-[1.65]">
-                  {ach.desc}
-                </div>
-                <div className="ach-year">
-                  {ach.type} · {ach.year}
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
