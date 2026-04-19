@@ -43,7 +43,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative w-full bg-gradient-to-b from-slate-950 via-slate-900 to-black py-16 sm:py-20"
+      className="relative w-full py-16 sm:py-20"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute bottom-0 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-accent-primary/4 blur-3xl" />

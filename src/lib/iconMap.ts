@@ -24,6 +24,8 @@ import {
   IconMoon,
   IconHospital,
   IconArrowRight,
+  IconChart,
+  IconStar,
 } from '@/components/icons';
 
 interface IconMap {
@@ -56,6 +58,8 @@ export const emojiToIcon: IconMap = {
   '🌙': IconMoon,
   '🏥': IconHospital,
   '→': IconArrowRight,
+  '📈': IconChart,
+  '⭐': IconStar,
 };
 
 export function getIcon(emoji: string): React.ComponentType<{ className?: string }> | null {

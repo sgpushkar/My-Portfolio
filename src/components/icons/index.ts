@@ -23,3 +23,5 @@ export { IconTarget } from './IconTarget';
 export { IconMoon } from './IconMoon';
 export { IconHospital } from './IconHospital';
 export { IconArrowRight } from './IconArrowRight';
+export { IconChart } from './IconChart';
+export { IconStar } from './IconStar';
