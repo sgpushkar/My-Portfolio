@@ -28,7 +28,7 @@ export const TYPING_PHRASES = [
 ];
 
 export const STATS: StatItem[] = [
-  { target: 6, label: 'Projects Built' },
+  { target: 7, label: 'Projects Built' },
   { target: 6, label: 'Tech Stacks' },
   { target: 2, label: 'Competitions Won' },
   { target: 3, label: 'Years Learning' },
@@ -190,7 +190,7 @@ export const PROJECTS: Project[] = [
     hook: 'The site you are on right now — built from scratch to ship fast and look great.',
     problem: 'Generic portfolio templates feel lifeless and do not reflect the actual craft of a developer.',
     desc: 'Personal developer portfolio built with Next.js 14, TypeScript, and Tailwind CSS. Features animated backgrounds, glassmorphism cards, scroll-driven animations, a custom cursor, and a fully responsive layout.',
-    impact: 'Fully deployed on Vercel. Showcases 6 projects and a complete professional profile in a premium, handcrafted dark design.',
+    impact: 'Fully deployed on Vercel. Showcases 7 projects and a complete professional profile in a premium, handcrafted dark design.',
     features: [
       'Animated neural canvas background',
       'Glassmorphism & depth card system',
@@ -201,6 +201,26 @@ export const PROJECTS: Project[] = [
     tags: ['Next.js 14', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Vercel'],
     githubUrl: 'https://github.com/sgpushkar/My-Portfolio',
     liveUrl: '',
+  },
+  {
+    id: 'sienvera',
+    featured: true,
+    name: 'Sienvera',
+    emoji: '🎨',
+    hook: 'A handmade art storefront with a soft luxury feel and a real admin workflow behind it.',
+    problem: 'Small handmade art brands need more than a static gallery - they need a storefront that feels premium and is easy to update without editing code every time.',
+    desc: 'Sienvera is a handcrafted art shop experience for showcasing canvas paintings, crochet pieces, and resin art. It includes collection browsing, commission and contact flows, theme switching, and an admin panel for managing artwork.',
+    impact: 'Live on Vercel with a polished storefront and a usable admin flow for uploading and updating pieces.',
+    features: [
+      'Curated storefront for canvas, crochet, and resin art',
+      'Admin panel for uploading and managing artwork',
+      'Cloudinary image uploads for collection pieces',
+      'Commission flow with Instagram, WhatsApp, and email contact',
+      'Responsive React interface with premium editorial styling',
+    ],
+    tags: ['React', 'Vite', 'JavaScript', 'CSS Modules', 'Cloudinary', 'Vercel'],
+    githubUrl: 'https://github.com/sgpushkar',
+    liveUrl: 'https://sienvera.vercel.app/',
   },
 ];
 
@@ -277,3 +297,4 @@ export const EDUCATION_SUBJECTS = [
   'Software Engineering',
   'Web Technology',
 ];
+
