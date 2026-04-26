@@ -67,14 +67,14 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5">
             {NAV_LINKS.map(({ href, label }) => {
               const active = activeId === href.slice(1);
               return (
                 <a
                   key={href}
                   href={href}
-                  className={`px-4 py-2 text-[13px] font-medium rounded-lg transition-all duration-200 font-mono ${
+                  className={`px-3 py-1.5 text-[12px] font-medium rounded-lg transition-all duration-200 font-mono ${
                     active
                       ? 'text-white bg-white/8'
                       : 'text-white/50 hover:text-white/80 hover:bg-white/5'
@@ -103,7 +103,7 @@ export default function Navbar() {
 
             {/* Mobile hamburger */}
             <button
-              className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex-shrink-0"
+              className="lg:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex-shrink-0"
               onClick={() => setMenuOpen((o) => !o)}
               aria-label="Toggle menu"
               aria-expanded={menuOpen}
@@ -127,7 +127,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm lg:hidden"
               onClick={() => setMenuOpen(false)}
             />
 
@@ -138,7 +138,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-              className="fixed inset-y-0 right-0 z-[1001] w-72 bg-[#0f0f0f] border-l border-white/[0.07] flex flex-col md:hidden"
+              className="fixed inset-y-0 right-0 z-[1001] w-72 bg-[#0f0f0f] border-l border-white/[0.07] flex flex-col lg:hidden"
             >
               <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.06]">
                 <span className="text-sm font-semibold text-white/60 font-inter">Menu</span>

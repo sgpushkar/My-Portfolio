@@ -15,8 +15,10 @@ import type {
 // ─── Navigation ────────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
+  { href: '#about', label: 'About' },
   { href: '#services', label: 'Services' },
   { href: '#work', label: 'Work' },
+  { href: '#achievements', label: 'Milestones' },
   { href: '#process', label: 'Process' },
   { href: '#testimonials', label: 'Testimonials' },
   { href: '#contact', label: 'Contact' },
