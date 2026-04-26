@@ -26,7 +26,7 @@ const POINTS = [
 
 export default function ValueProp() {
   return (
-    <section id="value-prop" className="relative w-full bg-[#080808]">
+    <section id="value-prop" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">

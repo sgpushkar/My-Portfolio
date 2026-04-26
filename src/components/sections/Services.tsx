@@ -12,7 +12,7 @@ const ICONS: Record<string, string> = {
 
 export default function Services() {
   return (
-    <section id="services" className="relative w-full bg-[#080808]">
+    <section id="services" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         {/* Header */}

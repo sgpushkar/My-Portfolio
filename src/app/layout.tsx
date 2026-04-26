@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
+import AuroraBackground from '@/components/ui/AuroraBackground';
 
 const texGyreCursor = localFont({
   src: [
@@ -79,7 +80,8 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="overflow-x-hidden bg-bg text-accent-DEFAULT antialiased">
+      <body className="overflow-x-hidden text-accent-DEFAULT antialiased">
+        <AuroraBackground />
         <div className="relative z-10">
           <Navbar />
           {children}

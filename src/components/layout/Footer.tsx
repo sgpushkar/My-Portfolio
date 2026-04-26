@@ -13,7 +13,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative w-full border-t border-white/[0.06] bg-[#080808]">
+    <footer className="relative w-full border-t border-white/[0.06] bg-transparent">
       <div className="mx-auto max-w-[1120px] px-5 sm:px-8 py-10 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

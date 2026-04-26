@@ -20,7 +20,7 @@ const THINKING_POINTS = [
 
 export default function About() {
   return (
-    <section id="about" className="relative w-full bg-[#080808]">
+    <section id="about" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -33,7 +33,7 @@ export default function About() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="section-label mb-4">About Me</p>
-            <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white mb-6">
+            <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white mb-6">
               Beyond the code,{' '}
               <span className="text-white/50">I build</span> with{' '}
               <span className="text-white">purpose and precision.</span>

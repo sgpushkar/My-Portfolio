@@ -41,7 +41,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative w-full bg-[#080808]">
+    <section id="contact" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-16">

@@ -8,7 +8,7 @@ const FEATURED = PROJECTS.filter((p) => p.featured);
 
 export default function Projects() {
   return (
-    <section id="work" className="relative w-full bg-[#080808]">
+    <section id="work" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         {/* Header */}

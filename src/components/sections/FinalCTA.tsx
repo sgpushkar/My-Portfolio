@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function FinalCTA() {
   return (
-    <section id="cta" className="relative w-full bg-[#080808]">
+    <section id="cta" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         <motion.div
@@ -34,13 +34,13 @@ export default function FinalCTA() {
             {/* Availability badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.04] mb-8">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
-              <span className="text-[12px] font-medium text-white/45 tracking-wide">
+              <span className="text-[12px] font-medium text-white/45 tracking-wide font-mono">
                 Currently taking 2 new projects
               </span>
             </div>
 
             {/* Headline */}
-            <h2 className="font-syne text-[2.2rem] sm:text-[3.2rem] lg:text-[4rem] font-extrabold leading-tight text-white max-w-3xl">
+            <h2 className="font-display text-[2.2rem] sm:text-[3.2rem] lg:text-[4rem] font-extrabold leading-tight text-white max-w-3xl">
               Ready to build something real?
             </h2>
 
@@ -69,7 +69,7 @@ export default function FinalCTA() {
             </div>
 
             {/* Micro-trust row */}
-            <div className="mt-10 flex flex-wrap justify-center gap-6 text-[12px] text-white/25">
+            <div className="mt-10 flex flex-wrap justify-center gap-6 text-[12px] text-white/25 font-mono uppercase tracking-wider">
               <span>✓ Fast response time</span>
               <span>✓ Clear scope & pricing</span>
               <span>✓ You own your code</span>

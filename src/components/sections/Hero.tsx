@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex items-center overflow-hidden"
+      className="relative min-h-screen w-full flex items-center overflow-hidden bg-transparent"
     >
       {/* Subtle radial glow at top */}
       <div

@@ -7,7 +7,7 @@ import { getIcon } from '@/lib/iconMap';
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="relative w-full bg-[#080808]">
+    <section id="achievements" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         <motion.div
@@ -18,7 +18,7 @@ export default function Achievements() {
           className="mb-12"
         >
           <p className="section-label mb-4">Milestones</p>
-          <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+          <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
             Proof of <span className="text-white/40">excellence.</span>
           </h2>
         </motion.div>
@@ -45,7 +45,7 @@ export default function Achievements() {
                       <div className="w-4 h-[1px] bg-white/10" />
                       <span className="text-[11px] font-bold tracking-wider text-white/50 uppercase">{achievement.type}</span>
                     </div>
-                    <h3 className="font-syne text-[1.2rem] font-bold text-white mb-2 leading-tight">
+                    <h3 className="font-display text-[1.2rem] font-bold text-white mb-2 leading-tight">
                       {achievement.title}
                     </h3>
                     <p className="text-[14px] text-white/40 leading-relaxed">

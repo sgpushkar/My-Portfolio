@@ -41,13 +41,12 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background-color: var(--bg);
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--bg);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+  background-color: transparent;
   background-attachment: fixed;
   color: var(--text);
   font-family: 'JetBrains Mono', 'Inter', monospace;

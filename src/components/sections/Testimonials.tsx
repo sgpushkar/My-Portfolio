@@ -24,7 +24,7 @@ function Stars({ count }: { count: number }) {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="relative w-full bg-[#080808]">
+    <section id="testimonials" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         {/* Header */}

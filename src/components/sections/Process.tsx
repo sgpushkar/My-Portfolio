@@ -6,7 +6,7 @@ import { PROCESS_STEPS } from '@/lib/data';
 
 export default function Process() {
   return (
-    <section id="process" className="relative w-full bg-[#080808]">
+    <section id="process" className="relative w-full bg-transparent">
       <div className="divider" />
       <div className="section-wrap">
         {/* Header */}
