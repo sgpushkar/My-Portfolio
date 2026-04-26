@@ -1,144 +1,148 @@
+// src/components/sections/Hero.tsx
 'use client';
 
 import { motion } from 'framer-motion';
-import GlowButton from '@/components/ui/GlowButton';
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 24 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay },
+});
+
+const TRUST_BADGES = [
+  '7 Projects Shipped',
+  'AI Intern @ Reva Technologies',
+  'Full-Stack & AI',
+  'Based in Mumbai',
+];
 
 export default function Hero() {
-  const stats = [
-    { value: '4', label: 'Products', subtext: 'Shipped & live' },
-    { value: '3+', label: 'Years', subtext: 'Building professionally' },
-    { value: '10+', label: 'Tech stacks', subtext: 'Full mastery' },
-  ];
-
   return (
     <section
       id="hero"
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-bg-primary via-bg-secondary to-bg-primary pt-40 sm:pt-44 md:pt-52"
+      className="relative min-h-screen w-full flex items-center overflow-hidden"
     >
-      {/* Subtle background accent blob (just one, not multiple) */}
-      <div className="absolute top-20 -right-32 w-96 h-96 bg-accent-warm/8 rounded-full blur-3xl pointer-events-none" />
+      {/* Subtle radial glow at top */}
+      <div
+        aria-hidden
+        className="absolute inset-x-0 top-0 h-[60vh] pointer-events-none"
+        style={{
+          background:
+            'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,255,255,0.055) 0%, transparent 70%)',
+        }}
+      />
 
-      {/* Subtle grid overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(149,164,175,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(149,164,175,0.03)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:linear-gradient(180deg,rgba(0,0,0,0.4),transparent_70%)] pointer-events-none" />
+      {/* Horizontal grid lines — editorial texture */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px)',
+          backgroundSize: '100% 80px',
+        }}
+      />
 
-      <div className="relative z-10 w-full max-w-7xl px-4 sm:px-6 mx-auto">
-        <div className="flex flex-col gap-12 sm:gap-16 lg:flex-row lg:justify-between lg:items-end">
-          {/* Main content - offset left with breathing room */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="max-w-2xl"
-          >
-            {/* Status badge - simple and subtle */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="inline-flex items-center gap-2 mb-2 sm:mb-4"
-            >
-              <div className="w-2 h-2 rounded-full bg-accent-warm" />
-              <span className="text-sm font-medium text-accent-muted">
-                Available for opportunities
-              </span>
-            </motion.div>
-
-            {/* Descriptor - soft and intentional */}
-            <p className="text-xs sm:text-sm uppercase tracking-widest text-accent-muted mb-3 sm:mb-4">
-              Full-Stack Engineer & AI Builder
-            </p>
-
-            {/* Main headline - bold and slightly offset */}
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black leading-tight mb-6 text-accent-default mix-blend-lighten">
-              Crafting{' '}
-              <span className="text-accent-warm">intentional</span>
-              {' '}
-              software that
-              works.
-            </h1>
-
-            {/* Description - warm and conversational */}
-            <p className="text-sm sm:text-lg leading-relaxed text-accent-muted max-w-xl mb-8 sm:mb-10">
-              I build full-stack applications, AI systems, and polished interfaces that are clean, purposeful, and genuinely human. Not another generic SaaS clone.
-            </p>
-
-            {/* CTA Buttons - primary focus */}
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-              <GlowButton href="#projects" className="px-6 sm:px-8 py-2 sm:py-2.5 text-xs sm:text-sm">
-                View my work
-              </GlowButton>
-              <GlowButton href="#contact" variant="outline" className="px-6 sm:px-8 py-2 sm:py-2.5 text-xs sm:text-sm">
-                Talk to me
-              </GlowButton>
-            </div>
+      <div className="relative z-10 mx-auto w-full max-w-[1120px] px-5 sm:px-8 pt-32 pb-20 sm:pt-36 sm:pb-24">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Logo */}
+          <motion.div {...fadeUp(0)} className="mb-8 flex justify-center">
+            <img 
+              src="/logo_icon.png" 
+              alt="PM Logo" 
+              className="h-16 w-16 object-contain brightness-125"
+            />
           </motion.div>
 
-          {/* Stats sidebar - intentionally offset right and slightly down */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
-            className="grid grid-cols-3 gap-3 sm:gap-4 lg:gap-6 w-full lg:w-auto lg:max-w-sm mt-8 lg:mt-0"
+          {/* Label */}
+          <motion.div {...fadeUp(0.05)} className="mb-6 flex items-center justify-center gap-3">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
+            <span className="text-[12px] font-semibold tracking-[0.18em] uppercase text-white/40">
+              Available for new projects
+            </span>
+          </motion.div>
+
+          {/* Main headline */}
+          <motion.h1
+            {...fadeUp(0.08)}
+            className="font-display text-[2.3rem] sm:text-[3.3rem] lg:text-[4.4rem] font-bold leading-[1.05] tracking-tight text-white"
           >
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className="relative group"
+            I Build Things That Feel As Good As They{' '}
+            <span
+              className="relative inline-block"
+              style={{
+                backgroundImage: 'linear-gradient(90deg, #fff 0%, #aaa 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
+            >
+              Look.
+            </span>
+          </motion.h1>
+
+          {/* Subheadline */}
+          <motion.p
+            {...fadeUp(0.16)}
+            className="mt-6 max-w-xl mx-auto text-[1.05rem] sm:text-[1.15rem] leading-relaxed text-white/50"
+          >
+            For startups, local businesses, and personal brands that need a site
+            that <em className="text-white/75 not-italic font-medium">works</em> — not just one
+            that looks good on Behance.
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            {...fadeUp(0.24)}
+            className="mt-10 flex flex-col sm:flex-row gap-3 justify-center"
+          >
+            <a
+              id="hero-cta-primary"
+              href="#contact"
+              className="btn btn-primary px-7 py-3.5 text-[15px] font-semibold rounded-xl"
+            >
+              Get Your Website →
+            </a>
+            <a
+              id="hero-cta-secondary"
+              href="#work"
+              className="btn btn-ghost px-7 py-3.5 text-[15px] rounded-xl"
+            >
+              See My Work
+            </a>
+          </motion.div>
+
+          {/* Trust badges */}
+          <motion.div
+            {...fadeUp(0.32)}
+            className="mt-12 flex flex-wrap gap-2 justify-center"
+          >
+            {TRUST_BADGES.map((badge) => (
+              <span
+                key={badge}
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[12px] font-medium text-white/40 border border-white/[0.08] bg-white/[0.03] font-cursor"
               >
-                {/* Subtle background - one color, intentional */}
-                <div className="absolute inset-0 bg-bg-secondary rounded-lg opacity-40 group-hover:opacity-60 transition-opacity duration-300" />
-
-                {/* Content */}
-                <div className="relative p-3 sm:p-4 lg:p-6">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent-warm mb-2">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm font-semibold text-accent-default mb-1">
-                    {stat.label}
-                  </div>
-                  <div className="text-xs text-accent-muted leading-tight">
-                    {stat.subtext}
-                  </div>
-                </div>
-
-                {/* Subtle border on hover */}
-                <div className="absolute inset-0 rounded-lg border border-accent-warm/0 group-hover:border-accent-warm/20 transition-colors duration-300" />
-              </div>
+                <span className="w-1 h-1 rounded-full bg-white/30" />
+                {badge}
+              </span>
             ))}
           </motion.div>
         </div>
-      </div>
 
-      {/* Scroll indicator - very subtle */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
+        {/* Scroll hint */}
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="flex flex-col items-center gap-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.35 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-xs text-accent-muted uppercase tracking-widest">
-            Scroll
-          </span>
-          <svg
-            className="w-4 h-4 text-accent-warm"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 14l-7 7m0 0l-7-7m7 7V3"
-            />
-          </svg>
+          <motion.div
+            animate={{ y: [0, 7, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-[1px] h-8 bg-gradient-to-b from-white/40 to-transparent rounded-full"
+          />
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

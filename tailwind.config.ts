@@ -9,20 +9,33 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-oxanium)", "sans-serif"],
-        body: ["var(--font-dm-sans)", "sans-serif"],
+        display: ["var(--font-cursor)", "Syne", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        mono: ["var(--font-cursor)", "monospace"],
+        cursor: ["var(--font-cursor)", "monospace"],
+        mechanical: ["var(--font-mechanical)", "sans-serif"],
+        police: ["var(--font-police)", "serif"],
+        syne: ["Syne", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
       colors: {
         bg: {
-          DEFAULT: "#0B0F14",
-          secondary: "#111827",
-          tertiary: "#1a202c",
+          DEFAULT: "#080808",
+          secondary: "#111111",
+          tertiary: "#1a1a1a",
+          card: "#0f0f0f",
         },
         accent: {
-          DEFAULT: "#E5E7EB",
-          primary: "#1F6FEB",
-          warm: "#F59E0B",
-          muted: "#6B7280",
+          DEFAULT: "#f2f2f2",
+          primary: "#ffffff",
+          warm: "#e8e8e8",
+          muted: "#6b6b6b",
+          subtle: "#3a3a3a",
+        },
+        border: {
+          DEFAULT: "rgba(255,255,255,0.08)",
+          strong: "rgba(255,255,255,0.18)",
+          subtle: "rgba(255,255,255,0.04)",
         },
       },
       backdropBlur: {

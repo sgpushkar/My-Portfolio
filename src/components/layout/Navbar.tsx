@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { NAV_LINKS } from '@/lib/data';
-import { motion } from 'framer-motion';
-import GlowButton from '@/components/ui/GlowButton';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -12,163 +11,175 @@ export default function Navbar() {
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>('section[id]');
-
     const onScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
       let current = '';
       sections.forEach((section) => {
-        if (window.scrollY >= section.offsetTop - 180) current = section.id;
+        if (window.scrollY >= section.offsetTop - 160) current = section.id;
       });
       setActiveId(current);
     };
-
     onScroll();
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   useEffect(() => {
     if (!menuOpen) return;
+    const close = () => { if (window.innerWidth >= 768) setMenuOpen(false); };
+    window.addEventListener('resize', close);
+    return () => window.removeEventListener('resize', close);
+  }, [menuOpen]);
 
-    const closeOnResize = () => {
-      if (window.innerWidth >= 768) setMenuOpen(false);
-    };
-
-    window.addEventListener('resize', closeOnResize);
-    return () => window.removeEventListener('resize', closeOnResize);
+  // Prevent body scroll when mobile menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-      className="fixed inset-x-0 top-0 z-[1000] px-3 pt-3 sm:px-6 sm:pt-4"
-    >
-      <div
-        className={`mx-auto max-w-7xl transition-all duration-300 ${
+    <>
+      <motion.header
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-300 ${
           scrolled
-            ? 'border border-accent-muted/10 bg-bg-secondary/50 shadow-soft-lg backdrop-blur-md'
-            : 'border border-accent-muted/10 bg-bg-secondary/50 backdrop-blur-md'
-        } rounded-xl overflow-hidden`}
+            ? 'border-b border-white/[0.06] bg-[#080808]/90 backdrop-blur-xl'
+            : 'bg-transparent'
+        }`}
       >
-        <div className="flex items-center justify-between gap-3 sm:gap-4 px-3 py-3 sm:px-6 sm:py-4">
+        <div className="mx-auto flex max-w-[1120px] items-center justify-between px-5 sm:px-8 h-16 sm:h-18">
           {/* Logo */}
           <a
             href="#hero"
-            className="flex items-center gap-2 text-accent-default hover:text-accent-warm transition-colors font-semibold flex-shrink-0"
+            className="group flex items-center gap-2.5 flex-shrink-0"
+            aria-label="Pushkar Mhatre — Home"
           >
-            <div className="w-8 h-8 rounded-lg bg-accent-warm/10 flex items-center justify-center font-black text-sm text-accent-warm">
-              PM
-            </div>
-            <span className="font-semibold text-xs sm:text-sm hidden sm:block text-accent-default">Pushkar</span>
+            <img 
+              src="/logo_icon.png" 
+              alt="Pushkar Mhatre" 
+              className="h-8 w-8 object-contain"
+            />
+            <span className="hidden sm:block text-sm font-semibold text-white/80 group-hover:text-white transition-colors font-cursor tracking-tight">
+              Pushkar Mhatre
+            </span>
           </a>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-2">
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-1">
             {NAV_LINKS.map(({ href, label }) => {
               const active = activeId === href.slice(1);
-
-              return (
-                <li key={href} className="h-10 flex items-center">
-                  <a
-                    href={href}
-                    className={`px-4 h-full flex items-center text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors duration-200 ${
-                      active
-                        ? 'text-accent-warm border-b-2 border-accent-warm -mb-0.5'
-                        : 'text-accent-muted hover:text-accent-default'
-                    }`}
-                  >
-                    {label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-
-          {/* Right side actions */}
-          <div className="flex items-center gap-1.5 sm:gap-3">
-            <a
-              href="https://github.com/sgpushkar"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline text-xs font-semibold uppercase tracking-wider text-accent-muted hover:text-accent-warm transition-colors"
-            >
-              GitHub
-            </a>
-            <GlowButton variant="primary" href="#contact" className="hidden sm:inline-flex text-xs px-4 sm:px-5 py-2 sm:py-2.5 whitespace-nowrap">
-              Contact
-            </GlowButton>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg bg-accent-warm/10 hover:bg-accent-warm/20 transition-all duration-300 flex-shrink-0"
-              onClick={() => setMenuOpen((open) => !open)}
-              aria-label="Toggle menu"
-              aria-expanded={menuOpen}
-            >
-              <span
-                className={`w-5 h-1 bg-accent-warm rounded-full transition-transform duration-300 ${
-                  menuOpen ? 'translate-y-2 rotate-45' : ''
-                }`}
-              />
-              <span
-                className={`w-5 h-1 bg-accent-warm rounded-full transition-opacity duration-300 ${
-                  menuOpen ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
-              <span
-                className={`w-5 h-1 bg-accent-warm rounded-full transition-transform duration-300 ${
-                  menuOpen ? '-translate-y-2 -rotate-45' : ''
-                }`}
-              />
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <motion.div
-          initial={false}
-          animate={{
-            height: menuOpen ? 'auto' : 0,
-            opacity: menuOpen ? 1 : 0,
-          }}
-          transition={{ duration: 0.2, ease: 'easeOut' }}
-          className="overflow-hidden md:hidden"
-        >
-          <div className="border-t border-accent-muted/10 px-4 py-4 space-y-2">
-            {NAV_LINKS.map(({ href, label }) => {
-              const active = activeId === href.slice(1);
-
               return (
                 <a
                   key={href}
                   href={href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`block px-4 py-3 text-xs font-semibold uppercase tracking-wider rounded-lg transition-colors ${
+                  className={`px-4 py-2 text-[13px] font-medium rounded-lg transition-all duration-200 font-cursor ${
                     active
-                      ? 'text-accent-warm bg-accent-warm/10'
-                      : 'text-accent-muted hover:text-accent-default hover:bg-bg-secondary'
+                      ? 'text-white bg-white/8'
+                      : 'text-white/50 hover:text-white/80 hover:bg-white/5'
                   }`}
                 >
                   {label}
                 </a>
               );
             })}
+          </nav>
 
-            <div className="flex items-center gap-2 pt-4 border-t border-accent-muted/10">
-              <a
-                href="https://github.com/sgpushkar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-accent-muted hover:text-accent-warm hover:bg-bg-secondary rounded-lg transition-colors text-center"
-              >
-                GitHub
-              </a>
+          {/* Right Actions */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Availability badge — desktop only */}
+            <div className="hidden lg:flex items-center gap-1.5 text-[11px] text-white/40 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse-dot" />
+              Available for work
             </div>
+
+            <a
+              href="#contact"
+              className="hidden sm:inline-flex btn btn-primary text-[13px] px-4 py-2 min-h-0 h-9 rounded-lg"
+            >
+              Get a Quote
+            </a>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex-shrink-0"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+            >
+              <span className={`w-4 h-[1.5px] bg-white/70 rounded-full transition-all duration-300 ${menuOpen ? 'translate-y-[4.5px] rotate-45' : ''}`} />
+              <span className={`w-4 h-[1.5px] bg-white/70 rounded-full transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`w-4 h-[1.5px] bg-white/70 rounded-full transition-all duration-300 ${menuOpen ? '-translate-y-[4.5px] -rotate-45' : ''}`} />
+            </button>
           </div>
-        </motion.div>
-      </div>
-    </motion.nav>
+        </div>
+      </motion.header>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {menuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-[999] bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={() => setMenuOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.div
+              key="drawer"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+              className="fixed inset-y-0 right-0 z-[1001] w-72 bg-[#0f0f0f] border-l border-white/[0.07] flex flex-col md:hidden"
+            >
+              <div className="flex items-center justify-between px-5 h-16 border-b border-white/[0.06]">
+                <span className="text-sm font-semibold text-white/60 font-inter">Menu</span>
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/6 hover:bg-white/12 text-white/50 hover:text-white transition-colors"
+                  aria-label="Close menu"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <nav className="flex flex-col gap-1 p-4 flex-1">
+                {NAV_LINKS.map(({ href, label }, i) => (
+                  <motion.a
+                    key={href}
+                    href={href}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    onClick={() => setMenuOpen(false)}
+                    className="flex items-center px-4 py-3.5 text-[15px] font-medium text-white/60 hover:text-white hover:bg-white/5 rounded-xl transition-all"
+                  >
+                    {label}
+                  </motion.a>
+                ))}
+              </nav>
+
+              <div className="p-4 border-t border-white/[0.06]">
+                <a
+                  href="#contact"
+                  onClick={() => setMenuOpen(false)}
+                  className="btn btn-primary w-full text-sm justify-center"
+                >
+                  Get a Quote
+                </a>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

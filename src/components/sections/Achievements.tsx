@@ -4,22 +4,26 @@
 import { motion } from 'framer-motion';
 import { ACHIEVEMENTS } from '@/lib/data';
 import { getIcon } from '@/lib/iconMap';
-import SectionHeading from '@/components/ui/SectionHeading';
 
 export default function Achievements() {
   return (
-    <section
-      id="achievements"
-      className="relative w-full py-16 sm:py-24"
-    >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-accent-primary/4 rounded-full blur-3xl" />
-      </div>
+    <section id="achievements" className="relative w-full bg-[#080808]">
+      <div className="divider" />
+      <div className="section-wrap">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <p className="section-label mb-4">Milestones</p>
+          <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+            Proof of <span className="text-white/40">excellence.</span>
+          </h2>
+        </motion.div>
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <SectionHeading subtitle="Proof of excellence">Achievements & Awards</SectionHeading>
-
-        <div className="mt-16 space-y-4 sm:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {ACHIEVEMENTS.map((achievement, i) => {
             const Icon = getIcon(achievement.icon);
             return (
@@ -27,25 +31,24 @@ export default function Achievements() {
                 key={achievement.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.15 }}
-                viewport={{ once: false }}
-                className="group bg-bg-secondary/40 border border-accent-muted/15 rounded-lg p-6 sm:p-8 hover:border-accent-warm/30 transition-all"
+                transition={{ duration: 0.45, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="card group p-6 sm:p-8 hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="flex gap-4 sm:gap-6">
-                  {Icon && <Icon className="w-6 h-6 sm:w-8 sm:h-8 flex-shrink-0 text-accent-warm mt-1" />}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2">
-                      <h3 className="text-lg sm:text-xl font-black text-accent-default leading-tight">
-                        {achievement.title}
-                      </h3>
-                      <span className="text-xs sm:text-sm font-mono text-accent-warm flex-shrink-0">
-                        {achievement.year}
-                      </span>
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-white/[0.03] border border-white/[0.06] flex items-center justify-center group-hover:border-white/20 transition-colors">
+                    {Icon ? <Icon className="w-6 h-6 text-white/70 group-hover:text-white transition-colors" /> : <span className="text-xl">{achievement.icon}</span>}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="text-[11px] font-bold tracking-wider text-white/30 uppercase">{achievement.year}</span>
+                      <div className="w-4 h-[1px] bg-white/10" />
+                      <span className="text-[11px] font-bold tracking-wider text-white/50 uppercase">{achievement.type}</span>
                     </div>
-                    <p className="text-xs sm:text-sm font-semibold text-accent-warm mb-3">
-                      {achievement.type}
-                    </p>
-                    <p className="text-sm text-accent-muted leading-relaxed">
+                    <h3 className="font-syne text-[1.2rem] font-bold text-white mb-2 leading-tight">
+                      {achievement.title}
+                    </h3>
+                    <p className="text-[14px] text-white/40 leading-relaxed">
                       {achievement.desc}
                     </p>
                   </div>

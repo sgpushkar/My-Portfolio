@@ -2,90 +2,119 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import SectionHeading from '@/components/ui/SectionHeading';
+
+const THINKING_POINTS = [
+  {
+    title: 'Code is a craft, not a chore.',
+    desc: "I don't just 'write' code. I build tools that solve real human frictions. To me, a well-placed button or a snappy API response is a form of art.",
+  },
+  {
+    title: 'The "Why" before the "How".',
+    desc: "I spend more time understanding the problem than typing the solution. If we don't know why we're building it, we shouldn't be building it.",
+  },
+  {
+    title: 'Ship fast, refine forever.',
+    desc: "I believe in getting a working product into users' hands as quickly as possible. Momentum is better than perfection in a vacuum.",
+  },
+];
 
 export default function About() {
-  const points = [
-    {
-      icon: 'PS',
-      title: 'Problem Solver',
-      desc: 'I identify real problems and build practical solutions, not features nobody needs.',
-    },
-    {
-      icon: 'QL',
-      title: 'Quick Learner',
-      desc: 'From AI and ML to full-stack web development, I jump into new stacks and ship products fast.',
-    },
-    {
-      icon: 'PB',
-      title: 'Passionate Builder',
-      desc: 'I love turning ideas into working products that people actually use and remember.',
-    },
-    {
-      icon: 'AI',
-      title: 'AI Enthusiast',
-      desc: 'I explore LLMs, computer vision, and practical AI applications to solve real problems.',
-    },
-  ];
-
   return (
-    <section
-      id="about"
-      className="relative w-full py-16 sm:py-24"
-    >
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-1/2 right-0 h-96 w-96 rounded-full bg-accent-primary/4 blur-3xl" />
-      </div>
+    <section id="about" className="relative w-full bg-[#080808]">
+      <div className="divider" />
+      <div className="section-wrap">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <SectionHeading subtitle="Who I am beyond the code">Why I Code</SectionHeading>
+          {/* Left — Philosophy */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <p className="section-label mb-4">About Me</p>
+            <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white mb-6">
+              Beyond the code,{' '}
+              <span className="text-white/50">I build</span> with{' '}
+              <span className="text-white">purpose and precision.</span>
+            </h2>
 
-        <motion.div
-          className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.15 }}
-          viewport={{ once: false }}
-        >
-          {points.map((point, index) => (
-            <motion.div
-              key={point.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: false }}
-              className="group rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-6 sm:p-8 transition-all hover:border-accent-warm/30 hover:shadow-depth-md"
-            >
-              <div className="mb-4 inline-flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-lg border border-accent-warm/30 bg-accent-warm/10 text-xs sm:text-sm font-bold text-accent-warm">
-                {point.icon}
+            <div className="space-y-8 mt-8">
+              <p className="text-[15px] text-white/60 leading-relaxed max-w-lg">
+                I see software as more than just logic. It's about creating experiences that feel native, 
+                intuitive, and reliable. Whether it's an AI-powered tool or a simple landing page, 
+                my approach remains the same: build it like I own it.
+              </p>
+              
+              <div className="space-y-6">
+                {THINKING_POINTS.map((point, i) => (
+                  <motion.div
+                    key={point.title}
+                    initial={{ opacity: 0, y: 14 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.45, delay: i * 0.08 }}
+                    viewport={{ once: true }}
+                    className="flex gap-4"
+                  >
+                    <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full border border-white/20 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 rounded-full bg-white/40" />
+                    </div>
+                    <div>
+                      <p className="text-[15px] font-semibold text-white mb-1">{point.title}</p>
+                      <p className="text-[14px] text-white/45 leading-relaxed">{point.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
-              <h3 className="mb-3 text-lg sm:text-xl font-black text-accent-default">{point.title}</h3>
-              <p className="leading-relaxed text-accent-muted text-sm">{point.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+            </div>
+          </motion.div>
 
-        <motion.div
-          className="mt-12 sm:mt-20 max-w-3xl"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false }}
-        >
-          <div className="rounded-lg border border-accent-muted/15 bg-bg-secondary/40 p-6 sm:p-10">
-            <p className="mb-6 text-base sm:text-lg leading-relaxed text-accent-muted">
-              I started coding to solve problems I faced in college. What began as
-              "let me automate this" turned into a passion for building AI-powered
-              tools and full-stack systems that actually impact people's lives.
-            </p>
-            <p className="text-lg leading-relaxed text-accent-muted">
-              Today, I am a final-year student obsessed with shipping products. Whether
-              it is AI chatbots, attendance systems, or backend APIs, I love the process
-              of turning ideas into working software.
-            </p>
-          </div>
-        </motion.div>
+          {/* Right — What I enjoy */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            className="flex flex-col gap-6"
+          >
+            <div className="card p-8 border-white/[0.06]">
+              <p className="text-[12px] uppercase tracking-[0.16em] text-white/30 mb-6 font-cursor">What I enjoy building</p>
+              
+              <ul className="space-y-5">
+                {[
+                  { icon: '🤖', label: 'AI Integrations', sub: 'Chatbots, automation, and LLM workflows.' },
+                  { icon: '⚡', label: 'High-Performance Web', sub: 'Fast, SEO-optimized, and conversion-focused.' },
+                  { icon: '🎨', label: 'UI/UX Details', sub: 'Micro-interactions and fluid animations.' }
+                ].map((item, i) => (
+                  <motion.li 
+                    key={item.label}
+                    initial={{ opacity: 0, x: 10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.2 + (i * 0.1) }}
+                    className="flex items-start gap-4"
+                  >
+                    <span className="text-xl">{item.icon}</span>
+                    <div>
+                      <p className="text-[14px] font-medium text-white">{item.label}</p>
+                      <p className="text-[13px] text-white/40">{item.sub}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="card p-8 bg-white/[0.02]">
+              <p className="text-[12px] uppercase tracking-[0.16em] text-white/30 mb-4 font-cursor">Current Focus</p>
+              <p className="text-[15px] text-white/70 leading-relaxed font-medium">
+                I'm currently deep-diving into <span className="text-white">Next.js 15 and AI Agent workflows</span>, 
+                exploring how to make the web feel more "alive" and interactive.
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
 }
+

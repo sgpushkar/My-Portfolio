@@ -37,7 +37,7 @@ export default function SectionHeading({
       >
         {subtitle && (
           <motion.p
-            className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-muted"
+            className="mb-4 text-xs font-semibold uppercase tracking-widest text-accent-muted font-cursor"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.05, duration: 0.4 }}

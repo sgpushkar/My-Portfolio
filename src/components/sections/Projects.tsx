@@ -2,198 +2,180 @@
 'use client';
 
 import { PROJECTS } from '@/lib/data';
-import { getIcon } from '@/lib/iconMap';
 import { motion } from 'framer-motion';
-import SectionHeading from '@/components/ui/SectionHeading';
-import GlowButton from '@/components/ui/GlowButton';
+
+const FEATURED = PROJECTS.filter((p) => p.featured);
 
 export default function Projects() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
-    <section
-      id="projects"
-      className="relative w-full py-16 sm:py-24"
-    >
-      {/* Subtle accent blob */}
-      <div className="absolute -left-32 top-1/3 w-96 h-96 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <SectionHeading 
-          subtitle="Real solutions that ship"
-          align="left"
-        >
-          Featured Projects
-        </SectionHeading>
-
+    <section id="work" className="relative w-full bg-[#080808]">
+      <div className="divider" />
+      <div className="section-wrap">
+        {/* Header */}
         <motion.div
-          className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16"
         >
-          {PROJECTS.map((project, index) => {
-            // Vary card style based on index
-            const isAlt = index % 2 === 1;
-            const Icon = getIcon(project.emoji);
-            
-            return (
-              <motion.div
-                key={project.id}
-                variants={cardVariants}
-                className="relative group overflow-hidden rounded-xl transition-all duration-300"
-              >
-                {/* Card background - subtle and intentional */}
-                <div
-                  className={`relative h-full backdrop-blur-sm border transition-all duration-300 group-hover:shadow-depth-md ${
-                    isAlt
-                      ? 'border-accent-primary/20 bg-accent-primary/5 hover:border-accent-primary/40'
-                      : 'border-accent-muted/15 bg-bg-secondary/40 hover:border-accent-warm/30'
-                  }`}
-                >
-                  {/* Content */}
-                  <div className="p-6 sm:p-8 lg:p-10 flex flex-col h-full">
-                    {/* Header with index and badge */}
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-widest text-accent-muted">
-                        <span>{String(index + 1).padStart(2, '0')} —</span>
-                        {Icon && <Icon className="w-5 h-5 text-accent-warm" />}
-                      </div>
+          <div className="max-w-xl">
+            <p className="section-label mb-4">Case Studies</p>
+            <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+              Real problems.{' '}
+              <span className="text-white/40">Real solutions.</span>{' '}
+              Real results.
+            </h2>
+          </div>
+          <a
+            href="https://github.com/sgpushkar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-shrink-0 text-[13px] text-white/35 hover:text-white/65 transition-colors flex items-center gap-1.5"
+          >
+            View all on GitHub
+            <span>↗</span>
+          </a>
+        </motion.div>
+
+        {/* Project Cards */}
+        <div className="space-y-6">
+          {FEATURED.map((project, i) => (
+            <motion.article
+              key={project.id}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: i * 0.08 }}
+              viewport={{ once: true, amount: 0.15 }}
+              className="card group overflow-hidden"
+            >
+              <div className="p-7 sm:p-10">
+                <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-8 lg:gap-12">
+
+                  {/* Left — meta */}
+                  <div className="flex flex-col">
+                    {/* Number + name */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="text-[11px] font-semibold tracking-[0.18em] text-white/20 font-inter">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <div className="w-6 h-[1px] bg-white/15" />
                       {project.featured && (
-                        <div className="px-3 py-1 rounded-full text-xs font-bold bg-accent-warm/20 text-accent-warm border border-accent-warm/30">
+                        <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase border border-white/15 text-white/35">
                           Featured
-                        </div>
+                        </span>
                       )}
                     </div>
 
-                    {/* Title */}
-                    <h3 className="mb-4 text-2xl lg:text-3xl font-black text-accent-default">
+                    <h3 className="font-syne text-[1.7rem] sm:text-[2rem] font-extrabold text-white leading-tight mb-3">
                       {project.name}
                     </h3>
 
-                    {/* Hook/quote */}
-                    {project.hook && (
-                      <p className="mb-6 text-accent-warm font-semibold italic">
-                        "{project.hook}"
-                      </p>
-                    )}
+                    <p className="text-[14px] text-white/40 italic leading-relaxed mb-6">
+                      &ldquo;{project.hook}&rdquo;
+                    </p>
 
-                    {/* Problem & Solution - clean layout */}
-                    <div className="mb-8 space-y-6">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-widest text-accent-muted mb-2">
-                          Problem
-                        </p>
-                        <p className="text-accent-muted leading-relaxed">
-                          {project.problem}
-                        </p>
-                      </div>
-
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-widest text-accent-muted mb-2">
-                          Solution
-                        </p>
-                        <p className="text-accent-muted leading-relaxed">
-                          {project.desc}
-                        </p>
-                      </div>
-
-                      {project.impact && (
-                        <div className="border-t border-accent-muted/10 pt-6">
-                          <p className="text-xs font-semibold uppercase tracking-widest text-accent-warm mb-2">
-                            Impact
-                          </p>
-                          <p className="text-accent-default font-medium">
-                            {project.impact}
-                          </p>
-                        </div>
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mt-auto">
+                      {project.tags.slice(0, 4).map((tag) => (
+                        <span key={tag} className="tag">{tag}</span>
+                      ))}
+                      {project.tags.length > 4 && (
+                        <span className="tag">+{project.tags.length - 4}</span>
                       )}
                     </div>
 
-                    {/* Tech stack */}
-                    {project.tags && project.tags.length > 0 && (
-                      <div className="mb-8">
-                        <p className="text-xs font-semibold uppercase tracking-widest text-accent-muted mb-3">
-                          Tech Stack
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag) => (
-                            <motion.span
-                              key={tag}
-                              className="px-3 py-1.5 text-xs font-medium rounded-md bg-accent-muted/10 text-accent-muted hover:bg-accent-warm/15 hover:text-accent-warm transition-colors duration-200 border border-accent-muted/10"
-                              whileHover={{ scale: 1.05 }}
-                            >
-                              {tag}
-                            </motion.span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* CTA buttons */}
-                    <div className="mt-auto flex flex-wrap gap-3 pt-6 border-t border-accent-muted/10">
-                      <GlowButton 
-                        variant="primary" 
+                    {/* Links */}
+                    <div className="flex items-center gap-4 mt-6 pt-6 border-t border-white/[0.06]">
+                      <a
                         href={project.githubUrl}
-                        className="text-xs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[13px] text-white/40 hover:text-white transition-colors flex items-center gap-1.5"
                       >
-                        Code
-                      </GlowButton>
+                        GitHub ↗
+                      </a>
                       {project.liveUrl && (
-                        <GlowButton 
-                          variant="secondary" 
+                        <a
                           href={project.liveUrl}
-                          className="text-xs"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[13px] text-white/70 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
                         >
-                          Live Demo
-                        </GlowButton>
+                          Live Demo ↗
+                        </a>
                       )}
                     </div>
                   </div>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
 
-        {/* CTA Section */}
+                  {/* Right — case study */}
+                  <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr] gap-0 border border-white/[0.07] rounded-xl overflow-hidden">
+                    {/* Problem */}
+                    <div className="p-5 sm:p-6 border-b sm:border-b-0 sm:border-r border-white/[0.07]">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/25 mb-3 font-semibold">
+                        Problem
+                      </p>
+                      <p className="text-[14px] text-white/55 leading-relaxed">
+                        {project.problem}
+                      </p>
+                    </div>
+
+                    {/* Solution */}
+                    <div className="p-5 sm:p-6 border-b border-white/[0.07]">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/25 mb-3 font-semibold">
+                        Solution
+                      </p>
+                      <p className="text-[14px] text-white/55 leading-relaxed">
+                        {project.desc}
+                      </p>
+                    </div>
+
+                    {/* Result — full width */}
+                    <div className="sm:col-span-2 p-5 sm:p-6 bg-white/[0.025]">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-white/35 mb-3 font-semibold">
+                        Result
+                      </p>
+                      <p className="text-[14px] text-white/75 leading-relaxed font-medium">
+                        {project.impact}
+                      </p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        {/* Non-featured projects — compact list */}
         <motion.div
-          className="mt-20 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          viewport={{ once: false }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="mt-8"
         >
-          <p className="mb-8 text-accent-muted">
-            Curious for more? Explore the full repository
-          </p>
-          <div className="inline-flex items-center gap-3">
-            <GlowButton
-              variant="outline"
-              href="https://github.com/sgpushkar"
-            >
-              View on GitHub
-            </GlowButton>
-            {(() => {
-              const ArrowIcon = getIcon('→');
-              return ArrowIcon ? <ArrowIcon className="w-5 h-5 text-accent-warm" /> : null;
-            })()}
+          <p className="text-[12px] uppercase tracking-[0.16em] text-white/25 mb-4">More projects</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {PROJECTS.filter((p) => !p.featured).map((project) => (
+              <a
+                key={project.id}
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card group p-5 hover:-translate-y-0.5 transition-transform duration-200"
+              >
+                <p className="font-syne text-[1rem] font-bold text-white mb-1.5 group-hover:text-white transition-colors">
+                  {project.name}
+                </p>
+                <p className="text-[12px] text-white/35 leading-relaxed line-clamp-2">
+                  {project.hook}
+                </p>
+                <p className="mt-3 text-[11px] text-white/25 group-hover:text-white/45 transition-colors">
+                  View on GitHub →
+                </p>
+              </a>
+            ))}
           </div>
         </motion.div>
       </div>

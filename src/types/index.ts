@@ -5,10 +5,10 @@ export interface Project {
   featured?: boolean;
   name: string;
   emoji: string;
-  hook: string;          // Added
-  problem: string;       // Added
+  hook: string;
+  problem: string;
   desc: string;
-  impact: string;        // Added
+  impact: string;
   features: string[];
   tags: string[];
   githubUrl: string;
@@ -21,7 +21,7 @@ export interface Achievement {
   title: string;
   desc: string;
   year: string;
-  type: "WINNER" | "PARTICIPANT" | "ORGANIZER";
+  type: 'WINNER' | 'PARTICIPANT' | 'ORGANIZER';
 }
 
 export interface SkillCategory {
@@ -54,4 +54,32 @@ export interface ContactLink {
 export interface StatItem {
   target: number;
   label: string;
+}
+
+// New types for client-acquisition sections
+
+export interface Service {
+  id: string;
+  icon: string;
+  title: string;
+  who: string;
+  description: string;
+  deliverables: string[];
+  outcome: string;
+}
+
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  quote: string;
+  stars: number;
+  initials: string;
+}
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
 }
