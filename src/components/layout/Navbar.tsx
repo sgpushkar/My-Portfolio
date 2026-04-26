@@ -61,7 +61,7 @@ export default function Navbar() {
               alt="Pushkar Mhatre" 
               className="h-8 w-8 object-contain"
             />
-            <span className="hidden sm:block text-sm font-semibold text-white/80 group-hover:text-white transition-colors font-cursor tracking-tight">
+            <span className="hidden sm:block text-sm font-semibold text-white/80 group-hover:text-white transition-colors font-mono tracking-tight">
               Pushkar Mhatre
             </span>
           </a>
@@ -74,7 +74,7 @@ export default function Navbar() {
                 <a
                   key={href}
                   href={href}
-                  className={`px-4 py-2 text-[13px] font-medium rounded-lg transition-all duration-200 font-cursor ${
+                  className={`px-4 py-2 text-[13px] font-medium rounded-lg transition-all duration-200 font-mono ${
                     active
                       ? 'text-white bg-white/8'
                       : 'text-white/50 hover:text-white/80 hover:bg-white/5'

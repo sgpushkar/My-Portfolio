@@ -54,7 +54,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.2 }}
           >
             <p className="section-label mb-4">Contact</p>
-            <h2 className="font-syne text-[2rem] sm:text-[2.4rem] font-extrabold leading-tight text-white mb-3">
+            <h2 className="font-display text-[2rem] sm:text-[2.4rem] font-extrabold leading-tight text-white mb-3">
               Let&apos;s talk about your project.
             </h2>
             <p className="text-[14px] text-white/40 mb-9">

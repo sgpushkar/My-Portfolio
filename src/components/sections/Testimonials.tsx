@@ -36,7 +36,7 @@ export default function Testimonials() {
           className="max-w-2xl mb-16"
         >
           <p className="section-label mb-4">Testimonials</p>
-          <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+          <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
             Don&apos;t take my word for it.{' '}
             <span className="text-white/40">Take theirs.</span>
           </h2>
@@ -67,7 +67,7 @@ export default function Testimonials() {
               <div className="mt-7 pt-5 border-t border-white/[0.07] flex items-center gap-3">
                 {/* Avatar */}
                 <div className="w-9 h-9 rounded-full bg-white/10 border border-white/12 flex items-center justify-center flex-shrink-0">
-                  <span className="text-[11px] font-bold text-white/60 font-syne">
+                  <span className="text-[11px] font-bold text-white/60 font-mono">
                     {t.initials}
                   </span>
                 </div>

@@ -120,7 +120,7 @@ export default function Hero() {
             {TRUST_BADGES.map((badge) => (
               <span
                 key={badge}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[12px] font-medium text-white/40 border border-white/[0.08] bg-white/[0.03] font-cursor"
+                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[12px] font-medium text-white/40 border border-white/[0.08] bg-white/[0.03] font-mono"
               >
                 <span className="w-1 h-1 rounded-full bg-white/30" />
                 {badge}

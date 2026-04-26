@@ -24,7 +24,7 @@ export default function Services() {
           className="max-w-2xl mb-16"
         >
           <p className="section-label mb-4">Services</p>
-          <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+          <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
             What I build,{' '}
             <span className="text-white/40">and what you get out of it.</span>
           </h2>
@@ -52,7 +52,7 @@ export default function Services() {
               </p>
 
               {/* Title */}
-              <h3 className="font-syne text-[1.35rem] font-bold text-white mb-3 leading-tight">
+              <h3 className="font-mono text-[1.35rem] font-bold text-white mb-3 leading-tight">
                 {service.title}
               </h3>
 

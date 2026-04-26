@@ -30,10 +30,10 @@ export default function Footer() {
               className="h-10 w-10 object-contain opacity-80"
             />
             <div>
-              <p className="text-sm font-semibold text-white font-cursor tracking-tight">
+              <p className="text-sm font-semibold text-white font-mono tracking-tight">
                 Pushkar Mhatre
               </p>
-              <p className="mt-1 text-[13px] text-white/40 font-cursor">
+              <p className="mt-1 text-[13px] text-white/40 font-mono">
                 Web Developer · Mumbai, India
               </p>
             </div>

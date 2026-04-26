@@ -18,7 +18,7 @@ export default function Process() {
           className="max-w-2xl mb-16"
         >
           <p className="section-label mb-4">Process</p>
-          <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+          <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
             Here&apos;s exactly how{' '}
             <span className="text-white/40">we work together.</span>
           </h2>
@@ -48,7 +48,7 @@ export default function Process() {
                 {/* Step number bubble */}
                 <div className="flex-shrink-0 flex flex-col items-center">
                   <div className="w-[63px] h-[63px] rounded-full border border-white/12 bg-white/[0.03] flex items-center justify-center group-hover:border-white/22 group-hover:bg-white/[0.06] transition-all duration-300">
-                    <span className="font-syne text-[13px] font-bold text-white/40 group-hover:text-white/60 transition-colors">
+                    <span className="font-mono text-[13px] font-bold text-white/40 group-hover:text-white/60 transition-colors">
                       {step.number}
                     </span>
                   </div>
@@ -56,7 +56,7 @@ export default function Process() {
 
                 {/* Content */}
                 <div className="flex-1 pb-6 pt-3">
-                  <h3 className="font-syne text-[1.15rem] sm:text-[1.3rem] font-bold text-white mb-2 group-hover:text-white transition-colors">
+                  <h3 className="font-mono text-[1.15rem] sm:text-[1.3rem] font-bold text-white mb-2 group-hover:text-white transition-colors">
                     {step.title}
                   </h3>
                   <p className="text-[14px] text-white/40 leading-relaxed max-w-2xl">
@@ -77,7 +77,7 @@ export default function Process() {
           className="mt-14 card p-7 border-white/[0.06] flex flex-col sm:flex-row sm:items-center gap-6"
         >
           <div className="flex-1">
-            <p className="font-syne text-[1.05rem] font-bold text-white mb-1">
+            <p className="font-mono text-[1.05rem] font-bold text-white mb-1">
               Typical turnaround: 3–7 days
             </p>
             <p className="text-[14px] text-white/40">

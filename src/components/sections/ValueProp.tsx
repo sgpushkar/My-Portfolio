@@ -39,7 +39,7 @@ export default function ValueProp() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <p className="section-label mb-4">Values</p>
-            <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white mb-6">
+            <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white mb-6">
               I turn ideas into{' '}
               <span className="text-white/50">websites</span> that{' '}
               <span className="text-white">actually work</span> for your business.
@@ -100,7 +100,7 @@ export default function ValueProp() {
                 className="card group p-7 hover:-translate-y-0.5 cursor-default"
               >
                 <p
-                  className="font-syne text-[3.2rem] font-extrabold tracking-tight leading-none text-white group-hover:text-white transition-colors"
+                  className="font-display text-[3.2rem] font-extrabold tracking-tight leading-none text-white group-hover:text-white transition-colors"
                   style={{
                     backgroundImage: 'linear-gradient(135deg, #fff 0%, #888 100%)',
                     WebkitBackgroundClip: 'text',

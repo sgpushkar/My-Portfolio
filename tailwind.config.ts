@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["var(--font-cursor)", "Syne", "sans-serif"],
-        body: ["Inter", "sans-serif"],
-        mono: ["var(--font-cursor)", "monospace"],
+        display: ["Inter", "sans-serif"],
+        body: ["JetBrains Mono", "monospace"],
+        mono: ["JetBrains Mono", "monospace"],
         cursor: ["var(--font-cursor)", "monospace"],
         mechanical: ["var(--font-mechanical)", "sans-serif"],
         police: ["var(--font-police)", "serif"],

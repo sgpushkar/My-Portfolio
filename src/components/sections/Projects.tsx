@@ -21,7 +21,7 @@ export default function Projects() {
         >
           <div className="max-w-xl">
             <p className="section-label mb-4">Case Studies</p>
-            <h2 className="font-syne text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
+            <h2 className="font-display text-[2rem] sm:text-[2.6rem] font-extrabold leading-tight text-white">
               Real problems.{' '}
               <span className="text-white/40">Real solutions.</span>{' '}
               Real results.
@@ -67,7 +67,7 @@ export default function Projects() {
                       )}
                     </div>
 
-                    <h3 className="font-syne text-[1.7rem] sm:text-[2rem] font-extrabold text-white leading-tight mb-3">
+                    <h3 className="font-display text-[1.7rem] sm:text-[2rem] font-extrabold text-white leading-tight mb-3">
                       {project.name}
                     </h3>
 
@@ -165,7 +165,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="card group p-5 hover:-translate-y-0.5 transition-transform duration-200"
               >
-                <p className="font-syne text-[1rem] font-bold text-white mb-1.5 group-hover:text-white transition-colors">
+                <p className="font-mono text-[1rem] font-bold text-white mb-1.5 group-hover:text-white transition-colors">
                   {project.name}
                 </p>
                 <p className="text-[12px] text-white/35 leading-relaxed line-clamp-2">
