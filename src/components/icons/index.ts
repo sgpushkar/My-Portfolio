@@ -25,3 +25,6 @@ export { IconHospital } from './IconHospital';
 export { IconArrowRight } from './IconArrowRight';
 export { IconChart } from './IconChart';
 export { IconStar } from './IconStar';
+export { IconCursor } from './IconCursor';
+export { IconCheck } from './IconCheck';
+

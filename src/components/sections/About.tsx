@@ -2,6 +2,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { IconRobot, IconBolt, IconCursor } from '@/components/icons';
+
 
 const THINKING_POINTS = [
   {
@@ -82,9 +84,9 @@ export default function About() {
               
               <ul className="space-y-5">
                 {[
-                  { icon: '🤖', label: 'AI Integrations', sub: 'Chatbots, automation, and LLM workflows.' },
-                  { icon: '⚡', label: 'High-Performance Web', sub: 'Fast, SEO-optimized, and conversion-focused.' },
-                  { icon: '🎨', label: 'UI/UX Details', sub: 'Micro-interactions and fluid animations.' }
+                  { icon: <IconRobot className="w-5 h-5 text-white/70" />, label: 'AI Integrations', sub: 'Chatbots, automation, and LLM workflows.' },
+                  { icon: <IconBolt className="w-5 h-5 text-white/70" />, label: 'High-Performance Web', sub: 'Fast, SEO-optimized, and conversion-focused.' },
+                  { icon: <IconCursor className="w-5 h-5 text-white/70" />, label: 'UI/UX Details', sub: 'Micro-interactions and fluid animations.' }
                 ].map((item, i) => (
                   <motion.li 
                     key={item.label}
@@ -93,7 +95,7 @@ export default function About() {
                     transition={{ delay: 0.2 + (i * 0.1) }}
                     className="flex items-start gap-4"
                   >
-                    <span className="text-xl">{item.icon}</span>
+                    <span className="flex-shrink-0 mt-0.5">{item.icon}</span>
                     <div>
                       <p className="text-[14px] font-medium text-white">{item.label}</p>
                       <p className="text-[13px] text-white/40">{item.sub}</p>

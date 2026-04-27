@@ -26,6 +26,7 @@ import {
   IconArrowRight,
   IconChart,
   IconStar,
+  IconCheck,
 } from '@/components/icons';
 
 interface IconMap {
@@ -60,7 +61,10 @@ export const emojiToIcon: IconMap = {
   '→': IconArrowRight,
   '📈': IconChart,
   '⭐': IconStar,
+  '✓': IconCheck,
+  '✅': IconCheck,
 };
+
 
 export function getIcon(emoji: string): React.ComponentType<{ className?: string }> | null {
   return emojiToIcon[emoji] || null;

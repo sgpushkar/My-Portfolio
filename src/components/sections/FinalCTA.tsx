@@ -2,6 +2,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { IconCheck } from '@/components/icons';
+
 
 export default function FinalCTA() {
   return (
@@ -69,11 +71,19 @@ export default function FinalCTA() {
             </div>
 
             {/* Micro-trust row */}
-            <div className="mt-10 flex flex-wrap justify-center gap-6 text-[12px] text-white/25 font-mono uppercase tracking-wider">
-              <span>✓ Fast response time</span>
-              <span>✓ Clear scope & pricing</span>
-              <span>✓ You own your code</span>
-              <span>✓ Deployed & tested</span>
+            <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3 text-[12px] text-white/35 font-mono uppercase tracking-wider">
+              <span className="flex items-center gap-1.5">
+                <IconCheck className="w-3.5 h-3.5 text-white/60" /> Fast response time
+              </span>
+              <span className="flex items-center gap-1.5">
+                <IconCheck className="w-3.5 h-3.5 text-white/60" /> Clear scope & pricing
+              </span>
+              <span className="flex items-center gap-1.5">
+                <IconCheck className="w-3.5 h-3.5 text-white/60" /> You own your code
+              </span>
+              <span className="flex items-center gap-1.5">
+                <IconCheck className="w-3.5 h-3.5 text-white/60" /> Deployed & tested
+              </span>
             </div>
           </div>
         </motion.div>

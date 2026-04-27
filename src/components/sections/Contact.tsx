@@ -4,11 +4,12 @@
 import { useRef, useState } from 'react';
 import { CONTACT_LINKS } from '@/lib/data';
 import { motion } from 'framer-motion';
+import { IconMail, IconGithub, IconLinkedIn, IconCheck } from '@/components/icons';
 
-const CONTACT_ICONS: Record<string, string> = {
-  '📧': '✉',
-  '🐙': '⌥',
-  '💼': '◈',
+const CONTACT_ICONS: Record<string, React.ReactNode> = {
+  '📧': <IconMail className="w-5 h-5" />,
+  '🐙': <IconGithub className="w-5 h-5" />,
+  '💼': <IconLinkedIn className="w-5 h-5" />,
 };
 
 export default function Contact() {
@@ -124,8 +125,9 @@ export default function Contact() {
 
               {/* Status messages */}
               {status === 'sent' && (
-                <div className="rounded-xl border border-emerald-400/20 bg-emerald-400/5 px-4 py-3 text-[13px] text-emerald-400">
-                  ✓ Message sent — I&apos;ll be in touch within 24 hours.
+                <div className="flex items-center gap-2 rounded-xl border border-emerald-400/20 bg-emerald-400/5 px-4 py-3 text-[13px] text-emerald-400">
+                  <IconCheck className="w-4 h-4 flex-shrink-0" />
+                  <span>Message sent — I&apos;ll be in touch within 24 hours.</span>
                 </div>
               )}
               {status === 'error' && (
@@ -167,7 +169,7 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="card group flex items-center gap-4 p-4 hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <span className="text-white/30 group-hover:text-white/60 transition-colors text-lg">
+                  <span className="flex-shrink-0 text-white/30 group-hover:text-white/60 transition-colors">
                     {CONTACT_ICONS[link.icon] || link.icon}
                   </span>
                   <div>

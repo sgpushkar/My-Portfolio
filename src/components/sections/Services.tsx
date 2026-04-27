@@ -3,6 +3,8 @@
 
 import { motion } from 'framer-motion';
 import { SERVICES } from '@/lib/data';
+import { IconCheck } from '@/components/icons';
+
 
 const ICONS: Record<string, string> = {
   '→': '↗',
@@ -65,9 +67,7 @@ export default function Services() {
               <ul className="space-y-2.5 mb-8 flex-1">
                 {service.deliverables.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-[13px] text-white/50">
-                    <span className="mt-[3px] flex-shrink-0 w-4 h-4 rounded-full border border-white/15 flex items-center justify-center">
-                      <span className="w-1 h-1 rounded-full bg-white/50" />
-                    </span>
+                    <IconCheck className="mt-[2px] flex-shrink-0 w-3.5 h-3.5 text-white/30" />
                     {item}
                   </li>
                 ))}
