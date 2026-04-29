@@ -9,7 +9,7 @@ import type {
   SkillCategory,
   StatItem,
   TechItem,
-  Testimonial,
+
 } from '@/types';
 
 // ─── Navigation ────────────────────────────────────────────────────────────────
@@ -20,7 +20,7 @@ export const NAV_LINKS = [
   { href: '#work', label: 'Work' },
   { href: '#achievements', label: 'Milestones' },
   { href: '#process', label: 'Process' },
-  { href: '#testimonials', label: 'Testimonials' },
+
   { href: '#contact', label: 'Contact' },
 ] as const;
 
@@ -264,40 +264,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
   },
 ];
 
-// ─── Testimonials ──────────────────────────────────────────────────────────────
 
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: 'rohan',
-    name: 'Rohan Desai',
-    role: 'Founder',
-    company: 'StudySpace India',
-    quote:
-      'Pushkar delivered our landing page in 4 days. Clean, fast, and exactly what we needed. Our enquiry rate went up almost immediately. Would hire again without hesitation.',
-    stars: 5,
-    initials: 'RD',
-  },
-  {
-    id: 'priya',
-    name: 'Priya Nair',
-    role: 'Yoga Coach',
-    company: 'Self-employed',
-    quote:
-      'I needed a site that looked professional and worked on mobile. Pushkar built exactly that — on time, within budget, and without me having to explain things twice. My enquiries have doubled.',
-    stars: 5,
-    initials: 'PN',
-  },
-  {
-    id: 'arjun',
-    name: 'Arjun Mehta',
-    role: 'Co-founder',
-    company: 'SwiftKart',
-    quote:
-      'Fast communicator, no ghost modes, delivered exactly what we scoped. The dashboard he built handles our core flows perfectly. We are already planning phase 2 with him.',
-    stars: 5,
-    initials: 'AM',
-  },
-];
 
 // ─── Achievements (kept for reference) ────────────────────────────────────────
 

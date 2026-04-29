@@ -6,7 +6,7 @@ import Services from '@/components/sections/Services';
 import Projects from '@/components/sections/Projects';
 import Achievements from '@/components/sections/Achievements';
 import Process from '@/components/sections/Process';
-import Testimonials from '@/components/sections/Testimonials';
+
 import FinalCTA from '@/components/sections/FinalCTA';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/layout/Footer';
@@ -35,8 +35,7 @@ export default function Home() {
       {/* 7. Process — How we work together */}
       <Process />
 
-      {/* 8. Testimonials — Social proof */}
-      <Testimonials />
+
 
       {/* 9. Final CTA — Strong closing push */}
       <FinalCTA />

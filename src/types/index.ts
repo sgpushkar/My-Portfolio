@@ -68,15 +68,7 @@ export interface Service {
   outcome: string;
 }
 
-export interface Testimonial {
-  id: string;
-  name: string;
-  role: string;
-  company: string;
-  quote: string;
-  stars: number;
-  initials: string;
-}
+
 
 export interface ProcessStep {
   number: string;
