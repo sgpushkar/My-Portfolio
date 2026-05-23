@@ -28,13 +28,11 @@ export default function Projects() {
             </h2>
           </div>
           <a
-            href="https://github.com/sgpushkar"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/works"
             className="flex-shrink-0 text-[13px] text-white/35 hover:text-white/65 transition-colors flex items-center gap-1.5"
           >
-            View all on GitHub
-            <span>↗</span>
+            View All Works
+            <span>→</span>
           </a>
         </motion.div>
 

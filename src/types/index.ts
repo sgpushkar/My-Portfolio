@@ -13,6 +13,11 @@ export interface Project {
   tags: string[];
   githubUrl: string;
   liveUrl?: string;
+  // Extended fields for the /works detail page (placeholders for now)
+  longDescription?: string;
+  role?: string;
+  timeline?: string;
+  screenshots?: string[];
 }
 
 export interface Achievement {

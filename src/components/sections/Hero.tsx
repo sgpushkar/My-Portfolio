@@ -43,7 +43,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1120px] px-5 sm:px-8 pt-32 pb-20 sm:pt-36 sm:pb-24">
+      <div className="relative z-10 mx-auto w-full max-w-[1280px] px-5 sm:px-8 pt-32 pb-20 sm:pt-36 sm:pb-24">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <motion.div {...fadeUp(0)} className="mb-8 flex justify-center">

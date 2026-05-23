@@ -24,7 +24,7 @@
   --text-muted:      #6b6b6b;
   --text-subtle:     #3a3a3a;
   --section-px:      clamp(1.25rem, 5vw, 3rem);
-  --max-w:           1120px;
+  --max-w:           1280px;
   --radius-card:     20px;
 }
 
@@ -268,6 +268,28 @@ input:focus, textarea:focus {
 .tag:hover {
   border-color: var(--border-hover);
   color: var(--text-soft);
+}
+
+/* ─── Select Dropdown ───────────────────────────────────── */
+
+select {
+  color-scheme: dark;
+}
+
+select option {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  padding: 8px 12px;
+}
+
+select option:checked {
+  background: linear-gradient(#555, #555);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+select option:hover {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ─── Noise Texture (subtle grain) ─────────────────────── */
