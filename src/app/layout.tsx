@@ -42,25 +42,23 @@ const beautifulPoliceOfficer = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Pushkar Mhatre — Web Developer for Startups & Local Businesses',
+  title: 'Pushkar Mhatre — The Long Walk',
   description:
-    'I build things that feel as good as they look. Serving startups, local businesses, and personal brands. Fast, clean, and built to convert.',
+    "I build things that feel as good as they look. Full-stack builder, AI tinkerer, collector of small details. This is what I've made so far.",
   keywords: [
     'Pushkar Mhatre',
+    'The Long Walk',
     'Web Developer',
-    'Freelance Developer',
-    'Website for startups',
-    'Business website India',
-    'Landing page developer',
+    'AI Engineer',
     'Next.js',
     'React',
     'Node.js',
+    'Mumbai',
   ],
   authors: [{ name: 'Pushkar Mhatre' }],
   openGraph: {
-    title: 'Pushkar Mhatre — Web Developer for Startups & Local Businesses',
-    description:
-      'I build things that feel as good as they look. Fast, clean, conversion-focused.',
+    title: 'Pushkar Mhatre — The Long Walk',
+    description: 'I build things that feel as good as they look.',
     type: 'website',
   },
 };
@@ -80,13 +78,12 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Rozha+One&display=swap" rel="stylesheet" />
       </head>
-      <body className="overflow-x-hidden text-accent-DEFAULT antialiased">
+      <body className="overflow-x-hidden">
         <AuroraBackground />
-        <div className="relative z-10">
-          <Navbar />
-          {children}
-        </div>
+        <Navbar />
+        {children}
       </body>
     </html>
   );
