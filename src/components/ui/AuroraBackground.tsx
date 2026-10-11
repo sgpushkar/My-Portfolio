@@ -1,9 +1,13 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 
 export default function AuroraBackground() {
+  const pathname = usePathname();
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  if (pathname === '/') return null;
 
   useEffect(() => {
     const canvas = canvasRef.current;
