@@ -1,0 +1,277 @@
+================================================================================
+PUSHKAR MHATRE — COMPLETE PROFILE & PORTFOLIO DOSSIER
+================================================================================
+
+1. PERSONAL & PROFESSIONAL OVERVIEW
+--------------------------------------------------------------------------------
+Full Name         : Pushkar Mhatre
+Professional Title: Full-Stack Web & AI Developer
+Target Audience   : Startups, Local Businesses, Creators & Personal Brands
+Location          : Mumbai / Panvel, Maharashtra, India
+Availability      : Available for new projects (24-hour response turnaround)
+Current Focus     : Next.js 15, AI Agent workflows, and interactive web systems
+Tagline           : "I build things that feel as good as they look."
+
+Core Philosophies:
+- "Code is a craft, not a chore." — Building tools that resolve real friction.
+- "The 'Why' before the 'How'." — Deep problem understanding before typing code.
+- "Ship fast, refine forever." — Prioritizing momentum and real feedback.
+- "Outcomes over portfolios." — Clean code, zero lock-in, designed to convert.
+
+
+2. CONTACT & SOCIAL CHANNELS
+--------------------------------------------------------------------------------
+Primary Email     : pushkarmhatre007@gmail.com
+Git Commit Email  : pushkarmhatre424@gmail.com
+GitHub Profile    : https://github.com/sgpushkar
+LinkedIn Profile  : https://linkedin.com/in/pushkar-mhatre-9430103a5
+Alternate LinkedIn: https://linkedin.com/in/pushkarmhatre
+Contact Form API  : https://formsubmit.co/ajax/pushkarmhatre007@gmail.com
+
+
+3. KEY METRICS & STATS
+--------------------------------------------------------------------------------
+- Projects Shipped         : 7+
+- Happy Clients            : 4+
+- Years of Building        : 3+
+- Average Client Lift      : 2x increase in client enquiries within first month
+
+
+4. EDUCATION & ACADEMICS
+--------------------------------------------------------------------------------
+Degree            : Diploma in Computer Engineering
+Institution       : Pillai Higher Education Institute / Pillai HOC College, Mumbai
+Status / Period   : Final Year (2025–2026)
+
+Core Coursework / Subjects:
+- Data Structures & Algorithms
+- Database Management Systems (DBMS)
+- Operating Systems
+- Computer Networks
+- Artificial Intelligence (AI)
+- Object-Oriented Programming (OOP)
+- Software Engineering
+- Web Technology
+
+
+5. PROFESSIONAL EXPERIENCE
+--------------------------------------------------------------------------------
+[1] AI Intern
+    Organization : Reva Technologies
+    Location     : Panvel, Maharashtra, India
+    Summary      : Built conversational AI chatbot applications integrating
+                   OpenAI API and LLaMA. Developed backend services and web
+                   applications using Flask and Node.js. Built prototypes and
+                   integrated third-party APIs for production AI use cases.
+
+[2] Freelance Developer
+    Organization : Independent
+    Summary      : Delivered full-stack websites, web applications, and AI
+                   tools for businesses and creators. Managed end-to-end delivery:
+                   client requirement discovery, UI/UX architecture, full-stack
+                   code, and deployment on tight schedules.
+
+[3] Personal Projects Developer
+    Organization : Independent
+    Location     : Mumbai, India
+    Summary      : Built real-world AI and full-stack systems from scratch:
+                   REST APIs, database systems, face recognition pipelines, and
+                   real-time automation engines.
+
+
+6. AWARDS & MILESTONES
+--------------------------------------------------------------------------------
+[1] State Level Technical Quiz Champion (WINNER - 1st Place, 2026)
+    - Organized at Pillai HOC College.
+    - Won 1st place competing against engineering teams across Maharashtra.
+    - Demonstrated advanced mastery in programming, AI, and computer science.
+
+[2] State Level Project Competition (PARTICIPANT, 2026)
+    - MSBTE Sponsored (Maharashtra State Board of Technical Education).
+    - Presented an AI-powered project competing with colleges statewide.
+
+
+7. TECHNICAL SKILLS & STACK
+--------------------------------------------------------------------------------
+- Programming Languages : Python, JavaScript, TypeScript, Java, C, C++, HTML5, CSS3
+- Frontend Technologies : React, Next.js (14 & 15), Vite, TailwindCSS, CSS Modules,
+                          Framer Motion, GSAP
+- Backend Technologies  : Node.js, Express.js, Flask, REST APIs, WebSockets
+- Databases             : MongoDB, MySQL, SQLite
+- AI & Computer Vision  : OpenAI API, LLaMA, InsightFace, OpenCV, AI Agents
+- Cloud, DevOps & Tools : Vercel, Render, Cloudinary, Git, GitHub, Postman, VS Code
+
+
+8. COMPLETE PROJECT CATALOG & LINKS
+--------------------------------------------------------------------------------
+
+[01] SIENVERA (Featured)
+     Category    : Art Storefront & Admin CMS
+     GitHub      : https://github.com/sgpushkar
+     Live Demo   : https://sienvera.vercel.app/
+     Tech Stack  : React, Vite, JavaScript, CSS Modules, Cloudinary, Vercel
+     Hook        : "A handmade art storefront with a soft luxury feel and a real admin workflow behind it."
+     Problem     : Small handmade art brands need more than a static gallery; they need a premium storefront that is easy to update without editing code every time.
+     Description : Handcrafted art shop showcasing canvas paintings, crochet pieces, and resin art with collection browsing, commission/contact flows, and a custom admin panel.
+     Key Features:
+       - Curated catalog for canvas, crochet, and resin art
+       - Admin dashboard for uploading and managing artwork
+       - Cloudinary image upload integration
+       - Multi-channel commission flows (Instagram, WhatsApp, Email)
+       - Editorial, responsive React styling
+     Result      : Live on Vercel with smooth client and admin workflows.
+
+--------------------------------------------------------------------------------
+[02] SONDER CAFE
+     Category    : Cinematic Hospitality & Branding Platform
+     GitHub      : https://github.com/sgpushkar/sonder-cafe
+     Live Demo   : https://sonder-cafe.vercel.app
+     Tech Stack  : React, TailwindCSS, Framer Motion, Node.js, MongoDB
+     Hook        : "A cinematic café experience built to feel warm, premium, and unforgettable."
+     Problem     : Most café websites feel generic, outdated, and fail to reflect the real atmosphere of the venue.
+     Description : Visually immersive café website featuring dark cinematic aesthetics, smooth animations, and interactive menu sections.
+     Key Features:
+       - Cinematic dark-themed UI
+       - Interactive food & drink menu sections
+       - Responsive mobile-first design
+       - Framer Motion animation system
+       - Optimized frontend architecture
+     Result      : High-engagement digital experience with memorable branding.
+
+--------------------------------------------------------------------------------
+[03] MADGEAR CAFE
+     Category    : High-Energy Animated Café Website
+     GitHub      : https://github.com/sgpushkar/Madgear-cafe
+     Live Demo   : https://madgear-cafe.vercel.app
+     Tech Stack  : Next.js, TailwindCSS, Framer Motion, GSAP, MongoDB
+     Hook        : "A bold modern café website designed with strong identity and immersive interactions."
+     Problem     : Modern cafés struggle to differentiate online due to generic templates with weak brand identity.
+     Description : Interactive web platform designed with high-impact visual storytelling, custom typography, and dynamic animations.
+     Key Features:
+       - Advanced GSAP and Framer Motion micro-interactions
+       - Bold visual branding
+       - High-speed Next.js frontend
+       - Interactive layouts optimized for all screens
+     Result      : Modern branded platform driving strong customer engagement.
+
+--------------------------------------------------------------------------------
+[04] REPOMEDIC
+     Category    : AI-Powered Repository Analysis & Health Checker
+     GitHub      : https://github.com/sgpushkar/RepoMedic
+     Live Demo   : https://repo-medic.vercel.app
+     Tech Stack  : Python, Flask, AI, GitHub API, Automation, Code Analysis
+     Hook        : "AI-powered repository analysis that helps developers clean, optimize, and improve projects."
+     Problem     : Developers waste hours manually auditing repositories for structure, hygiene, and dependency health.
+     Description : AI-assisted repository scanning tool that inspects GitHub projects and generates actionable improvement recommendations.
+     Key Features:
+       - Automated repository health checks
+       - AI-powered code & structure recommendations
+       - README generation and enhancement suggestions
+       - Dependency insights and security checks
+       - Developer-focused dashboard with GitHub integration
+     Result      : Reduced manual auditing effort and enhanced codebase maintainability.
+
+--------------------------------------------------------------------------------
+[05] ATTENDEX (Featured)
+     Category    : AI Biometric Facial Attendance System
+     GitHub      : https://github.com/sgpushkar
+     Live Demo   : Local Prototype & Live Class Deployments
+     Tech Stack  : Python, Flask, InsightFace, OpenCV, SQLite, HTML/CSS/JS
+     Hook        : "Face recognition that actually works, even in bad lighting."
+     Problem     : Manual roll call takes 10 minutes per class, wastes instructional time, and is prone to proxy attendance and errors.
+     Description : Real-time biometric attendance system that detects and encodes faces instantaneously to automate class attendance.
+     Key Features:
+       - Facial detection & encoding via InsightFace and OpenCV
+       - Role-based system: Admin / Teacher / Student
+       - Subject, timetable, and session management
+       - Administrative dashboard with attendance analytics
+       - Automated report export and background face encoding
+     Result      : Cut attendance time by 80%. Achieved 98% detection accuracy across 3 live class trials.
+
+--------------------------------------------------------------------------------
+[06] CRYPTONOVA (Featured)
+     Category    : Real-Time Crypto Tracker & 24/7 Notification Engine
+     GitHub      : https://github.com/sgpushkar/CryptoNova
+     Live Demo   : Local / Deployed Prototype
+     Tech Stack  : TypeScript, React, Vite, TailwindCSS, Express, WebSocket, MongoDB
+     Hook        : "Live crypto prices, server-side alerts, and real notifications — even when you close the tab."
+     Problem     : Web-based crypto trackers lose price trigger alerts the second the user closes their browser tab.
+     Description : Full-stack real-time cryptocurrency monitor streaming live Binance prices via WebSockets with server-side alert polling.
+     Key Features:
+       - Live Binance WebSocket stream tracking 50 cryptocurrency pairs
+       - Server-side alert sweep running every 1 second
+       - Telegram Bot and Email notifications delivered 24/7 (even when offline)
+       - Price-above, price-below, and %-move condition triggers
+       - Dark glassmorphic interface with real-time flashing price ticks
+     Result      : Sub-second alert dispatch with dependable 24/7 server sweeps.
+
+--------------------------------------------------------------------------------
+[07] LUNA
+     Category    : Emotion-Aware Music Recommendation Chatbot
+     GitHub      : https://github.com/sgpushkar
+     Live Demo   : Conversational Prototype
+     Tech Stack  : Node.js, JavaScript, OpenAI API, LLaMA, Spotify API
+     Hook        : "A chatbot that knows how you feel and plays the right song."
+     Problem     : Traditional music discovery is manual and static, requiring users to explicitly know what they want.
+     Description : Emotion-detecting conversational assistant that interprets mood from natural conversation and generates tailored music recommendations.
+     Key Features:
+       - Mood analysis powered by LLaMA and OpenAI
+       - Multilingual conversational interface (4 languages supported)
+       - Spotify API integration for automated song curation
+     Result      : Successfully processed 200+ mood queries in prototype testing.
+
+--------------------------------------------------------------------------------
+[08] PHOCCY
+     Category    : Pillai HOC College Campus Assistant Chatbot
+     GitHub      : https://github.com/sgpushkar
+     Live Demo   : College Event Deployment
+     Tech Stack  : Node.js, OpenAI API, JavaScript, NLP
+     Hook        : "The college assistant that never sleeps and never gives wrong answers."
+     Problem     : Students and visitors repeatedly ask administrative staff the same questions regarding admissions, dates, and departments.
+     Description : Campus assistant chatbot that answers student inquiries about Pillai HOC College using JSON intent matching with an AI fallback.
+     Key Features:
+       - Accurate Pillai HOC College departmental & admission queries
+       - Deterministic JSON-based intent matching pipeline
+       - Fallback to AI for open-ended queries
+     Result      : Handled 500+ queries during a live college event demo with 95% accuracy on domain topics.
+
+--------------------------------------------------------------------------------
+[9] MY PORTFOLIO
+     Category    : Developer Portfolio & Client Funnel
+     GitHub      : https://github.com/sgpushkar/My-Portfolio
+     Live Demo   : Deployed on Vercel
+     Tech Stack  : Next.js 14, TypeScript, TailwindCSS, Framer Motion, Vercel
+     Hook        : "The site you are on right now — built from scratch to ship fast and look great."
+     Problem     : Generic templates feel soulless and fail to convey the engineering depth and craft of a developer.
+     Description : Personal portfolio designed with conversion copy, aurora background canvas, glassmorphic cards, and responsive case studies.
+     Key Features:
+       - Conversion-focused client funnel with FormSubmit integration
+       - Framer Motion scroll and hover animations
+       - Custom typography (Tex Gyre Cursor, Mechanical, Beautiful Police Officer)
+       - Comprehensive project breakdown and filtering system
+
+
+9. CLIENT SERVICES & WORKFLOW
+--------------------------------------------------------------------------------
+Services Offered:
+1. Landing Page
+   - Target: Personal brands, coaches, freelancers
+   - Features: Mobile-first, SEO-ready, custom design (no templates), contact forms
+   - Outcome: Built to double client enquiries and launch on day 1
+
+2. Business Website
+   - Target: Local businesses, tuition centres, professional services
+   - Features: Up to 5 custom pages, WhatsApp & Google Maps integration, fast loading
+   - Outcome: Establishes immediate authority and credibility
+
+3. Full-Stack Web App
+   - Target: Startups and founders with product ideas
+   - Features: React/Next.js frontend, Node.js/Express backend, database setup, auth
+   - Outcome: Ready for user testing and investor demos
+
+Four-Step Delivery Process:
+  Step 01: Discovery Call (30-min alignment on goals and target users)
+  Step 02: Proposal & Scope (clear deliverables, price, and timeline within 24h)
+  Step 03: Build & Update (sprints with visible progress updates)
+  Step 04: Launch & Handoff (cross-device testing, deployment, 100% client code ownership)
+================================================================================
