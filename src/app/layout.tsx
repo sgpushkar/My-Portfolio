@@ -2,8 +2,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
-import Navbar from '@/components/layout/Navbar';
-import AuroraBackground from '@/components/ui/AuroraBackground';
 
 const texGyreCursor = localFont({
   src: [
@@ -81,8 +79,6 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Rozha+One&display=swap" rel="stylesheet" />
       </head>
       <body className="overflow-x-hidden">
-        <AuroraBackground />
-        <Navbar />
         {children}
       </body>
     </html>
