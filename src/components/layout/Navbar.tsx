@@ -12,6 +12,8 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  if (pathname === '/') return null;
+
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>('section[id]');
     const onScroll = () => {
