@@ -325,11 +325,11 @@ export default function LongWalk() {
       R.style.setProperty('--tgm', dk ? '#b9b8b4' : '#4a4a48');
     }
 
-    // Walker legs animation
-    const f = Math.floor(XS / (u * 3)) % 2;
+    // Walker step toggle
+    const st = Math.floor(XS / (u * 3)) % 2;
     if (faRef.current && fbRef.current) {
-      faRef.current.style.display = f ? 'none' : '';
-      fbRef.current.style.display = f ? '' : 'none';
+      faRef.current.style.display = st ? '' : 'none';
+      fbRef.current.style.display = st ? 'none' : '';
     }
 
     // Progress bar
@@ -1214,16 +1214,18 @@ export default function LongWalk() {
             aria-label="Poke character to hop"
           >
             <title>poke me to hop</title>
-            <g className="k">
-              <circle cx="30" cy="14" r="11" />
-              <path d="M14 42Q14 25 30 25Q46 25 46 42L50 98H10z" />
-              <path d="M14 40L-6 52 14 54z" />
-            </g>
-            <g className="k" id="fa" ref={faRef}>
-              <path d="M16 96L6 138H22L30 96zM30 96L44 138H58L42 96z" />
-            </g>
-            <g className="k" id="fb" ref={fbRef} style={{ display: 'none' }}>
-              <path d="M18 96L24 138H36L36 96zM28 96L36 138H48L42 96z" />
+            <g transform="translate(50, 0) scale(-1, 1)">
+              <g className="k">
+                <circle cx="30" cy="14" r="11" />
+                <path d="M14 42Q14 25 30 25Q46 25 46 42L50 98H10z" />
+                <path d="M14 40L-6 52 14 54z" />
+              </g>
+              <g className="k" id="fa" ref={faRef}>
+                <path d="M16 96L6 138H22L30 96zM30 96L44 138H58L42 96z" />
+              </g>
+              <g className="k" id="fb" ref={fbRef} style={{ display: 'none' }}>
+                <path d="M18 96L24 138H36L36 96zM28 96L36 138H48L42 96z" />
+              </g>
             </g>
           </svg>
 
