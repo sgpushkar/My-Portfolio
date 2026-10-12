@@ -237,7 +237,7 @@ export default function LongWalk() {
       html += `<div class="s" style="left:${r() * 100}%;top:${r() * 72}%;width:${z}px;height:${z}px;animation-delay:${r() * 4}s"></div>`;
     }
     for (let i = 0; i < 5; i++) {
-      html += `<svg viewBox="0 0 32 10" style="top:${6 + i * 4.5}%;animation-delay:-${i * 14}s;animation-duration:${55 + i * 9}s"><path d="M0 8Q8-2 16 8Q24-2 32 8" fill="none" stroke="var(--ink)" stroke-width="2"/></svg>`;
+      html += `<svg viewBox="0 0 32 10" style="top:${16 + i * 5}%;animation-delay:-${i * 14}s;animation-duration:${55 + i * 9}s"><path d="M0 8Q8-2 16 8Q24-2 32 8" fill="none" stroke="var(--ink)" stroke-width="2"/></svg>`;
     }
     skyRef.current.innerHTML = html;
   }, []);
@@ -450,22 +450,6 @@ export default function LongWalk() {
     },
     [renderFrame]
   );
-
-  // Next / Previous station navigation for mobile & keyboard
-  const goToNextStation = useCallback(() => {
-    const curIdx = activeStationRef.current;
-    if (curIdx < STATIONS.length - 1) {
-      goToStation(STATIONS[curIdx + 1][0]);
-    }
-  }, [goToStation]);
-
-  const goToPrevStation = useCallback(() => {
-    const curIdx = activeStationRef.current;
-    if (curIdx > 0) {
-      const prev = STATIONS[curIdx - 1];
-      goToStation(prev[0] === 8 ? 0 : prev[0]);
-    }
-  }, [goToStation]);
 
   // Character Hop
   const handleHop = useCallback(() => {
@@ -754,8 +738,6 @@ export default function LongWalk() {
       return next;
     });
   };
-
-  const currentStationName = STATIONS[activeStation]?.[1] || 'Start';
 
   return (
     <>
@@ -1265,26 +1247,7 @@ export default function LongWalk() {
       <div id="hud">
         <b onClick={() => goToStation(0)}>P.M</b>
 
-        {/* Mobile Station Pill Navigator */}
-        <div className="hud-station-pill">
-          <button
-            className="hud-step-arrow"
-            onClick={goToPrevStation}
-            aria-label="Previous station"
-          >
-            ‹
-          </button>
-          <span className="hud-station-label">{currentStationName}</span>
-          <button
-            className="hud-step-arrow"
-            onClick={goToNextStation}
-            aria-label="Next station"
-          >
-            ›
-          </button>
-        </div>
-
-        {/* Desktop Minimap Ticks */}
+        {/* Minimap Ticks */}
         <div id="mm">
           {STATIONS.map((st, idx) => (
             <i
@@ -1306,24 +1269,6 @@ export default function LongWalk() {
           <a onClick={() => goToStation(1135)}>Contact</a>
           <Link href="/works">Archive</Link>
         </span>
-      </div>
-
-      {/* Floating Bottom Stepper for One-Handed Mobile Browsing */}
-      <div className="mobile-stepper" aria-hidden="true">
-        <button
-          className="mobile-step-btn"
-          onClick={goToPrevStation}
-          aria-label="Previous station"
-        >
-          ‹
-        </button>
-        <button
-          className="mobile-step-btn"
-          onClick={goToNextStation}
-          aria-label="Next station"
-        >
-          ›
-        </button>
       </div>
 
       {/* Building Inspector Modal Overlay */}

@@ -381,45 +381,6 @@ body.long-walk-body ::selection {
   opacity: 0.7;
 }
 
-/* Mobile Station Indicator Pill inside HUD */
-.hud-station-pill {
-  display: none;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg);
-  border: 1px solid var(--g2);
-  padding: 4px 12px;
-  border-radius: 99px;
-  font-size: 10.5px;
-  letter-spacing: 0.08em;
-  pointer-events: auto;
-  color: var(--tx);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.hud-step-arrow {
-  background: none;
-  border: none;
-  color: var(--tx);
-  cursor: pointer;
-  padding: 0 4px;
-  font-size: 14px;
-  line-height: 1;
-  font-family: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.hud-station-label {
-  font-weight: 500;
-  max-width: 120px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 #pg {
   position: fixed;
   left: 0;
@@ -476,7 +437,7 @@ body.long-walk-body ::selection {
 #mm i::after {
   content: "";
   position: absolute;
-  inset: -14px -7px; /* Ergonomic hit target for mobile/touch thumbs */
+  inset: -14px -7px;
 }
 
 #mm i.on {
@@ -863,42 +824,6 @@ body.long-walk-body ::selection {
   transform: scale(0.92);
 }
 
-/* Mobile Quick Navigation Stepper */
-.mobile-stepper {
-  display: none;
-  position: fixed;
-  bottom: calc(var(--u) * 23.5);
-  left: max(16px, env(safe-area-inset-left, 16px));
-  right: max(16px, env(safe-area-inset-right, 16px));
-  justify-content: space-between;
-  pointer-events: none;
-  z-index: 15;
-}
-
-.mobile-step-btn {
-  pointer-events: auto;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--bg);
-  border: 1px solid var(--g2);
-  color: var(--tx);
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s, background 0.2s;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.mobile-step-btn:active {
-  transform: scale(0.9);
-  background: var(--g1);
-}
-
 /* ========================================================================= */
 /* Responsive Adaptation for Android, iPhone, Foldables & Tablets            */
 /* ========================================================================= */
@@ -928,14 +853,14 @@ body.long-walk-body ::selection {
   #hud b {
     font-size: 22px;
   }
-  .hud-station-pill {
-    display: flex;
-  }
+
+  /* Minimap ticks scale cleanly on mobile without crowding */
   #mm {
-    display: none; /* Hide crowded horizontal ticks on mobile screens */
+    gap: 5px;
+    top: 26px;
   }
-  .mobile-stepper {
-    display: flex;
+  #mm i {
+    width: 2.5px;
   }
 
   /* Sun size proportion on mobile */
@@ -1188,9 +1113,7 @@ body.pl #hud span a:not(#pv),
 body.pl #FG,
 body.pl #gp,
 body.pl #cr,
-body.pl #ov,
-body.pl .hud-station-pill,
-body.pl .mobile-stepper {
+body.pl #ov {
   display: none !important;
 }
 
