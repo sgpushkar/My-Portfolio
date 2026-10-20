@@ -158,7 +158,7 @@ export default function Projects() {
             {PROJECTS.filter((p) => !p.featured).map((project) => (
               <a
                 key={project.id}
-                href={project.githubUrl}
+                href={project.liveUrl || project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card group p-5 hover:-translate-y-0.5 transition-transform duration-200"
@@ -170,7 +170,7 @@ export default function Projects() {
                   {project.hook}
                 </p>
                 <p className="mt-3 text-[11px] text-white/25 group-hover:text-white/45 transition-colors">
-                  View on GitHub →
+                  {project.liveUrl ? 'Live Demo ↗' : 'View on GitHub →'}
                 </p>
               </a>
             ))}
