@@ -31,7 +31,7 @@ Contact Form API  : https://formsubmit.co/ajax/pushkarmhatre007@gmail.com
 
 3. KEY METRICS & STATS
 --------------------------------------------------------------------------------
-- Projects Shipped         : 7+
+- Projects Shipped         : 8+
 - Happy Clients            : 4+
 - Years of Building        : 3+
 - Average Client Lift      : 2x increase in client enquiries within first month
@@ -122,57 +122,7 @@ Core Coursework / Subjects:
      Result      : Live on Vercel with smooth client and admin workflows.
 
 --------------------------------------------------------------------------------
-[02] SONDER CAFE
-     Category    : Cinematic Hospitality & Branding Platform
-     GitHub      : https://github.com/sgpushkar/sonder-cafe
-     Live Demo   : https://sonder-cafe.vercel.app
-     Tech Stack  : React, TailwindCSS, Framer Motion, Node.js, MongoDB
-     Hook        : "A cinematic café experience built to feel warm, premium, and unforgettable."
-     Problem     : Most café websites feel generic, outdated, and fail to reflect the real atmosphere of the venue.
-     Description : Visually immersive café website featuring dark cinematic aesthetics, smooth animations, and interactive menu sections.
-     Key Features:
-       - Cinematic dark-themed UI
-       - Interactive food & drink menu sections
-       - Responsive mobile-first design
-       - Framer Motion animation system
-       - Optimized frontend architecture
-     Result      : High-engagement digital experience with memorable branding.
-
---------------------------------------------------------------------------------
-[03] MADGEAR CAFE
-     Category    : High-Energy Animated Café Website
-     GitHub      : https://github.com/sgpushkar/Madgear-cafe
-     Live Demo   : https://madgear-cafe.vercel.app
-     Tech Stack  : Next.js, TailwindCSS, Framer Motion, GSAP, MongoDB
-     Hook        : "A bold modern café website designed with strong identity and immersive interactions."
-     Problem     : Modern cafés struggle to differentiate online due to generic templates with weak brand identity.
-     Description : Interactive web platform designed with high-impact visual storytelling, custom typography, and dynamic animations.
-     Key Features:
-       - Advanced GSAP and Framer Motion micro-interactions
-       - Bold visual branding
-       - High-speed Next.js frontend
-       - Interactive layouts optimized for all screens
-     Result      : Modern branded platform driving strong customer engagement.
-
---------------------------------------------------------------------------------
-[04] REPOMEDIC
-     Category    : AI-Powered Repository Analysis & Health Checker
-     GitHub      : https://github.com/sgpushkar/RepoMedic
-     Live Demo   : https://repo-medic.vercel.app
-     Tech Stack  : Python, Flask, AI, GitHub API, Automation, Code Analysis
-     Hook        : "AI-powered repository analysis that helps developers clean, optimize, and improve projects."
-     Problem     : Developers waste hours manually auditing repositories for structure, hygiene, and dependency health.
-     Description : AI-assisted repository scanning tool that inspects GitHub projects and generates actionable improvement recommendations.
-     Key Features:
-       - Automated repository health checks
-       - AI-powered code & structure recommendations
-       - README generation and enhancement suggestions
-       - Dependency insights and security checks
-       - Developer-focused dashboard with GitHub integration
-     Result      : Reduced manual auditing effort and enhanced codebase maintainability.
-
---------------------------------------------------------------------------------
-[05] ATTENDEX (Featured)
+[02] ATTENDEX (Featured)
      Category    : AI Biometric Facial Attendance System
      GitHub      : https://github.com/sgpushkar
      Live Demo   : Local Prototype & Live Class Deployments
@@ -189,7 +139,7 @@ Core Coursework / Subjects:
      Result      : Cut attendance time by 80%. Achieved 98% detection accuracy across 3 live class trials.
 
 --------------------------------------------------------------------------------
-[06] CRYPTONOVA (Featured)
+[03] CRYPTONOVA (Featured)
      Category    : Real-Time Crypto Tracker & 24/7 Notification Engine
      GitHub      : https://github.com/sgpushkar/CryptoNova
      Live Demo   : Local / Deployed Prototype
@@ -206,7 +156,42 @@ Core Coursework / Subjects:
      Result      : Sub-second alert dispatch with dependable 24/7 server sweeps.
 
 --------------------------------------------------------------------------------
-[07] LUNA
+[04] SWEEP (Featured)
+     Category    : Android Utility & WhatsApp Media Cleaner
+     GitHub      : https://github.com/sgpushkar/Sweep
+     Live Demo   : Open-Source Android APK & Static Download Site
+     Tech Stack  : React Native, TypeScript, Android (Kotlin), MediaStore API, Vite, React
+     Hook        : "Clean up WhatsApp media clutter with a swipe."
+     Problem     : WhatsApp accumulates gigabytes of forwarded memes, blurry photos, and duplicate videos over time. Manual cleanup in gallery apps is painful, slow, and risks deleting important memories.
+     Description : Two-part utility featuring a React Native Android app that scans WhatsApp media via Android MediaStore APIs for a fast card-by-card swipe review, paired with a React/Vite download site.
+     Key Features:
+       - Swipe-to-review card deck (swipe left to delete, right to keep)
+       - Real Android MediaStore discovery for WhatsApp images & videos (no root needed)
+       - Safe batch deletion using Android system-authorized delete dialog (`MediaStore.createDeleteRequest()`)
+       - Full undo stack before batch confirmation
+       - Storage insights highlighting largest files and duplicate candidates
+       - Static React/Vite download page with automated release metadata and SHA-256 APK verification
+     Result      : Instant card-by-card media triage and system-authorized safe batch cleanup recovering gigabytes of device storage.
+
+--------------------------------------------------------------------------------
+[05] REPOMEDIC
+     Category    : AI-Powered Repository Analysis & Health Checker
+     GitHub      : https://github.com/sgpushkar/RepoMedic
+     Live Demo   : https://repo-medic.vercel.app
+     Tech Stack  : Python, Flask, AI, GitHub API, Automation, Code Analysis
+     Hook        : "AI-powered repository analysis that helps developers clean, optimize, and improve projects."
+     Problem     : Developers waste hours manually auditing repositories for structure, hygiene, and dependency health.
+     Description : AI-assisted repository scanning tool that inspects GitHub projects and generates actionable improvement recommendations.
+     Key Features:
+       - Automated repository health checks
+       - AI-powered code & structure recommendations
+       - README generation and enhancement suggestions
+       - Dependency insights and security checks
+       - Developer-focused dashboard with GitHub integration
+     Result      : Reduced manual auditing effort and enhanced codebase maintainability.
+
+--------------------------------------------------------------------------------
+[06] LUNA
      Category    : Emotion-Aware Music Recommendation Chatbot
      GitHub      : https://github.com/sgpushkar
      Live Demo   : Conversational Prototype
@@ -221,7 +206,7 @@ Core Coursework / Subjects:
      Result      : Successfully processed 200+ mood queries in prototype testing.
 
 --------------------------------------------------------------------------------
-[08] PHOCCY
+[07] PHOCCY
      Category    : Pillai HOC College Campus Assistant Chatbot
      GitHub      : https://github.com/sgpushkar
      Live Demo   : College Event Deployment
@@ -236,7 +221,7 @@ Core Coursework / Subjects:
      Result      : Handled 500+ queries during a live college event demo with 95% accuracy on domain topics.
 
 --------------------------------------------------------------------------------
-[9] MY PORTFOLIO
+[08] MY PORTFOLIO
      Category    : Developer Portfolio & Client Funnel
      GitHub      : https://github.com/sgpushkar/My-Portfolio
      Live Demo   : Deployed on Vercel
