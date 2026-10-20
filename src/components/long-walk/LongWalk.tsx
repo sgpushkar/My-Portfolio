@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { PROJECTS } from '@/lib/data';
 import type { Project } from '@/types';
 
-const TW = 1290;
+const TW = 1217;
 
 const D = [
   [242, 241, 238],
@@ -34,28 +34,26 @@ const STATIONS: [number, string, string?][] = [
   [262, 'Sienvera', 'sienvera'],
   [335, 'AttenDex', 'attendex'],
   [408, 'CryptoNova', 'cryptonova'],
-  [481, 'Sonder Cafe', 'sonder-cafe'],
-  [554, 'Madgear Cafe', 'madgear-cafe'],
-  [627, 'RepoMedic', 'repomedic-ai'],
-  [700, 'Luna', 'luna'],
-  [773, 'PHOCCy', 'phoccy'],
-  [846, 'My Portfolio', 'portfolio'],
-  [925, 'Things I make'],
-  [1020, 'Milestones'],
-  [1075, 'Buildyn'],
-  [1135, 'Contact'],
+  [481, 'Sweep', 'sweep'],
+  [554, 'RepoMedic', 'repomedic-ai'],
+  [627, 'Luna', 'luna'],
+  [700, 'PHOCCy', 'phoccy'],
+  [773, 'My Portfolio', 'myportfolio'],
+  [852, 'Things I make'],
+  [947, 'Milestones'],
+  [1002, 'Buildyn'],
+  [1062, 'Contact'],
 ];
 
 const PROJECT_MAP: Record<string, string> = {
   '262': 'sienvera',
   '335': 'attendex',
   '408': 'cryptonova',
-  '481': 'sonder-cafe',
-  '554': 'madgear-cafe',
-  '627': 'repomedic-ai',
-  '700': 'luna',
-  '773': 'phoccy',
-  '846': 'portfolio',
+  '481': 'sweep',
+  '554': 'repomedic-ai',
+  '627': 'luna',
+  '700': 'phoccy',
+  '773': 'myportfolio',
 };
 
 const pos = (
@@ -135,7 +133,7 @@ export default function LongWalk() {
     my: 0,
     ms: false,
     u: 10,
-    W: 12900,
+    W: 11440,
     isPlain: false,
     lastN: -1,
     reduceMotion: false,
@@ -182,7 +180,7 @@ export default function LongWalk() {
     }
 
     // Telegraph poles in L1
-    [330, 1010].forEach((c) => {
+    [330, 791].forEach((c) => {
       const d = document.createElement('div');
       d.className = 'co';
       d.style.left = `${window.innerWidth * 0.62 + 0.18 * (c * u - window.innerWidth * 0.34)}px`;
@@ -303,7 +301,7 @@ export default function LongWalk() {
     const p = maxScroll > 0 ? Math.min(1, Math.max(0, XS / maxScroll)) : 0;
     const cur = (XS + window.innerWidth * 0.34) / u;
 
-    let n = pl ? 0 : Math.min(1, Math.max(0, (cur - 805) / 75));
+    let n = pl ? 0 : Math.min(1, Math.max(0, (cur - 732) / 75));
     n = n * n * (3 - 2 * n);
 
     // Only update CSS variables on documentElement if n changed by a meaningful threshold
@@ -854,7 +852,7 @@ export default function LongWalk() {
             {/* Selected Work Title */}
             <div className="tx it" style={pos(222, 40)}>
               <p className="tiny">Selected work</p>
-              <h2 style={{ '--f': 8 } as React.CSSProperties}>7+ shipped. Nine on this road.</h2>
+              <h2 style={{ '--f': 8 } as React.CSSProperties}>8+ shipped. Eight on this road.</h2>
             </div>
 
             {/* 01: Sienvera */}
@@ -955,71 +953,43 @@ export default function LongWalk() {
               </p>
             </div>
 
-            {/* 04: Sonder Cafe */}
+            {/* 04: Sweep */}
             <div className="no it" style={pos(481)}>
               04
             </div>
             <svg
               className="bd it"
-              style={pos(481, 34, 34)}
-              viewBox="0 0 340 340"
+              style={pos(481, 34, 50)}
+              viewBox="0 0 340 500"
             >
-              <defs>
-                <pattern id="stp" width="68" height="60" patternUnits="userSpaceOnUse">
-                  <rect width="34" height="60" fill="var(--bg)" />
-                </pattern>
-              </defs>
-              <rect className="k" y="40" width="340" height="60" />
-              <rect fill="url(#stp)" y="40" width="340" height="60" />
-              <rect className="c" x="20" y="100" width="300" height="240" />
-              <rect className="a" x="44" y="130" width="150" height="110" />
-              <rect className="k" x="224" y="150" width="70" height="190" />
-              <rect className="k" x="84" y="195" width="52" height="45" />
-              <circle className="k" cx="142" cy="212" r="11" />
+              <rect className="d" x="65" y="80" width="210" height="420" rx="26" />
+              <rect className="b" x="80" y="110" width="180" height="360" rx="16" />
+              <circle className="k" cx="170" cy="95" r="4" />
+              <rect className="c" x="98" y="150" width="144" height="186" rx="12" transform="rotate(-6 170 243)" />
+              <rect className="k" x="98" y="145" width="144" height="186" rx="12" />
+              <rect className="w" x="110" y="158" width="120" height="96" rx="6" />
+              <polygon className="b" points="163,196 163,216 181,206" />
+              <path d="M124 280l-12 12 12 12M112 292h24" stroke="var(--bg)" strokeWidth="3" fill="none" strokeLinecap="round" />
+              <path d="M202 284l8 8 16-16" stroke="var(--bg)" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              <rect className="c" x="98" y="360" width="144" height="14" rx="7" />
+              <rect className="k" x="98" y="360" width="94" height="14" rx="7" />
+              <circle className="k pu" cx="264" cy="125" r="30" />
+              <path className="w" d="M254 140l18-24M268 118l5 5M250 136l8 8" stroke="var(--bg)" strokeWidth="4" strokeLinecap="round" />
+              <circle className="w" cx="278" cy="112" r="3" />
             </svg>
             <div className="cp it" style={pos(481)}>
-              <small>04 — BRANDING & WEB</small>
-              <h3>Sonder Cafe</h3>
-              <p>A cinematic café experience designed to feel warm, premium, and unforgettable.</p>
+              <small>04 — ANDROID APP</small>
+              <h3>Sweep</h3>
+              <p>WhatsApp media cleaner app built with React Native and Kotlin using system MediaStore APIs.</p>
             </div>
 
-            {/* 05: Madgear Cafe */}
+            {/* 05: RepoMedic */}
             <div className="no it" style={pos(554)}>
               05
             </div>
             <svg
               className="bd it"
-              style={pos(554, 26, 46)}
-              viewBox="0 0 260 460"
-            >
-              <path className="k" d="M30 460V80L70 0H190L230 80V460z" />
-              <rect className="a" x="62" y="96" width="136" height="110" />
-              <g className="k bk">
-                <rect x="96" y="130" width="16" height="16" />
-                <rect x="148" y="130" width="16" height="16" />
-                <rect x="112" y="146" width="40" height="16" />
-                <rect x="96" y="162" width="16" height="16" />
-                <rect x="148" y="162" width="16" height="16" />
-              </g>
-              <path className="c" d="M30 268H230V310H30z" />
-              <circle className="w" cx="85" cy="289" r="11" />
-              <circle className="b" cx="150" cy="289" r="10" />
-              <circle className="b" cx="185" cy="289" r="10" />
-              <rect className="d" x="100" y="350" width="60" height="14" />
-            </svg>
-            <div className="cp it" style={pos(554)}>
-              <small>05 — ANIMATED EXPERIENCE</small>
-              <h3>Madgear Cafe</h3>
-              <p>A bold modern café website designed with high-energy interactions and strong visual identity.</p>
-            </div>
-
-            {/* 06: RepoMedic */}
-            <div className="no it" style={pos(627)}>
-              06
-            </div>
-            <svg
-              className="bd it"
-              style={pos(627, 34, 48)}
+              style={pos(554, 34, 48)}
               viewBox="0 0 340 480"
             >
               <path
@@ -1040,19 +1010,19 @@ export default function LongWalk() {
               <circle className="d" cx="256" cy="400" r="64" />
               <path className="w" d="M244 365h24v26h26v24h-26v26h-24v-26h-26v-24h26z" />
             </svg>
-            <div className="cp it" style={pos(627)}>
-              <small>06 — AI DEV TOOL</small>
+            <div className="cp it" style={pos(554)}>
+              <small>05 — AI DEV TOOL</small>
               <h3>RepoMedic</h3>
               <p>AI-powered repository analysis inspecting codebases for structure, dependencies, and hygiene.</p>
             </div>
 
-            {/* 07: Luna */}
-            <div className="no it" style={pos(700)}>
-              07
+            {/* 06: Luna */}
+            <div className="no it" style={pos(627)}>
+              06
             </div>
             <svg
               className="bd it"
-              style={pos(700, 30, 50)}
+              style={pos(627, 30, 50)}
               viewBox="0 0 300 500"
             >
               <path className="k" d="M170 20A90 90 0 1 0 170 200A70 70 0 1 1 170 20z" />
@@ -1064,19 +1034,19 @@ export default function LongWalk() {
               </g>
               <path className="c" d="M0 460q37-30 75 0t75 0t75 0t75 0V500H0z" />
             </svg>
-            <div className="cp it" style={pos(700)}>
-              <small>07 — AI ASSISTANT</small>
+            <div className="cp it" style={pos(627)}>
+              <small>06 — AI ASSISTANT</small>
               <h3>Luna</h3>
               <p>Emotion-aware music recommendation chatbot interpreting mood to curate tailored audio journeys.</p>
             </div>
 
-            {/* 08: PHOCCy */}
-            <div className="no it" style={pos(773)}>
-              08
+            {/* 07: PHOCCy */}
+            <div className="no it" style={pos(700)}>
+              07
             </div>
             <svg
               className="bd it"
-              style={pos(773, 40, 50)}
+              style={pos(700, 40, 50)}
               viewBox="0 0 400 500"
             >
               <rect className="k" x="230" width="170" height="100" rx="18" />
@@ -1096,19 +1066,19 @@ export default function LongWalk() {
               </g>
               <path className="k" d="M170 500V400a30 30 0 0 1 60 0V500z" />
             </svg>
-            <div className="cp it" style={pos(773)}>
-              <small>08 — CAMPUS AI</small>
+            <div className="cp it" style={pos(700)}>
+              <small>07 — CAMPUS AI</small>
               <h3>PHOCCy</h3>
               <p>Deterministic campus assistant built for Pillai HOC College to answer admissions and events.</p>
             </div>
 
-            {/* 09: My Portfolio */}
-            <div className="no it" style={pos(846)}>
-              09
+            {/* 08: My Portfolio */}
+            <div className="no it" style={pos(773)}>
+              08
             </div>
             <svg
               className="bd it"
-              style={pos(846, 40, 50)}
+              style={pos(773, 40, 50)}
               viewBox="-140 400 500"
             >
               <rect className="k" y="300" width="400" height="60" />
@@ -1119,14 +1089,14 @@ export default function LongWalk() {
               <rect className="d" x="300" y="-140" width="100" height="200" />
               <path className="w" d="M320 60V-50a30 30 0 0 1 60 0V60z" />
             </svg>
-            <div className="cp it" style={pos(846)}>
-              <small>09 — YOU ARE HERE</small>
+            <div className="cp it" style={pos(773)}>
+              <small>08 — YOU ARE HERE</small>
               <h3>My Portfolio</h3>
               <p>An evolving interactive digital playground built with Next.js, Framer Motion &amp; custom shaders.</p>
             </div>
 
             {/* Things I make */}
-            <div className="tx it big" style={pos(925, 100)}>
+            <div className="tx it big" style={pos(852, 100)}>
               <p className="tiny">Things I make</p>
               <a>Creative storefronts</a>
               <a>Full-stack web apps</a>
@@ -1135,7 +1105,7 @@ export default function LongWalk() {
             </div>
 
             {/* Milestones */}
-            <div className="tx it" style={pos(1020, 50)}>
+            <div className="tx it" style={pos(947, 50)}>
               <p className="tiny">Milestones</p>
               <div className="row">
                 <b>→</b>
@@ -1168,7 +1138,7 @@ export default function LongWalk() {
             </div>
 
             {/* Founder Buildyn */}
-            <div className="tx it" style={pos(1075, 50)}>
+            <div className="tx it" style={pos(1002, 50)}>
               <p className="tiny">Founder</p>
               <h2 style={{ '--f': 9 } as React.CSSProperties}>Buildyn.</h2>
               <p>The creative digital studio I started.</p>
@@ -1178,7 +1148,7 @@ export default function LongWalk() {
             </div>
 
             {/* Contact */}
-            <div className="tx it" style={pos(1135, 100)}>
+            <div className="tx it" style={pos(1062, 100)}>
               <p className="tiny">Contact</p>
               <h2 style={{ '--f': 7.6 } as React.CSSProperties}>
                 Seen something you like? <i>Say hi.</i>
@@ -1267,8 +1237,8 @@ export default function LongWalk() {
             {isPlain ? 'Walk view' : 'Simple view'}
           </a>
           <a onClick={() => goToStation(248)}>Work</a>
-          <a onClick={() => goToStation(1020)}>Milestones</a>
-          <a onClick={() => goToStation(1135)}>Contact</a>
+          <a onClick={() => goToStation(947)}>Milestones</a>
+          <a onClick={() => goToStation(1062)}>Contact</a>
           <Link href="/works">Archive</Link>
         </span>
       </div>
