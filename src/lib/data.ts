@@ -35,7 +35,7 @@ export const TYPING_PHRASES = [
 ];
 
 export const STATS: StatItem[] = [
-  { target: 7, label: 'Projects Shipped' },
+  { target: 8, label: 'Projects Shipped' },
   { target: 4, label: 'Happy Clients' },
   { target: 3, label: 'Years Building' },
 ];
@@ -116,69 +116,6 @@ export const PROJECTS: Project[] = [
     liveUrl: 'https://sienvera.vercel.app/',
   },
   {
-    id: 'sonder-cafe',
-    name: 'Sonder Cafe',
-    emoji: '☕',
-    hook: 'A cinematic café experience built to feel warm, premium, and unforgettable.',
-    problem:
-      'Most café websites feel generic, outdated, and forgettable. Poor branding and weak UI fail to attract customers or reflect the café\'s real atmosphere.',
-    desc: 'Designed and developed a visually immersive café website with smooth animations, premium typography, interactive menu sections, and modern responsive layouts.',
-    impact: 'Created a premium café experience with strong visual storytelling and modern UI.',
-    features: [
-      'Cinematic dark-themed UI',
-      'Interactive menu sections',
-      'Fully responsive design',
-      'Framer Motion animations',
-      'Premium typography',
-      'Optimized frontend architecture',
-    ],
-    tags: ['React', 'TailwindCSS', 'Framer Motion', 'Node.js', 'MongoDB', 'Responsive UI'],
-    githubUrl: 'https://github.com/sgpushkar/sonder-cafe',
-    liveUrl: 'https://sonder-cafe.vercel.app',
-  },
-  {
-    id: 'madgear-cafe',
-    name: 'Madgear Cafe',
-    emoji: '⚡',
-    hook: 'A bold modern café website designed with strong identity and immersive interactions.',
-    problem:
-      'Modern cafés struggle to stand out online because most websites use repetitive templates with weak branding.',
-    desc: 'Developed a premium interactive café platform with advanced animations and visually rich layouts.',
-    impact: 'Produced a modern branded experience with improved engagement and visual identity.',
-    features: [
-      'Advanced animated UI',
-      'Premium branding',
-      'Mobile-first design',
-      'Smooth visual storytelling',
-      'Optimized frontend architecture',
-      'Interactive layouts',
-    ],
-    tags: ['Next.js', 'TailwindCSS', 'Framer Motion', 'GSAP', 'MongoDB', 'Responsive UI'],
-    githubUrl: 'https://github.com/sgpushkar/Madgear-cafe',
-    liveUrl: 'https://madgear-cafe.vercel.app',
-  },
-  {
-    id: 'repomedic-ai',
-    name: 'RepoMedic',
-    emoji: '🩺',
-    hook: 'AI-powered repository analysis that helps developers clean, optimize, and improve projects.',
-    problem:
-      'Developers waste hours manually reviewing repositories for structure, dependencies, and maintainability issues.',
-    desc: 'Created an AI-assisted repository analysis tool capable of scanning projects and suggesting improvements automatically.',
-    impact: 'Improved project maintainability and reduced manual auditing effort.',
-    features: [
-      'AI-powered repo analysis',
-      'README suggestions',
-      'Dependency insights',
-      'Automated project health checks',
-      'GitHub integration',
-      'Developer-focused dashboard',
-    ],
-    tags: ['Python', 'AI', 'GitHub API', 'Flask', 'Automation', 'Code Analysis'],
-    githubUrl: 'https://github.com/sgpushkar/RepoMedic',
-    liveUrl: 'https://repo-medic.vercel.app',
-  },
-  {
     id: 'attendex',
     featured: true,
     name: 'AttenDex',
@@ -221,6 +158,50 @@ export const PROJECTS: Project[] = [
     tags: ['TypeScript', 'React', 'Vite', 'TailwindCSS', 'Express', 'WebSocket', 'MongoDB'],
     githubUrl: 'https://github.com/sgpushkar/CryptoNova',
     liveUrl: '',
+  },
+  {
+    id: 'sweep',
+    featured: true,
+    name: 'Sweep',
+    emoji: '🧹',
+    hook: 'Clean up WhatsApp media clutter with a swipe.',
+    problem:
+      'WhatsApp accumulates gigabytes of forwarded memes, blurry photos, and duplicate videos over time. Manual cleanup in gallery apps is painful, slow, and risks deleting important memories.',
+    desc: 'Two-part utility featuring a React Native Android app that scans WhatsApp media via Android MediaStore APIs for a fast card-by-card swipe review, paired with a React/Vite download site.',
+    impact:
+      'Provides safe batch deletion via MediaStore.createDeleteRequest(), duplicate analysis, a full undo stack, and SHA-256 verified APK delivery.',
+    features: [
+      'Swipe-to-review card deck (swipe left to delete, right to keep)',
+      'Real MediaStore discovery for WhatsApp images & videos (no root needed)',
+      'Batch safe deletion using Android system-authorized delete dialog',
+      'Full undo stack before final deletion confirmation',
+      'Storage insights highlighting largest files and duplicate candidates',
+      'Static React/Vite download page with automated release metadata',
+    ],
+    tags: ['React Native', 'TypeScript', 'Android', 'Kotlin', 'MediaStore API', 'Vite', 'React'],
+    githubUrl: 'https://github.com/sgpushkar/Sweep',
+    liveUrl: '',
+  },
+  {
+    id: 'repomedic-ai',
+    name: 'RepoMedic',
+    emoji: '🩺',
+    hook: 'AI-powered repository analysis that helps developers clean, optimize, and improve projects.',
+    problem:
+      'Developers waste hours manually reviewing repositories for structure, dependencies, and maintainability issues.',
+    desc: 'Created an AI-assisted repository analysis tool capable of scanning projects and suggesting improvements automatically.',
+    impact: 'Improved project maintainability and reduced manual auditing effort.',
+    features: [
+      'AI-powered repo analysis',
+      'README suggestions',
+      'Dependency insights',
+      'Automated project health checks',
+      'GitHub integration',
+      'Developer-focused dashboard',
+    ],
+    tags: ['Python', 'AI', 'GitHub API', 'Flask', 'Automation', 'Code Analysis'],
+    githubUrl: 'https://github.com/sgpushkar/RepoMedic',
+    liveUrl: 'https://repo-medic.vercel.app',
   },
   {
     id: 'luna',
@@ -266,7 +247,7 @@ export const PROJECTS: Project[] = [
     hook: 'The site you are on right now — built from scratch to ship fast and look great.',
     problem: 'Generic portfolio templates feel lifeless and do not reflect the actual craft of a developer.',
     desc: 'Personal developer portfolio built with Next.js 14, TypeScript, and Tailwind CSS. Features scroll-driven animations, glassmorphism cards, and a fully responsive layout.',
-    impact: 'Fully deployed on Vercel. Showcases 10 projects and a complete professional profile.',
+    impact: 'Fully deployed on Vercel. Showcases 8 projects and a complete professional profile.',
     features: [
       'Conversion-focused layout and copy',
       'Framer Motion scroll animations',
