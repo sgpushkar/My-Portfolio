@@ -24,8 +24,7 @@ Core Philosophies:
 Primary Email     : pushkarmhatre007@gmail.com
 Git Commit Email  : pushkarmhatre424@gmail.com
 GitHub Profile    : https://github.com/sgpushkar
-LinkedIn Profile  : https://linkedin.com/in/pushkar-mhatre-9430103a5
-Alternate LinkedIn: https://linkedin.com/in/pushkarmhatre
+LinkedIn Profile  : https://www.linkedin.com/in/pushkar-buildyn/
 Contact Form API  : https://formsubmit.co/ajax/pushkarmhatre007@gmail.com
 
 
