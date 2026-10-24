@@ -28,14 +28,14 @@ export const siteConfig = {
   title: 'Pushkar Mhatre — Founder of Buildyn | Full-Stack Web & AI Developer',
   tagline: 'I build things that feel as good as they look.',
   description:
-    'Official portfolio of Pushkar Mhatre, Founder of Buildyn (buildyn.in). Full-stack developer & AI engineer based in Mumbai creating high-converting websites, web apps, and AI systems.',
+    'Official portfolio of Pushkar Mhatre, Founder of Buildyn (www.buildyn.in). Full-stack developer & AI engineer based in Mumbai creating high-converting websites, web apps, and AI systems.',
   url: getBaseUrl(),
   author: 'Pushkar Mhatre',
   email: 'pushkarmhatre007@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/pushkar-buildyn/',
     github: 'https://github.com/sgpushkar',
-    buildyn: 'https://buildyn.in',
+    buildyn: 'https://www.buildyn.in/',
   },
   keywords: [
     'Pushkar Mhatre',
@@ -45,6 +45,7 @@ export const siteConfig = {
     'Buildyn Pushkar',
     'Pushkar Buildyn',
     'buildyn.in',
+    'www.buildyn.in',
     'Buildyn Studio',
     'Buildyn Agency',
     'Buildyn Mumbai',
@@ -76,22 +77,22 @@ export function getPersonJsonLd() {
     url: baseUrl,
     image: `${baseUrl}/pushkar-monogram.png`,
     jobTitle: 'Founder & Full-Stack Developer',
-    description: 'Founder of Buildyn (buildyn.in). Full-Stack Web & AI Developer based in Mumbai.',
+    description: 'Founder of Buildyn (www.buildyn.in). Full-Stack Web & AI Developer based in Mumbai.',
     founder: {
       '@type': 'Organization',
       name: 'Buildyn',
-      url: 'https://buildyn.in',
-      sameAs: 'https://buildyn.in',
+      url: 'https://www.buildyn.in/',
+      sameAs: ['https://www.buildyn.in/', 'https://buildyn.in'],
     },
     worksFor: {
       '@type': 'Organization',
       name: 'Buildyn',
-      url: 'https://buildyn.in',
+      url: 'https://www.buildyn.in/',
     },
     sameAs: [
       'https://www.linkedin.com/in/pushkar-buildyn/',
       'https://github.com/sgpushkar',
-      'https://buildyn.in',
+      'https://www.buildyn.in/',
     ],
     knowsAbout: [
       'Buildyn Studio',
@@ -124,11 +125,12 @@ export function getBuildynOrganizationJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    '@id': 'https://buildyn.in/#organization',
+    '@id': 'https://www.buildyn.in/#organization',
     name: 'Buildyn',
-    alternateName: 'Buildyn Studio',
-    url: 'https://buildyn.in',
+    alternateName: ['Buildyn Studio', 'Buildyn Digital'],
+    url: 'https://www.buildyn.in/',
     sameAs: [
+      'https://www.buildyn.in/',
       'https://buildyn.in',
       'https://www.linkedin.com/in/pushkar-buildyn/',
       `${baseUrl}`,
@@ -187,7 +189,7 @@ export function getProfilePageJsonLd() {
       sameAs: [
         'https://www.linkedin.com/in/pushkar-buildyn/',
         'https://github.com/sgpushkar',
-        'https://buildyn.in',
+        'https://www.buildyn.in/',
       ],
     },
   };
