@@ -400,8 +400,8 @@ export const CONTACT_LINKS: ContactLink[] = [
   {
     icon: '💼',
     label: 'LinkedIn',
-    value: 'linkedin.com/in/pushkarmhatre',
-    href: 'https://linkedin.com/in/pushkar-mhatre-9430103a5',
+    value: 'linkedin.com/in/pushkar-buildyn',
+    href: 'https://www.linkedin.com/in/pushkar-buildyn/',
   },
 ];
 
