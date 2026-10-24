@@ -1142,7 +1142,7 @@ export default function LongWalk() {
               <p className="tiny">Founder</p>
               <h2 style={{ '--f': 9 } as React.CSSProperties}>Buildyn.</h2>
               <p>The creative digital studio I started.</p>
-              <a className="btn" href="https://buildyn.in" target="_blank" rel="noopener noreferrer">
+              <a className="btn" href="https://www.buildyn.in/" target="_blank" rel="noopener noreferrer">
                 Visit buildyn.in ↗
               </a>
             </div>
