@@ -74,10 +74,11 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: '/logo.png',
+        url: '/og-image.png',
         width: 1024,
-        height: 1024,
-        alt: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
+        height: 379,
+        type: 'image/png',
+        alt: 'Pushkar Mhatre — I Build Things That Feel As Good As They Look',
       },
     ],
   },
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
     description: siteConfig.description,
-    images: ['/logo.png'],
+    images: ['/og-image.png'],
     creator: '@pushkarmhatre',
   },
   robots: {

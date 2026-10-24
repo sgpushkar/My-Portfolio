@@ -53,6 +53,7 @@ export const siteConfig = {
     buildyn: 'https://www.buildyn.in/',
   },
   images: {
+    og: '/og-image.png',
     logo: '/logo.png',
     monogram: '/pushkar-monogram.png',
     avatar: '/pushkar-favicon-circle.png',

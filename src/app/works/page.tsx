@@ -23,10 +23,11 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     images: [
       {
-        url: '/logo.png',
+        url: '/og-image.png',
         width: 1024,
-        height: 1024,
-        alt: 'Pushkar Mhatre Works Archive',
+        height: 379,
+        type: 'image/png',
+        alt: 'Works & Case Studies — Pushkar Mhatre',
       },
     ],
   },
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Works & Case Studies — Pushkar Mhatre',
     description:
       'Explore 8+ full-stack web applications, AI tools, and mobile products by Pushkar Mhatre.',
-    images: ['/logo.png'],
+    images: ['/og-image.png'],
   },
 };
 
