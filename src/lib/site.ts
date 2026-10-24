@@ -109,8 +109,8 @@ export function getWebSiteJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Pushkar Mhatre — The Long Walk',
-    alternateName: 'Pushkar Mhatre Portfolio',
+    name: 'Pushkar Mhatre — Official Portfolio',
+    alternateName: ['Pushkar Mhatre The Long Walk', 'Pushkar Buildyn Portfolio'],
     url: baseUrl,
     description: siteConfig.description,
     author: {
@@ -120,3 +120,27 @@ export function getWebSiteJsonLd() {
     inLanguage: 'en-US',
   };
 }
+
+export function getProfilePageJsonLd() {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    dateCreated: '2024-01-01T00:00:00Z',
+    dateModified: new Date().toISOString(),
+    mainEntity: {
+      '@type': 'Person',
+      name: 'Pushkar Mhatre',
+      alternateName: ['Pushkar Buildyn', 'sgpushkar'],
+      description: siteConfig.description,
+      image: `${baseUrl}/pushkar-monogram.png`,
+      jobTitle: 'Full-Stack Web & AI Developer',
+      sameAs: [
+        'https://www.linkedin.com/in/pushkar-buildyn/',
+        'https://github.com/sgpushkar',
+        'https://buildyn.in',
+      ],
+    },
+  };
+}
+
