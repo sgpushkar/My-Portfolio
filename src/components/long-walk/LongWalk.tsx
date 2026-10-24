@@ -778,12 +778,12 @@ export default function LongWalk() {
           <div id="T" ref={tRef}>
             {/* 00: Intro Hero */}
             <div className="tx it" style={pos(9, 112, undefined, 10.5)}>
-              <p className="tiny">Pushkar Mhatre · Full-stack developer &amp; AI enthusiast · Mumbai</p>
+              <p className="tiny">Pushkar Mhatre · Full-Stack Web &amp; AI Developer · Mumbai</p>
               <h1>
                 I Build Things That Feel <i>As Good</i> As They Look.
               </h1>
               <p>
-                Founder of Buildyn. Full-stack builder, AI tinkerer, collector of small details. This is
+                Full-stack builder, AI tinkerer, collector of small details. This is
                 what I&apos;ve made so far.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -1166,6 +1166,13 @@ export default function LongWalk() {
                   rel="noopener noreferrer"
                 >
                   LinkedIn ↗
+                </a>
+                <a
+                  href="https://www.buildyn.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Buildyn ↗
                 </a>
                 <Link href="/works">
                   Works Archive →

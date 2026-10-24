@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description:
       'Explore 8+ full-stack web applications, AI tools, and mobile products by Pushkar Mhatre.',
     url: `${baseUrl}/works`,
-    siteName: 'Pushkar Mhatre — The Long Walk',
+    siteName: 'Pushkar Mhatre — Portfolio',
     type: 'website',
     locale: 'en_IN',
     images: [
@@ -43,10 +43,17 @@ export default function WorksPage() {
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Pushkar Mhatre — Works & Case Studies',
+    '@id': `${baseUrl}/works#collection`,
+    url: `${baseUrl}/works`,
+    name: 'Works & Case Studies — Pushkar Mhatre',
     description:
       'Showcase of shipped full-stack web apps, AI systems, and mobile software by Pushkar Mhatre.',
-    url: `${baseUrl}/works`,
+    isPartOf: {
+      '@id': `${baseUrl}/#website`,
+    },
+    author: {
+      '@id': `${baseUrl}/#person`,
+    },
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: PROJECTS.map((project, idx) => ({

@@ -259,6 +259,14 @@ export default function WorksPageClient() {
               LinkedIn ↗
             </a>
             <a
+              href="https://www.buildyn.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--tx)] transition-colors"
+            >
+              Buildyn ↗
+            </a>
+            <a
               href="mailto:pushkarmhatre007@gmail.com"
               className="hover:text-[var(--tx)] transition-colors"
             >

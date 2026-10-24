@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
     short_name: 'Pushkar Mhatre',
     description:
-      'I build things that feel as good as they look. Full-stack builder, AI engineer, and founder of Buildyn.',
+      'I build things that feel as good as they look. Full-stack web and AI developer.',
     start_url: '/',
     display: 'standalone',
     background_color: '#080808',

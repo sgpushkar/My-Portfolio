@@ -52,8 +52,8 @@ const baseUrl = getBaseUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Pushkar Mhatre — Founder of Buildyn | Full-Stack Web & AI Developer',
-    template: '%s | Pushkar Mhatre (Buildyn)',
+    default: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
+    template: '%s | Pushkar Mhatre',
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -69,8 +69,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: baseUrl,
-    siteName: 'Pushkar Mhatre — The Long Walk',
-    title: 'Pushkar Mhatre — Full-Stack Web & AI Developer | The Long Walk',
+    siteName: 'Pushkar Mhatre — Portfolio',
+    title: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
     description: siteConfig.description,
     images: [
       {

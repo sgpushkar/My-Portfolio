@@ -9,6 +9,7 @@ export default function Footer() {
   const socials = [
     { label: 'GitHub', href: 'https://github.com/sgpushkar' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pushkar-buildyn/' },
+    { label: 'Buildyn', href: 'https://www.buildyn.in/' },
     { label: 'Email', href: 'mailto:pushkarmhatre007@gmail.com' },
   ];
 
@@ -34,7 +35,7 @@ export default function Footer() {
                 Pushkar Mhatre
               </p>
               <p className="mt-1 text-[13px] text-white/40 font-mono">
-                Web Developer · Mumbai, India
+                Full-Stack Web &amp; AI Developer · Mumbai
               </p>
             </div>
           </div>
