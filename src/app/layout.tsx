@@ -1,7 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { getBaseUrl } from '@/lib/site';
+import { getBaseUrl, siteConfig, getPersonJsonLd, getWebSiteJsonLd } from '@/lib/site';
 import './globals.css';
 
 const texGyreCursor = localFont({
@@ -44,28 +44,42 @@ const baseUrl = getBaseUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'Pushkar Mhatre — The Long Walk',
-  description:
-    "I build things that feel as good as they look. Full-stack builder, AI tinkerer, collector of small details. This is what I've made so far.",
-  keywords: [
-    'Pushkar Mhatre',
-    'The Long Walk',
-    'Web Developer',
-    'AI Engineer',
-    'Next.js',
-    'React',
-    'Node.js',
-    'Mumbai',
-  ],
-  authors: [{ name: 'Pushkar Mhatre' }],
+  title: {
+    default: 'Pushkar Mhatre — Full-Stack Web & AI Developer | The Long Walk',
+    template: '%s | Pushkar Mhatre',
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: 'Pushkar Mhatre', url: siteConfig.links.linkedin }],
+  creator: 'Pushkar Mhatre',
+  publisher: 'Pushkar Mhatre',
+  applicationName: 'Pushkar Mhatre Portfolio',
+  category: 'technology',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Pushkar Mhatre — The Long Walk',
-    description: 'I build things that feel as good as they look.',
-    url: '/',
     type: 'website',
+    locale: 'en_IN',
+    url: baseUrl,
+    siteName: 'Pushkar Mhatre — The Long Walk',
+    title: 'Pushkar Mhatre — Full-Stack Web & AI Developer | The Long Walk',
+    description: siteConfig.description,
+    images: [
+      {
+        url: '/logo.png',
+        width: 1024,
+        height: 1024,
+        alt: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
+    description: siteConfig.description,
+    images: ['/logo.png'],
+    creator: '@pushkarmhatre',
   },
   robots: {
     index: true,
@@ -114,6 +128,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = [getPersonJsonLd(), getWebSiteJsonLd()];
+
   return (
     <html 
       lang="en" 
@@ -125,6 +141,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Rozha+One&display=swap" rel="stylesheet" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
       </head>
       <body className="overflow-x-hidden">
         {children}

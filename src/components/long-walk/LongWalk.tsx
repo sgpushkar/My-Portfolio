@@ -1161,7 +1161,7 @@ export default function LongWalk() {
                   GitHub ↗
                 </a>
                 <a
-                  href="https://linkedin.com/in/pushkarmhatre"
+                  href="https://www.linkedin.com/in/pushkar-buildyn/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

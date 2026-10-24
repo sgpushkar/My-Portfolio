@@ -251,7 +251,7 @@ export default function WorksPageClient() {
               GitHub ↗
             </a>
             <a
-              href="https://linkedin.com/in/pushkarmhatre"
+              href="https://www.linkedin.com/in/pushkar-buildyn/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[var(--tx)] transition-colors"

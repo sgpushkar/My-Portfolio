@@ -8,7 +8,7 @@ export default function Footer() {
 
   const socials = [
     { label: 'GitHub', href: 'https://github.com/sgpushkar' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/pushkar-mhatre-9430103a5' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pushkar-buildyn/' },
     { label: 'Email', href: 'mailto:pushkarmhatre007@gmail.com' },
   ];
 
