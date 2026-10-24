@@ -1,7 +1,14 @@
 // src/app/layout.tsx
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { getBaseUrl, siteConfig, getPersonJsonLd, getWebSiteJsonLd, getProfilePageJsonLd } from '@/lib/site';
+import {
+  getBaseUrl,
+  siteConfig,
+  getPersonJsonLd,
+  getWebSiteJsonLd,
+  getProfilePageJsonLd,
+  getBuildynOrganizationJsonLd,
+} from '@/lib/site';
 import './globals.css';
 
 const texGyreCursor = localFont({
@@ -45,8 +52,8 @@ const baseUrl = getBaseUrl();
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Pushkar Mhatre — Full-Stack Web & AI Developer | Official Portfolio',
-    template: '%s | Pushkar Mhatre',
+    default: 'Pushkar Mhatre — Founder of Buildyn | Full-Stack Web & AI Developer',
+    template: '%s | Pushkar Mhatre (Buildyn)',
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -128,7 +135,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = [getPersonJsonLd(), getProfilePageJsonLd(), getWebSiteJsonLd()];
+  const structuredData = [
+    getPersonJsonLd(),
+    getProfilePageJsonLd(),
+    getBuildynOrganizationJsonLd(),
+    getWebSiteJsonLd(),
+  ];
 
   return (
     <html 
