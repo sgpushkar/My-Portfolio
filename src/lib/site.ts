@@ -25,10 +25,10 @@ export function getBaseUrl(): string {
 
 export const siteConfig = {
   name: 'Pushkar Mhatre',
-  title: 'Pushkar Mhatre — Full-Stack Web & AI Developer | The Long Walk',
+  title: 'Pushkar Mhatre — Founder of Buildyn | Full-Stack Web & AI Developer',
   tagline: 'I build things that feel as good as they look.',
   description:
-    'Full-stack developer, AI engineer, and founder of Buildyn based in Mumbai. Specialized in Next.js, React, Node.js, AI agent workflows, and high-performance interactive web products.',
+    'Official portfolio of Pushkar Mhatre, Founder of Buildyn (buildyn.in). Full-stack developer & AI engineer based in Mumbai creating high-converting websites, web apps, and AI systems.',
   url: getBaseUrl(),
   author: 'Pushkar Mhatre',
   email: 'pushkarmhatre007@gmail.com',
@@ -39,7 +39,16 @@ export const siteConfig = {
   },
   keywords: [
     'Pushkar Mhatre',
+    'Buildyn',
+    'Buildyn Founder',
+    'Founder of Buildyn',
+    'Buildyn Pushkar',
     'Pushkar Buildyn',
+    'buildyn.in',
+    'Buildyn Studio',
+    'Buildyn Agency',
+    'Buildyn Mumbai',
+    'Pushkar Mhatre Buildyn',
     'Pushkar Mhatre LinkedIn',
     'Full-Stack Developer Mumbai',
     'AI Engineer India',
@@ -50,12 +59,9 @@ export const siteConfig = {
     'AI Agent Workflows',
     'Freelance Web Developer Mumbai',
     'Creative Developer Portfolio',
-    'Buildyn Founder',
     'The Long Walk Portfolio',
     'Web Developer Panvel',
     'Full-Stack Engineer India',
-    'Frontend Animation Framer Motion',
-    'UI UX Engineer Mumbai',
   ],
 };
 
@@ -64,11 +70,19 @@ export function getPersonJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${baseUrl}/#person`,
     name: 'Pushkar Mhatre',
-    alternateName: ['Pushkar Buildyn', 'sgpushkar'],
+    alternateName: ['Pushkar Buildyn', 'Pushkar Mhatre Buildyn', 'sgpushkar'],
     url: baseUrl,
     image: `${baseUrl}/pushkar-monogram.png`,
-    jobTitle: 'Full-Stack Web & AI Developer',
+    jobTitle: 'Founder & Full-Stack Developer',
+    description: 'Founder of Buildyn (buildyn.in). Full-Stack Web & AI Developer based in Mumbai.',
+    founder: {
+      '@type': 'Organization',
+      name: 'Buildyn',
+      url: 'https://buildyn.in',
+      sameAs: 'https://buildyn.in',
+    },
     worksFor: {
       '@type': 'Organization',
       name: 'Buildyn',
@@ -80,6 +94,7 @@ export function getPersonJsonLd() {
       'https://buildyn.in',
     ],
     knowsAbout: [
+      'Buildyn Studio',
       'Next.js',
       'React',
       'TypeScript',
@@ -104,17 +119,50 @@ export function getPersonJsonLd() {
   };
 }
 
+export function getBuildynOrganizationJsonLd() {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': 'https://buildyn.in/#organization',
+    name: 'Buildyn',
+    alternateName: 'Buildyn Studio',
+    url: 'https://buildyn.in',
+    sameAs: [
+      'https://buildyn.in',
+      'https://www.linkedin.com/in/pushkar-buildyn/',
+      `${baseUrl}`,
+    ],
+    founder: {
+      '@type': 'Person',
+      '@id': `${baseUrl}/#person`,
+      name: 'Pushkar Mhatre',
+      url: baseUrl,
+      jobTitle: 'Founder & Lead Developer',
+      sameAs: [
+        'https://www.linkedin.com/in/pushkar-buildyn/',
+        'https://github.com/sgpushkar',
+      ],
+    },
+  };
+}
+
 export function getWebSiteJsonLd() {
   const baseUrl = getBaseUrl();
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Pushkar Mhatre — Official Portfolio',
-    alternateName: ['Pushkar Mhatre The Long Walk', 'Pushkar Buildyn Portfolio'],
+    name: 'Pushkar Mhatre — Founder of Buildyn | Official Portfolio',
+    alternateName: [
+      'Pushkar Mhatre The Long Walk',
+      'Pushkar Buildyn Portfolio',
+      'Buildyn Pushkar Mhatre',
+    ],
     url: baseUrl,
     description: siteConfig.description,
     author: {
       '@type': 'Person',
+      '@id': `${baseUrl}/#person`,
       name: 'Pushkar Mhatre',
     },
     inLanguage: 'en-US',
@@ -130,11 +178,12 @@ export function getProfilePageJsonLd() {
     dateModified: new Date().toISOString(),
     mainEntity: {
       '@type': 'Person',
+      '@id': `${baseUrl}/#person`,
       name: 'Pushkar Mhatre',
-      alternateName: ['Pushkar Buildyn', 'sgpushkar'],
+      alternateName: ['Pushkar Buildyn', 'Pushkar Mhatre Buildyn', 'sgpushkar'],
       description: siteConfig.description,
       image: `${baseUrl}/pushkar-monogram.png`,
-      jobTitle: 'Full-Stack Web & AI Developer',
+      jobTitle: 'Founder & Full-Stack Developer at Buildyn',
       sameAs: [
         'https://www.linkedin.com/in/pushkar-buildyn/',
         'https://github.com/sgpushkar',
@@ -143,4 +192,3 @@ export function getProfilePageJsonLd() {
     },
   };
 }
-
