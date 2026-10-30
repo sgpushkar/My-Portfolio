@@ -2,9 +2,9 @@
 
 /**
  * Target production canonical URL.
- * Defaults strictly to the intended Vercel deployment URL as requested.
+ * Official custom domain for Pushkar Mhatre.
  */
-export const DEFAULT_SITE_URL = 'https://pushkar-mhatre.vercel.app';
+export const DEFAULT_SITE_URL = 'https://www.pushkarmhatre.in';
 
 function normalizeUrl(url: string): string {
   const trimmed = url.trim().replace(/\/+$/, '');
@@ -16,9 +16,7 @@ function normalizeUrl(url: string): string {
 /**
  * Returns the resolved canonical base URL for the portfolio.
  * - Prioritizes explicit NEXT_PUBLIC_SITE_URL or SITE_URL overrides.
- * - In Vercel environments, only allows production URLs to become canonical,
- *   preventing branch/preview deployments from being indexed as canonicals.
- * - Defaults strictly to https://pushkar-mhatre.vercel.app.
+ * - Defaults to https://www.pushkarmhatre.in.
  */
 export function getBaseUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) {
@@ -26,13 +24,6 @@ export function getBaseUrl(): string {
   }
   if (process.env.SITE_URL) {
     return normalizeUrl(process.env.SITE_URL);
-  }
-
-  // Prevent preview deployments from hijacking canonical URLs
-  if (process.env.VERCEL_ENV === 'production') {
-    if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-      return normalizeUrl(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`);
-    }
   }
 
   return DEFAULT_SITE_URL;
