@@ -223,7 +223,7 @@ Core Coursework / Subjects:
 [08] MY PORTFOLIO
      Category    : Developer Portfolio & Client Funnel
      GitHub      : https://github.com/sgpushkar/My-Portfolio
-     Live Demo   : Deployed on Vercel
+     Live Demo   : https://pushkarmhatre.in
      Tech Stack  : Next.js 14, TypeScript, TailwindCSS, Framer Motion, Vercel
      Hook        : "The site you are on right now — built from scratch to ship fast and look great."
      Problem     : Generic templates feel soulless and fail to convey the engineering depth and craft of a developer.

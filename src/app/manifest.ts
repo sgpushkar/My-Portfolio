@@ -6,12 +6,16 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Pushkar Mhatre — Full-Stack Web & AI Developer',
     short_name: 'Pushkar Mhatre',
     description:
-      'I build things that feel as good as they look. Full-stack web and AI developer.',
+      'Official portfolio of Pushkar Mhatre. Full-stack web and AI developer based in Mumbai.',
     start_url: '/',
+    id: '/',
+    scope: '/',
+    lang: 'en',
     display: 'standalone',
     background_color: '#080808',
     theme_color: '#080808',
     orientation: 'portrait',
+    categories: ['portfolio', 'technology', 'developer'],
     icons: [
       {
         src: '/pushkar-favicon-circle.png',

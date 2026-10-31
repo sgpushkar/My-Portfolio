@@ -4,10 +4,7 @@ import localFont from 'next/font/local';
 import {
   getBaseUrl,
   siteConfig,
-  getPersonJsonLd,
-  getWebSiteJsonLd,
-  getProfilePageJsonLd,
-  getBuildynOrganizationJsonLd,
+  getCompleteJsonLdGraph,
 } from '@/lib/site';
 import './globals.css';
 
@@ -88,6 +85,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ['/og-image.png'],
     creator: '@pushkarmhatre',
+    site: '@pushkarmhatre',
   },
   robots: {
     index: true,
@@ -102,6 +100,8 @@ export const metadata: Metadata = {
   },
   verification: {
     google: [
+      'google8d91ee48a2ec5f4d',
+      '8d91ee48a2ec5f4d',
       'ks3ODG4VWdgAWb8GOtxLq1OG1yeUYtWqP19iWzld-ls',
       'VHAHKgGNhcRgBGMuZDS4L6n5z9vN8vsKN9jRg-G5Ovo',
     ],
@@ -136,12 +136,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = [
-    getPersonJsonLd(),
-    getProfilePageJsonLd(),
-    getBuildynOrganizationJsonLd(),
-    getWebSiteJsonLd(),
-  ];
+  const structuredData = getCompleteJsonLdGraph();
 
   return (
     <html 

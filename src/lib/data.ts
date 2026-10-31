@@ -256,7 +256,7 @@ export const PROJECTS: Project[] = [
     ],
     tags: ['Next.js 14', 'TypeScript', 'TailwindCSS', 'Framer Motion', 'Vercel'],
     githubUrl: 'https://github.com/sgpushkar/My-Portfolio',
-    liveUrl: '',
+    liveUrl: 'https://pushkarmhatre.in',
   },
 ];
 

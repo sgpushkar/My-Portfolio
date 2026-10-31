@@ -43,33 +43,61 @@ export const metadata: Metadata = {
 export default function WorksPage() {
   const collectionJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    '@id': `${baseUrl}/works#collection`,
-    url: `${baseUrl}/works`,
-    name: 'Works & Case Studies — Pushkar Mhatre',
-    description:
-      'Showcase of shipped full-stack web apps, AI systems, and mobile software by Pushkar Mhatre.',
-    isPartOf: {
-      '@id': `${baseUrl}/#website`,
-    },
-    author: {
-      '@id': `${baseUrl}/#person`,
-    },
-    mainEntity: {
-      '@type': 'ItemList',
-      itemListElement: PROJECTS.map((project, idx) => ({
-        '@type': 'ListItem',
-        position: idx + 1,
-        item: {
-          '@type': 'CreativeWork',
-          name: project.name,
-          headline: project.hook,
-          description: project.desc || project.problem,
-          keywords: project.tags.join(', '),
-          url: project.liveUrl || project.githubUrl,
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${baseUrl}/works#breadcrumbs`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${baseUrl}/`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Works & Case Studies',
+            item: `${baseUrl}/works`,
+          },
+        ],
+      },
+      {
+        '@type': 'CollectionPage',
+        '@id': `${baseUrl}/works#collection`,
+        url: `${baseUrl}/works`,
+        name: 'Works & Case Studies — Pushkar Mhatre',
+        description:
+          'Showcase of shipped full-stack web apps, AI systems, and mobile software by Pushkar Mhatre.',
+        isPartOf: {
+          '@id': `${baseUrl}/#website`,
         },
-      })),
-    },
+        author: {
+          '@id': `${baseUrl}/#person`,
+        },
+        mainEntity: {
+          '@type': 'ItemList',
+          numberOfItems: PROJECTS.length,
+          itemListElement: PROJECTS.map((project, idx) => ({
+            '@type': 'ListItem',
+            position: idx + 1,
+            item: {
+              '@type': 'SoftwareApplication',
+              name: project.name,
+              headline: project.hook,
+              description: project.desc || project.problem,
+              applicationCategory: project.role || 'DeveloperApplication',
+              operatingSystem: 'Web, Android, Cross-platform',
+              keywords: project.tags.join(', '),
+              url: project.liveUrl || project.githubUrl,
+              author: {
+                '@id': `${baseUrl}/#person`,
+              },
+            },
+          })),
+        },
+      },
+    ],
   };
 
   return (

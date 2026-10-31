@@ -8,16 +8,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: `${baseUrl}`,
+      url: `${baseUrl}/`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 1.0,
+      images: [`${baseUrl}/og-image.png`],
     },
     {
       url: `${baseUrl}/works`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
+      images: [`${baseUrl}/og-image.png`],
     },
   ];
 }
